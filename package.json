@@ -1,0 +1,27 @@
+{
+  "name": "hexo-theme-aifrontiers",
+  "version": "1.0.0",
+  "description": "The hexo theme for AI Frontiers conference blog",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AI-Frontiers/hexo-theme-aifrontiers"
+  },
+  "keywords": [
+    "hexo",
+    "theme",
+    "aifrontiers"
+  ],
+  "author": "Jim Zenn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AI-Frontiers/hexo-theme-aifroniters/issues"
+  },
+  "homepage": "https://github.com/AI-Frontiers/hexo-theme-aifrontiers#readme",
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}

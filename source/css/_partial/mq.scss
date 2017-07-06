@@ -1,0 +1,238 @@
+body {
+}
+
+main.container {
+    margin: auto;
+    margin-top: 2em;
+}
+
+header {
+    .header-wrap {
+        position: relative;
+        padding: 0 20px;
+    }
+    .logo-link {
+        display: flex;
+        height: 100%;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        img {
+            height: 30px;
+        }
+    }
+}
+
+.container {
+    margin-top: 5px!important;
+}
+.container-left {
+    width: 60%;
+}
+
+.sidebar {
+    padding-top: 18px;
+    margin: 0 0 0 1em;
+    width: 40%;
+    max-width: 420px; // Prevent Twitter timeline from applying a larger header
+}
+
+.videos {
+    .videos-heading {
+        width: 15%;
+        border-left: $c11 5px solid;
+        font-size: 30px;
+        padding-left: 15px;
+        text-shadow: 0px 2px 1px rgba(0,0,0,.6);
+    }
+    .slider {
+        display: flex;
+        width: 70%;
+        align-items: center;
+        flex-direction: row;
+        height: 330px;
+        justify-content: space-around;
+        iframe {
+            width: 620px;
+            height: 280px;
+            max-width: 45%;
+        }
+    }
+}
+
+.subscribe-wrap {
+    width: 850px;
+    position: relative;
+    display: flex;
+    padding: 10px 0;
+    margin: auto;
+    .quote {
+        width: 370px;
+        font-size: 24px;
+        padding: 0 20px;
+        border-right: rgba(255,255,255,.5) 2px solid;
+        margin-right: 20px;
+        line-height: 26px;
+    }
+    form.subscribe-form {
+        padding-right: 20px;
+        width: 50%;
+        height: 40px;
+        input.email {
+            width: 100%;
+            min-width: 150px;
+        }
+    }
+}
+
+/*
+@media screen and (max-width: 999px) and (min-width: 701px) {
+    header {
+        .header-wrap {
+            padding: 0 10px;
+        }
+        .logo-link {
+            position: absolute;
+            img {
+                height: 30px;
+                padding: 10px 0;
+            }
+        }
+    }
+
+    .jumbotron {
+        .video-hide {
+            display: none;
+        }
+        .videos-heading {
+            border-left: $c11 5px solid;
+            padding-left: 15px;
+            width: 18%;
+            font-size: 28px;
+        }
+        .slider {
+            width: 70%;
+            align-items: center;
+            flex-direction: row;
+            height: 330px;
+            justify-content: space-around;
+            iframe {
+                width: 620px;
+                height: 280px;
+                max-width: 90%;
+            }
+        }
+    }
+
+    .subscribe-wrap {
+        width: 850px;
+        position: relative;
+        display: flex;
+        padding: 10px 0;
+        margin: auto;
+        .quote {
+            width: 370px;
+            font-size: 24px;
+            padding: 0 20px;
+            border-right: rgba(255,255,255,.5) 2px solid;
+            margin-right: 20px;
+            line-height: 26px;
+        }
+        form.subscribe-form {
+            padding-right: 20px;
+            width: 50%;
+            height: 40px;
+            input.email {
+                width: 100%;
+                min-width: 150px;
+            }
+        }
+    }
+
+    .sidebar {
+        padding-top: 18px;
+        width: 40%;
+        .slideshare {
+            .slideshare-heading {
+                font-size: 22px;
+            }
+            .slideshare-list {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .videos {
+        flex-direction: column;
+    }
+    .video-hide {
+        display: none;
+    }
+    .videos-heading {
+        width: 80%;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom:0;
+    }
+
+    main.container {
+        margin: 1em 1em;
+    }
+    .header-wrap {
+        position: relative;
+        .logo-link {
+            position: absolute;
+            img {
+                height: 26px;
+                padding: 11px;
+            }
+        }
+        .slicknav_menu {
+            display: block;
+        }
+        ul.nav {
+            display: none;
+
+        }
+    }
+    .sidebar {
+        display: none;
+    }
+    .slider {
+        height: 225px;
+        .slick-arrow {
+            display: none!important;
+        }
+    }
+    .subscribe-wrap {
+        display: block;
+        overflow: hidden;
+        .quote {
+            display: block;
+            text-align: center;
+            box-sizing: border-box;
+            width: 100%;
+            font-size: 20px;
+            line-height: 26px;
+            margin-bottom: 10px;
+            padding: 8px 18px 0;
+        }
+        form.subscribe-form {
+            width: 100%;
+            box-sizing: border-box;
+            font-size: 15px;
+            input.email {
+                height: 40px;
+                &:focus {
+                    background: #ECECEC!important;
+                    &::placeholder {
+                        color: #CCC;
+                    }
+                }
+            }
+        }
+    }
+}
+*/

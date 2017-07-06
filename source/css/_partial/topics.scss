@@ -1,0 +1,45 @@
+.module-topics {
+    width: 980px;
+    margin: auto;
+    margin-bottom: 40px;
+    .module-title {
+        margin-top: 50px;
+        margin-bottom: 40px;
+    }
+
+    .topics {
+        display: flex;
+        padding: 0 20px;
+        position: relative;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .topic-card {
+        display: flex;
+        position: relative;
+        width: 30%;
+        height: 320px;
+        flex-direction: column;
+        justify-content: start;
+    }
+
+    .topic-card .topic-image {
+        width: 100%;
+    }
+
+    .topic-card .topic-title {
+        font-size: 16px;
+        color: #3D9BE9;
+        text-transform: uppercase;
+        font-weight: 600;
+        text-align: center;
+        margin: 8px auto 11px auto;
+    }
+
+    .topic-card .topic-description {
+        font-size: 16px;
+        line-height: 18px;
+        letter-spacing: -0.1px;
+    }
+}

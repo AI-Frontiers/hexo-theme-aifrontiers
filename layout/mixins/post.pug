@@ -1,0 +1,44 @@
+mixin postInfo(item)
+    .post-info
+        != full_date(item.date, 'll')
+        if item.from && (is_home() || is_post())
+            a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
+
+//- Index Page
+mixin posts()
+    ul.home.post-list.container-left
+        - page.posts.each(function (item) {
+            li.post-list-item
+                article.post-block
+                    +postInfo(item)
+                    h2.post-title
+                        a.post-title-link(href= url_for(item.path))
+                            != item.title
+                    if item.feature
+                        if item.feature.substring(0,8).toLowerCase() == "youtube/"
+                            a.post-feature
+                                iframe(src="//www.youtube.com/embed/"+ item.feature.substring(8),frameborder="0",allowfullscreen="")
+                        else
+                            a.post-feature(href= url_for(item.path))
+                                img(src="/" + item.feature)
+                    .post-content
+                        != item.content
+                    //a.read-more(href= url_for(item.path))!= __('more')
+        - })
+
+//- Post Page
+mixin post(item)
+    .post
+        article.post-block
+            +postInfo(item)
+            h1.post-title
+                != item.title
+            if item.feature
+                if item.feature.substring(0,8).toLowerCase() == "youtube/"
+                    .post-feature
+                        iframe(src="//www.youtube.com/embed/"+ item.feature.substring(8),frameborder="0",allowfullscreen="")
+                else
+                    .post-feature
+                        img(src="/" + item.feature)
+            .post-content
+                != item.content

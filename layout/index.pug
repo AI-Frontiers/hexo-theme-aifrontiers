@@ -1,0 +1,25 @@
+extends partial/layout
+
+block navigation
+    include partial/nav-main
+
+block jumbotron
+    include mixins/jumbotron
+    // +videos()
+    // +subscribe()
+
+block container
+    include partial/topics
+    include partial/speakers
+    include partial/schedule
+    // include mixins/sidebar
+    // +sidebar()
+    include partial/sponsors
+    include partial/venue
+
+block pagination
+    include mixins/paginator
+    +home()
+
+block copyright
+    include partial/copyright

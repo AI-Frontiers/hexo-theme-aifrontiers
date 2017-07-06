@@ -1,0 +1,28 @@
+mixin section(title, description)
+    .section
+        .section-title
+            != title
+        .section-description
+            != description
+
+mixin subsection(title, description)
+    .subsection
+        .subsection-title
+            != title
+        .subsection-description
+            != description
+
+.module.module-schedule
+    .module-title(name="schedule")
+        | Conference Program
+    p.schedule-description
+        | In this two-day conference (www.aifrontiers.com) during Jan 11-12 at Santa Clara, we are bringing the leaders in Applied AI from companies to share with you the latest advances in deep learning product. You will have opportunity to build your first deep learning models through our training session, and network with companies and other professionals recruiting for engineers & data scientists in this space.
+    .schedule
+        +section("Autonomous Driving", "A panel of industry experts from companies that are actively developing autonomous cars come together to discuss their work. Our speakers include Zhaoyin Jia, tech lead of Google Self Driving, Junli Gu, Machine Learning Lead of Tesla Autopilot, and Tony Han, Director of Baidu Autonomous Driving Unit. Each panelist will give a presentation for 20 minutes, followed by 20-minute panel discussion, moderated by the session chair.")
+        +subsection("Zhaoyin Jia: How a driverless car sees the road", "In this talk I will give a brief introduction to Google Self Driving Car project: why self-driving cars matter, and what we’re up to. Our self driving cars are designed to navigate safely through city streets. They have sensors designed to detect objects in all directions, including pedestrians, cyclists and vehicles. The software processes all the information to help the car safely navigate the road without getting tired or distracted. We’ve self-driven more than 2 million miles and are currently out on the streets of Mountain View, CA, Austin, TX, Kirkland, WA and Metro Phoenix, AZ.")
+        +section("Speech-enabled Personal Assistants", "A panel of industry experts and leading scientists on Speech-enabled Personal Assistants come together to discuss their work. Our speakers include Li Deng, Chief Scientist of AI of Microsoft, Adam Coates, Director of AI lab of Baidu, and manager of Amazon Alexa team.")
+        +section("Natural Language Processing", "Our speaker Lukasz Kaiser, Senior Research Scientist of Google Brain will talk about Natural Language Processing (NLP) products, including Machine Translation, Automatic Email Response, and Question Answering Systems and more.")
+        +section("Internet of Things", "A panel of industry experts from companies that are actively developing Connected Home and Building Technology discuss their work. Our speakers include Sean Ding, Chief Scientist from Huawei, Mohak Shah, Head of Data Science from Bosch, and more.")
+        +section("Computer Vision", "A panel of industry experts and leading scientists discuss the newest development in computer vision, including photo and video processing. Our speakers include Gary Bradski, Founder of OpenCV, Liu Ren, Chief Scientist of Bosch, and Shinko Cheng of Google Photo.")
+        +section("Deep Learning Framework", "Leaders of current deep learning frameworks, including TensorFlow, Torch, Caffe and MXNet, come together to share insights on their frameworks. Our speaker include.")
+        +section("Dinner and AI Startup Pitch Competition", "Join our AI Startup Pitch Competition and get funding by top investors. Enjoy the dinner and network with AI entrepreneurs, startups, investors and experts.")

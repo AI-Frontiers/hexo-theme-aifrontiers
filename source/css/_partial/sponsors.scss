@@ -1,0 +1,39 @@
+.module-sponsors {
+    padding: 20px 0;
+    min-width: 980px;
+    background: #fafafa;
+    padding-bottom: 50px;
+    .module-title {
+        color: #454545;
+        width: 980px;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .sponsors {
+        display: flex;
+        width: 980px;
+        margin: auto;
+        position: relative;
+        flex-flow: row wrap;
+    }
+    .speaker-logo {
+        width: 192px;
+    }
+    .sponsorship-letter {
+        display: block;
+        text-align: center;
+        margin: auto;
+        width: 300px;
+        color: white;
+        margin-top: 40px;
+        display: block;
+        height: 45px;
+        background: #e04445;
+        font-family: "baskerville", "Times New Roman", serif;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 27px;
+    }
+
+}
+

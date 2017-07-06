@@ -1,0 +1,13 @@
+ul.nav.nav-main.nav-list
+    each value, key in theme.menu_main
+        li.nav-list-item
+            - var re = /^(http|https):\/\/*/gi;
+            - var isOutbound = re.test(value);
+            - var tar = isOutbound ? "_blank" : "_self"
+            - var act = !isOutbound && "/"+page.current_url === value
+            if isOutbound
+                a.nav-list-link(class={active: act} href=url_for(value) onclick="trackOutboundLink('"+url_for(value)+"')" target=tar)
+                    != key.toUpperCase()
+            else
+                a.nav-list-link(class={active: act} href=url_for(value) target=tar)
+                    != key.toUpperCase()

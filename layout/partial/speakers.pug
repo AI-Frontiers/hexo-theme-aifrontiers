@@ -1,0 +1,24 @@
+mixin speaker-card(photo, name, position, company)
+    .speaker-card
+        img.speaker-photo(src=photo)
+        span.speaker-name
+            != name
+        span.speaker-position
+            != position
+        span.speaker-company
+            != company
+
+.module.module-speakers
+    a.module-title(name="speakers")
+        | Speakers
+    .speakers
+        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Associate Professor", "Stanford")
+        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Associate Professor", "Stanford")
+        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Associate Professor", "Stanford")
+        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Associate Professor", "Stanford")
+        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Associate Professor", "Stanford")
+        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Associate Professor", "Stanford")
+        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Associate Professor", "Stanford")
+        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Associate Professor", "Stanford")
+        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Associate Professor", "Stanford")
+        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Associate Professor", "Stanford")
