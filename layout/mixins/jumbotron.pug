@@ -1,32 +1,22 @@
 include mailChimp
 
 .jumbotron
-    span.conf-title
-        span.conf-name AI Frontiers
-        br
-        | conference
-    span.conf-theme
-        != "Theme: " + theme.conf_theme
-    span.conf-info
-        != theme.conf_date + " | " + theme.conf_venue
-    span.register-button Register
+    .jumbotron-wrap
+        span.conf-title
+            span.conf-name AI Frontiers
+            br
+            | conference
+        span.conf-theme
+            != "Theme: " + theme.conf_theme
+        span.conf-info
+            != theme.conf_date + " | " + theme.conf_venue
+        span.register-button Register
 
 mixin videos()
-    .videos
-        h2.videos-heading
-            | Watch speeches from our previous conference.
-        .slider
-            - var tmpId;
-            - for (i in site.data.speeches) {
-                - var item = site.data.speeches[i];
-                - if (i % 2 == 0) {
-                    - tmpId = item.id;
-                - } else {
-                    .slide
-                        iframe(src="https://www.youtube.com/embed/" + tmpId,frameborder="0",allowfullscreen)
-                        iframe.video-hide(src="https://www.youtube.com/embed/" + item.id,frameborder="0",allowfullscreen)
-                - }
-            - }
+    div.intro-video
+        span.video-heading
+            | Video From Last AI Frontiers Conference
+        iframe(src="https://www.youtube.com/embed/glg5pJs_g3E?ecver=2",width="533",height="300",frameborder="0",allowfullscreen)
 
 mixin subscribe()
     div.subscribe
