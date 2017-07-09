@@ -1,7 +1,7 @@
 .module-venue {
     padding: 20px 0;
     background: #848ba3;
-    font-family: "baskerville", "Times New Roman", serif;
+    font-family: $serif;
     min-width: 980px;
     color: white;
 
@@ -31,12 +31,12 @@
             text-transform: uppercase;
         }
         .venue-name {
-            font-size: 24px;
+            font-size: 20px;
             margin: 6px 0 4px 0;
         }
         .venue-address {
-            font-size: 18px;
-            line-height: 1.3em;
+            font-size: 16px;
+            line-height: 1.5em;
         }
     }
 
@@ -73,14 +73,14 @@
             }
             .title {
                 display: block;
-                font-size: 32px;
+                font-size: 30px;
                 line-height: 1.5em;
                 letter-spacing: 0.05em;
                 text-transform: uppercase;
             }
             .content {
                 display: block;
-                font-size: 22px;
+                font-size: 20px;
                 line-height: 1.5em;
                 letter-spacing: 0.05em;
             }

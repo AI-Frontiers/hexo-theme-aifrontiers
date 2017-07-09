@@ -2,11 +2,15 @@ footer {
     border-top: 1px solid #ddd;
     padding-bottom: 20px;
     min-width: 980px;
+    .social-icons {
+        width: 28px;
+        height: 28px;
+    }
     .copyright {
         text-align: center;
         p, a {
-            font-family: "baskerville", "Times New Roman", serif;
-            font-size: 17px;
+            font-family: $serif;
+            font-size: 14px;
             color: #000;
             margin: 0;
         }

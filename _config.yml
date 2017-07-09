@@ -12,8 +12,8 @@ menu_main:
     "Venue": "#venue"
 
 menu_sub:
-    "About Us": /about
-    "Contact Us": /contact
+    "About Us": "#about"
+    "Contact Us": "#contact"
     #Rss: /atom.xml
 
 favicon: /images/favicon.png
