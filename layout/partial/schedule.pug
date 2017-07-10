@@ -13,12 +13,13 @@ mixin subsection(title, description)
             != description
 
 .module.module-schedule
+    - var programs = site.data.programs;
     a.module-title(name="schedule")
         | Conference Program
     p.schedule-description
-        | In this two-day conference (www.aifrontiers.com) during Nov 3-4 at Santa Clara, we are bringing the leaders in Applied AI from companies to share with you the latest advances in deep learning product. You will have opportunity to build your first deep learning models through our training session, and network with companies and other professionals recruiting for engineers & data scientists in this space.
+        - console.log(programs)
+        != site.data.general["conference-description"]
     .schedule
-        - var programs = site.data.programs;
         - var m = programs.length;
         - for (day in programs) {
              - sections = programs[day];

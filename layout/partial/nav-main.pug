@@ -1,5 +1,6 @@
 ul.nav.nav-main.nav-list
-    each value, key in theme.menu_main
+    - var menuMain = site.data.navigation["menu_main"];
+    each value, key in menuMain
         li.nav-list-item
             - var re = /^(http|https):\/\/*/gi;
             - var isOutbound = re.test(value);
