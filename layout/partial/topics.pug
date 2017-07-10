@@ -10,6 +10,10 @@ mixin topic-card(image, title, description)
     a.module-title(name="topics")
         | Our Topics
     .topics
+        - for (id in site.data.topics) {
+            - var item = site.data.jobs[id];
+        - }
+
         +topic-card("/images/topics/speech-enabled-assistants.webp", "Chatbot and NLP", "How do we scale up speech recognition across hundreds of millions of people?How do we build personal assistants?")
         +topic-card("/images/topics/autonomous-driving.webp", "Autonomous Driving", "What are the new challenges in computer vision? How is machine learning applied in building Augmented Reality (AR)?")
         +topic-card("/images/topics/games.jpg", "Games", "How has deep learning revolutionized natural language processing? What applications can we build today? ")
