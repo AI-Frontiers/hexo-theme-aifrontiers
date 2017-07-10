@@ -1,4 +1,4 @@
-mixin speaker-card(photo, name, position, company)
+mixin speaker-card(name, photo, position, company)
     .speaker-card
         img.speaker-photo(src=photo)
         span.speaker-name
@@ -12,8 +12,9 @@ mixin speaker-card(photo, name, position, company)
     a.module-title(name="speakers")
         | Speakers
     .speakers
-        +speaker-card("/images/speakers/feifei-li.jpg", "Feifei Li", "Chief Scientist of AI/ML", "Google Cloud")
-        +speaker-card("/images/speakers/yuandong-tian.jpg", "Yuandong Tian", "Research scientist", "Facebook")
-        +speaker-card("/images/speakers/lukasz-kaiser.jpg", "Lukasz Kaiser", "Sr. Research Scientist", "Google")
-        +speaker-card("/images/speakers/lihong-li.jpg", "Lihong Li", "Principal Researcher", "Microsoft Research")
-        +speaker-card("/images/speakers/michael-bowling.png", "Michael Bowling", "Professor", "University of Alberta")
+        - var speakers = site.data.speakers;
+        - var m = speakers.length;
+        - for (var i = 0; i < m; i++) {
+            - speaker = site.data.speakers[i]
+            +speaker-card(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
+        - }

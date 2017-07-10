@@ -4,22 +4,30 @@
     .about
         p.about-description
             | We are an organization for Artificial Intelligence and Big Data professionals that innovate and build our success through global information exchange and professional networking, through investing our future with adoption of new technology in silicon valley.
-        .organizer-title Conference Organizer
+        .heading
+            | Conference Organizer
         .organizers
-            | Conference Chair:
-            span.name  Junling Hu
-            br
-            | Conference Co-Chair:
-            br
-            span.name.indent  Stella Huang, West Garden PE
-            span.name.indent  Apoorv Saxena, Google
-            span.name.indent  Yang Wang, Facebook
-            | Organizing Committee:
-            br
-            span.name.indent  Sean Ding, Huawei
-            span.name.indent  Tim Ding, Microsoft
-            span.name.indent  Xiufeng Song, Faraday Future
-            span.name.indent  Devon Sun, DSP
+            - var organizers = site.data.organizers;
+            - for (position in organizers) {
+                - var names = organizers[position];
+                - var m = names.length;
+                span.title
+                    != position + ":"
+                    - if (m != 1) {
+                        br
+                    - }
+                - if (m == 1) {
+                    span.name
+                        != " " + names[0]
+                        br
+                - }
+                - else {
+                    - for (var i = 0; i < m; i++) {
+                        span.name.indent
+                            != names[i]
+                    - }
+                - }
+            - }
         p.organizer-description
             | This conference is hosted by Impact Deep LLC, a training and education organization for AI and deep learning, in support of
             a(href="http://svaib.org/")  Silicon Valley AI and Big Data Association.

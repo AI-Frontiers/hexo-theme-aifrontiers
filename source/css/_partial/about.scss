@@ -17,7 +17,7 @@
     .about-description {
         font-size: 13px;
     }
-    .organizer-title {
+    .heading {
         font-family: $serif;
         margin: auto;
         margin-bottom: 10px;
@@ -26,17 +26,15 @@
         font-size: 24px;
     }
     .organizers {
-        display: block;
         margin-left: 45px;
         font-size: 13px;
         line-height: 16px;
         .name {
-            display: inline;
             color: #E0E0E0;
         }
         .indent {
             display: block;
-            text-indent: 20px;
+            margin-left: 20px;
         }
     }
     .organizer-description {
