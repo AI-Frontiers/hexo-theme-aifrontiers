@@ -1,14 +1,16 @@
 .module.module-venue
+    - var data = site.data.venue_text
     a.module-title(name="venue")
         | Venue
     .venue
         .venue-info
             img.venue-photo(src="/images/santa-clara-convention-center.webp")
-            span.venue-name Santa Clara Convention Center
-            span.venue-address
-                | 5001 Great America PKWY,
-                br
-                | Santa Clara, CA 95054
+            span.venue-name
+                != data["venue-name"]
+                span.venue-address
+                    != data["address-first-line"]
+                    br
+                    != data["address-second-line"]
         .conf-info
             .venue-date
                 img.date-image.image(src="/images/date.png")

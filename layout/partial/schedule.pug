@@ -17,7 +17,7 @@ mixin subsection(title, description)
     a.module-title(name="schedule")
         | Conference Program
     p.schedule-description
-        != site.data.general["conference-description"]
+        != site.data.programs_text["conference-description"]
     .schedule
         - var m = programs.length;
         - for (day in programs) {
