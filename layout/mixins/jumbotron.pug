@@ -10,14 +10,19 @@ include mailChimp
         span.conf-theme
             != "Theme: " + data["theme"]
         span.conf-info
-            != data["date"] + " | " +  data["location"]
+            span.conf-date
+                != data["date"]
+            span.sep
+                != " | "
+            span.conf-location
+                != data["location"]
         span.register-button Register
 
 mixin videos()
     div.intro-video
         span.video-heading
             != data["intro-video-title"]
-            iframe(src="https://www.youtube.com/embed/WiD_uWWfqaw?ecver=2",width="408",height="240",frameborder="0",allowfullscreen)
+        iframe(src="https://www.youtube.com/embed/WiD_uWWfqaw?ecver=2",width="408",height="240",frameborder="0",allowfullscreen)
 
 mixin subscribe()
     div.subscribe

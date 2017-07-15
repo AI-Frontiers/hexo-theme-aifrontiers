@@ -6,39 +6,19 @@ header {
 .header-wrap {
     background: $c0;
     height: 45px;
-    box-sizing:border-box;
+    box-sizing: border-box;
     margin: auto;
-    min-width: 980px;
-}
-
-.slicknav_menu {
-    // mobile menu, hidden by default
-    display: none;
-    padding: 0;
-    background: transparent;
-    top: 0;
-    right: 0;
-    .slicknav_btn {
-        margin: 0;
-        padding: 17px 15px;
-        background: transparent;
-    }
-    .slicknav_nav {
+    min-width: 100%;
+    position: relative;
+    padding: 0 20px;
+    .logo-link {
+        display: flex;
+        height: 100%;
         position: absolute;
-        top: 40px;
-        right: 0;
-        z-index: 1000;
-        background: $c11;
-        .nav-list-item {
-            display: block;
-            a {
-                text-align: center;
-                &:hover {
-                    border-radius: 0;
-                    background: transparent;
-                    color: white;
-                }
-            }
+        align-items: center;
+        justify-content: center;
+        img {
+            height: 30px;
         }
     }
 }
@@ -77,4 +57,8 @@ ul.nav-sub {
     clear: both;
     width: 100%;
     background: white;
+}
+
+.slicknav_menu {
+    display: none;
 }

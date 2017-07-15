@@ -1,0 +1,223 @@
+@media (max-width: 667px) {
+
+    .slicknav_menu {
+        position: absolute;
+        display: block;
+        padding: 0;
+        background: transparent;
+        top: 0;
+        right: 0;
+        .slicknav_btn {
+            margin: 0;
+            padding: 15px 15px;
+            background: transparent;
+        }
+        .slicknav_nav {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            z-index: 1000;
+            background: $c10;
+            .nav-list-item {
+                display: block;
+                a {
+                    text-align: center;
+                    &:hover {
+                        border-radius: 0;
+                        background: transparent;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+
+
+    // width reset
+    header,
+    .jumbotron,
+    .jumbotron-wrap,
+    .intro-video,
+    .video-heading,
+    .intro-video iframe,
+    .container,
+    .module,
+    .module-title,
+    a.module-title,
+    .speakers,
+    .schedule-description,
+    .schedule,
+    .venue,
+    .about,
+    .contact,
+    .contact form,
+    footer,
+    .paginator,
+    .copyright {
+        width: 100%!important;
+        min-width: 0!important;
+        padding: 0!important;
+    }
+
+    .module {
+        padding-top: 5px!important;
+        padding-bottom: 5px!important;
+        .module-title {
+            font-size: 30px!important;
+            margin-top: 30px!important;
+            margin-bottom: 15px!important;
+        }
+    }
+
+    header {
+        border-bottom: solid 2px #FFA100;
+        height: auto;
+        .nav {
+            display: none;
+        }
+    }
+
+    .jumbotron {
+        height: 300px;
+        .jumbotron-wrap {
+            transform: none;
+        }
+        .conf-title {
+            margin-top: 30px;
+            .conf-name {
+                font-size: 30px;
+            }
+            font-size: 26px;
+        }
+        .conf-theme {
+            font-size: 18px;
+        }
+        .conf-info {
+            margin-top: 15px;
+            font-size: 13px;
+            span {
+                display: block;
+                text-align:center;
+            }
+            .sep {
+                display: none;
+            }
+        }
+        .register-button {
+            font-size: 20px;
+            width: 150px;
+            height: 34px;
+        }
+    }
+
+    .intro-video {
+        .video-heading {
+            display: none;
+            margin-top: 10px;
+            font-size: 16px!important;
+        }
+        iframe {
+            margin-top: 0px;
+        }
+    }
+
+    .module-topics {
+        .topic-card {
+            .topic-title {
+                margin-bottom: 3px;
+            }
+            width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+        }
+    }
+
+    .module-speakers {
+        .speakers {
+            justify-content: center;
+        }
+        .speaker-card {
+            width: 45%;
+            height: auto;
+            .speaker-position, speaker-company {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .module-schedule {
+        box-sizing: border-box;
+        padding: 0 14px!important;
+    }
+
+    .module-sponsors {
+        padding-bottom: 30px!important;
+        .sponsorship-letter {
+            margin-top: 5px;
+        }
+    }
+
+    .module-venue {
+        box-sizing: border-box;
+        padding: 40px!important;
+        padding-top: 2px!important;
+        .venue {
+            flex-direction: column;
+            .venue-info, .conf-info {
+                width: 100%;
+                padding: 0;
+            }
+            .venue-info {
+                margin-bottom: 15px;
+            }
+            .conf-info {
+                flex-flow: row wrap;
+                .venue-date, .venue-time {
+                    width: 50%!important;
+                    text-align: center;
+                    height: auto;
+                    img {
+                        margin-right: 0;
+                        float: none;
+                        margin: auto!important;
+                        margin-bottom: 10px;
+                    }
+                    .title {
+                        font-size: 24px;
+                    }
+                    .content {
+                        font-size: 16px;
+                    }
+                }
+                .register-button {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .module-contact {
+        flex-direction: column;
+        box-sizing: border-box;
+        padding-left:15px!important;
+        padding-right:15px!important;
+        form {
+            input {
+                width: 100%!important;
+            }
+        }
+    }
+
+    .module-about {
+        box-sizing: border-box;
+        padding-left:15px!important;
+        padding-right:15px!important;
+        .heading, .organizers {
+            margin-left: 20px;
+        }
+    }
+
+    footer {
+        padding-top: 15px!important;
+    }
+}
