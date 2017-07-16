@@ -3,10 +3,10 @@
     background: $c02;
     background-image: url("/images/jumbotron-bg.jpg");
     background-size: 100% auto;
+    background-position-y: -150px;
     height: 350px;
     width: 100%;
     min-width: 980px;
-
     .jumbotron-wrap {
         width: 100%;
         min-width: 980px;
@@ -18,10 +18,8 @@
         transform-origin: top center;
         transform: scale(.8);
     }
-
     span {
         color: white;
-
     }
     .conf-title {
         color: #F79405;

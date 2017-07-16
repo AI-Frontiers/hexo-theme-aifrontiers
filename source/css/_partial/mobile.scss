@@ -1,5 +1,4 @@
 @media (max-width: 667px) {
-
     .slicknav_menu {
         position: absolute;
         display: block;
@@ -137,9 +136,9 @@
             justify-content: center;
         }
         .speaker-card {
-            width: 45%;
+            width: 60%;
             height: auto;
-            .speaker-position, speaker-company {
+            .speaker-position, .speaker-company {
                 font-size: 14px;
             }
         }
