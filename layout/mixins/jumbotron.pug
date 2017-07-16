@@ -1,4 +1,5 @@
 include mailChimp
+include countdown
 
 .jumbotron
     - var data = site.data.header;
@@ -16,7 +17,7 @@ include mailChimp
                 != " | "
             span.conf-location
                 != data["location"]
-        span.register-button Register
+        a.register-button(href="https://www.eventbrite.com/", alt="Register") Register
 
 mixin videos()
     div.intro-video
