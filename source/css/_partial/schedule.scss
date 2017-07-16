@@ -23,11 +23,24 @@
         text-align: justify;
         padding: 0 20px;
     }
+    .day-buttons {
+        width: 155px;
+        height: 25px;
+    }
+    .day-heading {
+        display: block;
+        margin: auto;
+        width: 980px;
+        text-align: center;
+        margin-top: 30px;
+        font-weight: normal;
+        margin-bottom: 8px;
+    }
     .section {
         display: block;
         border-top: solid 1px #f79405;
         padding-top: 10px;
-        margin-top: 20px;
+        margin-bottom: 20px;
         .section-title {
             color: #F79405;
             font-size: 24px;
@@ -57,11 +70,4 @@
         }
     }
 
-    .day-heading {
-        display: block;
-        margin: auto;
-        width: 980px;
-        text-align: center;
-        margin-top: 30px;
-    }
 }
