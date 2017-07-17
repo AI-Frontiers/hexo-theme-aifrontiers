@@ -12,6 +12,7 @@ menu_main:
     "Venue": "#venue"
 
 menu_sub:
+    "Last Conference": "https://2017.aifrontiers.com/"
     "About Us": "#about"
     "Contact Us": "#contact"
     #Rss: /atom.xml
