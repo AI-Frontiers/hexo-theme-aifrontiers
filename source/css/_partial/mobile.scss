@@ -78,7 +78,8 @@
 
     .jumbotron {
         height: 300px;
-        background-size: 100% auto;
+        background-size: auto 140%;
+        background-position-y: bottom;
         .jumbotron-wrap {
             transform: none;
         }
