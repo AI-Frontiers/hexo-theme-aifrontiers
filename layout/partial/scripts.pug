@@ -118,16 +118,4 @@ script(type='text/javascript').
       newDate.setDate(45);
       $('.counter').countdown({targetDate: newDate});
 
-      // jquery for the slider
-      $('.slider').slider({
-        min: 0,
-        max: 100,
-        value: 50,
-        slide: function(event, ui){
-          var $counter = $('.counter');
-          $counter.css('font-size', ui.value);
-          $('.font-size').html(ui.value);
-          $('.slider').css('margin-top', $counter.height() + 50 + 'px');
-        }
-      });
     });
