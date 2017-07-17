@@ -1,11 +1,11 @@
 .jumbotron {
     box-sizing: border-box;
     background: $c02;
+    width: 100%;
     background-image: url("/images/jumbotron-bg.jpg");
     background-size: 100% auto;
-    background-position-y: -280px;
+    background-position-y: 0;
     height: 350px;
-    width: 100%;
     min-width: 980px;
     .jumbotron-wrap {
         width: 100%;
@@ -44,12 +44,15 @@
     .conf-info {
         font-size: 20px;
         font-family: $serif;
-        margin-top: 55px;
+        margin-top: 30px;
         letter-spacing: 1.2px;
         text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
         * {
             display: inline;
         }
+    }
+    .register-button {
+        margin-top: 90px;
     }
 }
 

@@ -9,13 +9,38 @@ block jumbotron
     // +subscribe()
 
 block container
-    include partial/topics
+    - var controls = site.data.module_controls;
+    - var m = controls.length;
+    - for (module in controls) {
+        - if (module == "topics" && controls[module]) {
+            include partial/topics
+        - }
+        - if (module == "speakers" && controls[module]) {
+            include partial/speakers
+        - }
+        - if (module == "schedule" && controls[module]) {
+            include partial/schedule
+        - }
+        - if (module == "sponsors" && controls[module]) {
+            include partial/sponsors
+        - }
+        - if (module == "venue" && controls[module]) {
+            include partial/venue
+        - }
+        - if (module == "about" && controls[module]) {
+            include partial/about
+        - }
+        - if (module == "contact" && controls[module]) {
+            include partial/contact
+        - }
+    - }
+    // include partial/topics
     // include partial/speakers
-    include partial/schedule
-    include partial/sponsors
-    include partial/venue
-    include partial/about
-    include partial/contact
+    // include partial/schedule
+    // include partial/sponsors
+    // include partial/venue
+    // include partial/about
+    // include partial/contact
 
 block pagination
     include mixins/paginator

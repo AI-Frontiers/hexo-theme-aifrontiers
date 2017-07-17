@@ -1,4 +1,5 @@
 ul.nav.nav-main.nav-list
+    - var controls = site.data.module_controls;
     - var menuMain = site.data.navigation["menu_main"];
     each value, key in menuMain
         li.nav-list-item
@@ -6,9 +7,13 @@ ul.nav.nav-main.nav-list
             - var isOutbound = re.test(value);
             - var tar = isOutbound ? "_blank" : "_self"
             - var act = !isOutbound && "/"+page.current_url === value
-            if isOutbound
-                a.nav-list-link(class={active: act} href=url_for(value) onclick="trackOutboundLink('"+url_for(value)+"')" target=tar)
-                    != key.toUpperCase()
-            else
-                a.nav-list-link(class={active: act} href=url_for(value) target=tar)
-                    != key.toUpperCase()
+            - var lower_key = key.toLowerCase()
+            - var module_switch = (lower_key in controls) && controls[lower_key]
+            - if (!(lower_key in controls) || module_switch) {
+                if isOutbound
+                    a.nav-list-link(class={active: act} href=url_for(value) onclick="trackOutboundLink('"+url_for(value)+"')" target=tar)
+                        != key.toUpperCase()
+                else
+                    a.nav-list-link(class={active: act} href=url_for(value) target=tar)
+                        != key.toUpperCase()
+            - }
