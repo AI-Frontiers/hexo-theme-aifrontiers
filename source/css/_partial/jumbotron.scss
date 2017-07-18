@@ -6,7 +6,6 @@
     background-size: 100% auto;
     background-position-y: bottom;
     background-position-x: center;
-    background-position-y: -130px;
     height: 350px;
     min-width: 980px;
     .jumbotron-wrap {
@@ -20,8 +19,10 @@
         transform-origin: top center;
         transform: scale(.8);
     }
-    span {
-        color: white;
+    .conf-logo {
+        margin: auto;
+        margin-top: 20px;
+        height: 140px;
     }
     .conf-title {
         color: #F79405;
@@ -37,24 +38,27 @@
         }
     }
     .conf-theme {
-        color: #F7B205;
-        font-size: 28px;
+        color: #11588D;
+        font-size: 26px;
         font-family: "Helvetica Neue", sans-serif;
-        font-weight: 600;
-        text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+        font-weight: 500;
+        margin-top: 40px;
+        // text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
     }
     .conf-info {
         font-size: 20px;
         font-family: $serif;
-        margin-top: 30px;
-        letter-spacing: 1.2px;
-        text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+        margin-top: 10px;
+        color: #11588D;
+        // text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
         * {
             display: inline;
         }
     }
     .register-button {
+        background-color: #D23100;
         margin-top: 40px;
+        padding: 5px 0;
     }
 }
 

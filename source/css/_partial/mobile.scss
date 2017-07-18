@@ -83,6 +83,10 @@
         .jumbotron-wrap {
             transform: none;
         }
+        .conf-logo {
+            height: 60px;
+            margin-top: 30px;
+        }
         .conf-title {
             margin-top: 30px;
             .conf-name {
@@ -91,11 +95,12 @@
             font-size: 26px;
         }
         .conf-theme {
-            font-size: 16px;
+            margin-top: 20px;
+            font-size: 17px;
         }
         .conf-info {
             margin-top: 15px;
-            font-size: 13px;
+            font-size: 14px;
             span {
                 display: block;
                 text-align:center;
@@ -105,9 +110,10 @@
             }
         }
         .register-button {
-            font-size: 20px;
-            width: 150px;
-            height: 34px;
+            font-size: 17px;
+            width: 130px;
+            height: 28px;
+            margin-top: 20px;
         }
     }
 

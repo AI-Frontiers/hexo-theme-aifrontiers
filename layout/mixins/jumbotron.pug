@@ -4,10 +4,11 @@ include countdown
 .jumbotron
     - var data = site.data.header;
     .jumbotron-wrap
-        span.conf-title
-            span.conf-name AI Frontiers
-            br
-            | conference
+        img.conf-logo(src="/images/logo-horizontal.png")
+        // span.conf-title
+        //     span.conf-name AI Frontiers
+        //     br
+        //     | conference
         span.conf-theme
             != "Theme: " + data["theme"]
         span.conf-info
