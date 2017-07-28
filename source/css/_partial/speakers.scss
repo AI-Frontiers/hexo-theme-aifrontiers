@@ -3,7 +3,7 @@
     background-color: #015EC3;
     min-width: 1250px;
     width: 100%;
-    padding: 70px;
+    padding: 70px 0;
     .module-title {
         display: block;
         color: white;
@@ -15,10 +15,10 @@
         display: flex;
         width: 1250px;
         box-sizing: border-box;
-        padding: 0 120px;
         margin: auto;
         position: relative;
         flex-flow: row wrap;
+        padding: 0 125px;
     }
     .speaker-card {
         display: flex;

@@ -1,7 +1,7 @@
 .module-schedule {
     width: 1250px;
     margin: auto;
-    margin-top: 120px;
+    margin-top: 90px;
     padding: 0 167px;
     margin-bottom: 40px;
     box-sizing: border-box;
@@ -38,7 +38,7 @@
         width: 155px;
         height: 25px;
     }
-    .day-heading {
+    .heading-box {
         display: block;
         box-sizing: border-box;
         padding: 20px 46px 22px;
@@ -52,6 +52,15 @@
         height: 72px;
         font-weight: 500;
         letter-spacing: .5px;
+        a {
+            color: white;
+        }
+        .day-heading {
+            float: left;
+        }
+        .day-date {
+            float: right;
+        }
     }
     .section {
         display: flex;
@@ -59,6 +68,12 @@
         border: solid 1px #E2E2E2;
         border-top: 0;
         padding: 38px 46px;
+        &.dim {
+            background: #FAFAFA;
+            .section-title {
+                color: #083365;
+            }
+        }
         .section-title {
             display: block;
             width: 145px;
