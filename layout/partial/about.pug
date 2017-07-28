@@ -5,29 +5,30 @@
         p.about-description
             != site.data.about_us_text["top-text"]
 
-        .heading
-            | Conference Organizer
-        .organizers
-            - var organizers = site.data.organizers;
-            - for (position in organizers) {
-                - var names = organizers[position];
-                - var m = names.length;
-                span.title
-                    != position + ":"
-                    - if (m != 1) {
-                        br
+        .wrapper
+            .heading
+                | Conference Organizer
+            .organizers
+                - var organizers = site.data.organizers;
+                - for (position in organizers) {
+                    - var names = organizers[position];
+                    - var m = names.length;
+                    span.title
+                        != position + ":"
+                        - if (m != 1) {
+                            br
+                        - }
+                    - if (m == 1) {
+                        span.name
+                            != " " + names[0]
+                            br
                     - }
-                - if (m == 1) {
-                    span.name
-                        != " " + names[0]
-                        br
-                - }
-                - else {
-                    - for (var i = 0; i < m; i++) {
-                        span.name.indent
-                            != names[i]
+                    - else {
+                        - for (var i = 0; i < m; i++) {
+                            span.name.indent
+                                != names[i]
+                        - }
                     - }
                 - }
-            - }
         p.organizer-description
             != site.data.about_us_text["bottom-text"]

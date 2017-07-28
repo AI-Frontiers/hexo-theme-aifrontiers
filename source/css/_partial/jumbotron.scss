@@ -1,74 +1,108 @@
 .jumbotron {
+    position: relative;
     box-sizing: border-box;
-    background: $c02;
     width: 100%;
-    background-image: url("/images/jumbotron-bg.jpg");
+    background-color: #000;
     background-size: 100% auto;
     background-position-y: bottom;
     background-position-x: center;
-    height: 350px;
-    min-width: 980px;
-    .jumbotron-wrap {
+    height: 610px;
+    min-width: 1250px;
+    .bg-video {
+        z-index: 4;
+        position: absolute;
+        display: block;
         width: 100%;
-        min-width: 980px;
-        padding-top: 30px;
+        height: 100%;
+        top: 0;
+        opacity: .5;
+        overflow: hidden;
+        pointer-events: none;
+        iframe {
+            margin: 0;
+            width: 100%;
+            height: 133%;
+            margin-top: -6%;
+        }
+    }
+    .jumbotron-wrap {
+        position: relative;
+        z-index: 5;
+        width: 100%;
+        min-width: 1250px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         transform-origin: top center;
-        transform: scale(.8);
     }
     .conf-logo {
         margin: auto;
-        margin-top: 20px;
-        height: 140px;
+        margin-top: 90px;
+        height: 67px;
     }
     .conf-title {
-        color: #F79405;
-        text-transform: uppercase;
-        font-family: "Helvetica Neue", sans-serif;
-        font-size: 38px;
-        font-weight: 600;
+        font-family: "Avenir Next", sans-serif;
         text-align: center;
-        text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+        font-size: 20px;
+        color: white;
         .conf-name {
             color: #F79405;
             font-size: 55px;
         }
     }
     .conf-theme {
-        color: #11588D;
-        font-size: 26px;
-        font-family: "Helvetica Neue", sans-serif;
+        font-family: "Avenir Next", sans-serif;
+        color: white;
+        font-size: 58px;
+        line-height: 58px;
         font-weight: 500;
-        margin-top: 40px;
-        // text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+        margin-top: 35px;
+        width: 700px;
+        text-align: center;
     }
     .conf-info {
-        font-size: 20px;
-        font-family: $serif;
-        margin-top: 10px;
-        color: #11588D;
-        // text-shadow: rgba(0, 0, 0, 0.4) 0px 4px 5px;
+        font-family: "Avenir Next", sans-serif;
+        font-size: 18px;
+        font-weight: 300;
+        color: white;
         * {
             display: inline;
         }
     }
-    .register-button {
-        background-color: #D23100;
-        margin-top: 40px;
-        padding: 5px 0;
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 432px;
+        height: 45px;
+        margin-top: 35px;
+        .button {
+            display: inline-block;
+            width: 204px;
+            box-sizing: border-box;
+        }
+        .register-button {
+            background-color: #0070E8;
+            color: white;
+            letter-spacing: 1.01px;
+        }
+        .video-button {
+            background-color: white;
+            font-weight: 600;
+            letter-spacing: .6px;
+            color: #0070E8;
+        }
     }
 }
 
 .intro-video {
-    width: 980px;
+    width: 1250px;
     margin: auto;
     .video-heading {
         display: block;
         font-weight: bold;
-        width: 980px;
+        width: 1250px;
         margin: auto;
         margin-top: 25px;
         font-size: 20px;

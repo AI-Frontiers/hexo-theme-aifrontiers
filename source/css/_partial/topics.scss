@@ -1,5 +1,5 @@
 .module-topics {
-    width: 980px;
+    width: 1250px;
     margin: auto;
     margin-bottom: 40px;
     .module-title {
@@ -9,7 +9,7 @@
 
     .topics {
         display: flex;
-        padding: 0 20px;
+        padding: 0 145px;
         position: relative;
         flex-flow: row wrap;
         justify-content: space-between;
@@ -17,29 +17,57 @@
 
     .topic-card {
         display: flex;
-        position: relative;
+        width: 29.5%;
+        height: 320px;
         width: 30%;
         height: 320px;
         flex-direction: column;
         justify-content: start;
-    }
 
-    .topic-card .topic-image {
-        width: 100%;
-    }
+        .topic-image-wrapper {
+            position: relative;
+            height: 195px;
+            .topic-image, .topic-image-mask {
+                position: absolute;
+                width: 100%;
+                height: 195px;
+            }
+            .topic-image {
+                top: 0;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                border-radius: 5px;
+            }
+            .topic-image-mask {
+                bottom: 0;
+                height: 50%;
+                background-image: linear-gradient(-180deg, rgba(0,0,0,0.00) 0%, #3C67AC 98%);
+                mix-blend-mode: multiply;
+            }
+            .topic-title {
+                display: block;
+                position: absolute;
+                width: 100%;
+                bottom: 24px;
+                font-size: 16px;
+                color: white;
+                text-transform: uppercase;
+                font-weight: 500;
+                text-align: center;
+                letter-spacing: 1.2px;
+            }
+        }
 
-    .topic-card .topic-title {
-        font-size: 16px;
-        color: #3D9BE9;
-        text-transform: uppercase;
-        font-weight: 600;
-        text-align: center;
-        margin: 8px auto 11px auto;
-    }
-
-    .topic-card .topic-description {
-        font-size: 16px;
-        line-height: 18px;
-        letter-spacing: -0.1px;
+        .topic-description {
+            display: block;
+            width: 100%;
+            font-size: 15px;
+            line-height: 18px;
+            font-weight: 400;
+            color: #083365;
+            text-align: center;
+            margin-top: 22px;
+        }
     }
 }

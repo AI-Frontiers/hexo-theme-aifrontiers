@@ -1,26 +1,38 @@
 .module-schedule {
-    width: 720px;
+    width: 1250px;
     margin: auto;
-    margin-top: 50px;
-    padding: 0 130px;
+    margin-top: 120px;
+    padding: 0 167px;
     margin-bottom: 40px;
+    box-sizing: border-box;
     .module-title {
-        width: 720px;
+        width: 100%;
         margin: auto;
         margin-bottom: 20px;
     }
     .schedule {
         display: flex;
-        padding: 0 20px;
         position: relative;
         flex-flow: row wrap;
         justify-content: space-between;
         color: #454545;
     }
     .schedule-description {
+        font-size: 24px;
+        color: #083365;
+        letter-spacing: 0;
+        line-height: 32px;
+        text-align: center;
+        width: 780px;
+        margin: auto;
+        margin-bottom: 32px;
+    }
+    .schedule-subdescription {
         font-size: 16px;
-        line-height: 20px;
-        padding: 0 20px;
+        color: #083365;
+        text-align: center;
+        width: 780px;
+        margin: auto;
     }
     .day-buttons {
         width: 155px;
@@ -28,30 +40,42 @@
     }
     .day-heading {
         display: block;
+        box-sizing: border-box;
+        padding: 20px 46px 22px;
         margin: auto;
-        width: 980px;
+        width: 1250px;
         font-size: 22px;
-        font-family: $serif;
-        text-align: center;
         margin-top: 30px;
         font-weight: normal;
-        margin-bottom: 8px;
-        color: #454545;
+        color: white;
+        background: #0070E8;
+        height: 72px;
+        font-weight: 500;
+        letter-spacing: .5px;
     }
     .section {
-        display: block;
-        border-top: solid 1px #f79405;
-        padding-top: 10px;
-        margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        border: solid 1px #E2E2E2;
+        border-top: 0;
+        padding: 38px 46px;
         .section-title {
-            color: #F79405;
-            font-size: 18px;
-            font-weight: bold;
+            display: block;
+            width: 145px;
+            font-weight: 500;
             margin-bottom: 5px;
+            padding-right: 45px;
+            font-size: 20px;
+            color: #0070E8;
+            letter-spacing: 0;
+            line-height: 27px;
         }
         .section-description {
-            font-size: 16px;
-            line-height: 20px;
+            width: 100%;
+            font-size: 15px;
+            color: #083365;
+            letter-spacing: 0;
+            line-height: 26px;
         }
     }
 

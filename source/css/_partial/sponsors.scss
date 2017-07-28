@@ -1,37 +1,38 @@
 .module-sponsors {
-    padding: 20px 0;
-    min-width: 980px;
-    background: #fafafa;
+    width: 100%;
+    min-width: 1250px;
     padding-bottom: 50px;
     .module-title {
-        color: #454545;
-        width: 980px;
+        color: #083365;
+        letter-spacing: 0;
+        width: 1250px;
         margin: auto;
         margin-bottom: 20px;
     }
     .sponsors {
         display: flex;
-        width: 980px;
+        width: 1250px;
         margin: auto;
-        position: relative;
         flex-flow: row wrap;
     }
     .speaker-logo {
         width: 192px;
     }
     .sponsorship-letter {
+        box-sizing: border-box;
         display: block;
         text-align: center;
         margin: auto;
-        width: 300px;
         color: white;
-        margin-top: 40px;
         display: block;
-        background: #e04445;
-        font-family: $serif;
         text-transform: uppercase;
         text-align: center;
-        font-size: 25px;
+        background-color: white;
+        letter-spacing: .6px;
+        color: #0070E8;
+        border: solid #0070E8 1px;
+        width: 200px;
+        font-weight: 500;
     }
 
 }

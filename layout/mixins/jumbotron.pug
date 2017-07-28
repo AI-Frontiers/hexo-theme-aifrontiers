@@ -4,13 +4,13 @@ include countdown
 .jumbotron
     - var data = site.data.header;
     .jumbotron-wrap
-        img.conf-logo(src="/images/logo-horizontal.png")
-        // span.conf-title
-        //     span.conf-name AI Frontiers
+        img.conf-logo(src="/images/logo-horizontal-white.png")
+        span.conf-title
+            | 2nd Conference
         //     br
         //     | conference
         span.conf-theme
-            != "Theme: " + data["theme"]
+            != data["theme"]
         span.conf-info
             span.conf-date
                 != data["date"]
@@ -18,8 +18,11 @@ include countdown
                 != " | "
             span.conf-location
                 != data["location"]
-        // +countdown()
-        a.register-button(href="https://www.eventbrite.com/", alt="Register") Register
+        .buttons
+            a.button.register-button(href="https://www.eventbrite.com/", alt="Register") Register
+            a.button.video-button(href="https://www.eventbrite.com/", alt="Last Edition Video") Last Edition Video
+    .bg-video
+        #player
 
 mixin videos()
     div.intro-video

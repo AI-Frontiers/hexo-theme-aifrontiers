@@ -1,90 +1,63 @@
 .module-venue {
-    padding: 20px 0;
     background: #848ba3;
-    font-family: $serif;
-    min-width: 980px;
+    min-width: 1250px;
+    width: 100%;
+
+    .wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     color: white;
-
-    .module-title {
-        color: white;
-        width: 980px;
-        margin: auto;
-        margin-bottom: 20px;
+    margin: auto;
     }
 
-    .venue {
-        display: flex;
-        width: 870px;
-        margin: auto;
-        padding: 0 50px;
-        flex-direction: row;
-    }
-
-    .venue-info {
-        display: flex;
-        width: 65%;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        span {
-            text-align: center;
-            text-transform: uppercase;
-        }
-        .venue-name {
-            font-size: 20px;
-            margin: 6px 0 4px 0;
-        }
-        .venue-address {
-            display: block;
-            font-size: 16px;
-            line-height: 1.5em;
-        }
-    }
-
-    .venue-info {
-        .venue-photo {
-            width: 100%;
-        }
-    }
-
-    .conf-info {
-        display: flex;
-        box-sizing: border-box;
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
+    iframe {
         width: 50%;
-        padding: 30px 0 0 40px;
-        .register-button {
-            box-sizing: border-box;
-            width: 260px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            padding: 12px 10px;
-            line-height: 20px;
+        margin: 0;
+    }
+    .venue {
+        width: 50%;
+        box-sizing: border-box;
+        padding: 45px 55px;
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        background: url(/images/santa-clara-convention-center.jpg);
+        background-size: cover;
+        background-position: left center;
+        .conf-info {
+            width: 220px;
+            font-family: "Avenir Next";
+            font-size: 31px;
+            color: #FFF;
+            letter-spacing: 0;
+            line-height: 32px;
+            font-weight: 600;
+            margin-right: 43px;
+            .venue-time {
+                font-size: 18px;
+            }
         }
-        .venue-date,
-        .venue-time {
-            width: 300px;
-            height: 120px;
-            .image {
-                width: 86px;
-                float: left;
-                margin-right: 18px;
-            }
-            .title {
+        .venue-info {
+            font-family: "Avenir Next";
+            font-weight: 500;
+            font-size: 14px;
+            color: #FFF;
+            letter-spacing: 0;
+            line-height: 22px;
+            span {
                 display: block;
-                font-size: 30px;
-                line-height: 1.5em;
-                letter-spacing: 0.05em;
-                text-transform: uppercase;
             }
-            .content {
-                display: block;
-                font-size: 20px;
-                line-height: 1.5em;
-                letter-spacing: 0.05em;
-            }
+        }
+        .register-button {
+            position: absolute;
+            background: #0070E8;
+            border-radius: 4px;
+            box-sizing: border-box;
+            width: 540px;
+            bottom: 40px;
+            color: white;
+            letter-spacing: .7px;
         }
     }
 }

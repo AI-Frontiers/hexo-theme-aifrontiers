@@ -1,6 +1,7 @@
-
 ul.nav.nav-sub.nav-list
-    each value, key in theme.menu_sub
+    - var controls = site.data.module_controls;
+    - var menuSub = site.data.navigation["menu_sub"];
+    each value, key in menuSub
         li.nav-list-item
             - var re = /^(http|https):\/\/*/gi;
             - var isOutbound = re.test(value);
