@@ -58,7 +58,7 @@
         height: 67px;
     }
     .conf-title {
-        font-family: "Avenir Next", sans-serif;
+        font-family: $Avenir-Next;
         text-align: center;
         font-size: 20px;
         color: white;
@@ -68,19 +68,19 @@
         }
     }
     .conf-theme {
-        font-family: "Avenir Next", sans-serif;
+        font-family: $Avenir-Next;
         color: white;
         font-size: 58px;
         line-height: 58px;
-        font-weight: 600;
+        font-weight: 500;
         margin-top: 35px;
         width: 700px;
         text-align: center;
     }
     .conf-info {
-        font-family: "Avenir Next", sans-serif;
+        font-family: $Avenir-Next;
         font-size: 18px;
-        font-weight: 300;
+        font-weight: 400;
         color: white;
         * {
             display: inline;
