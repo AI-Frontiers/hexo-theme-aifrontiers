@@ -20,8 +20,9 @@ include countdown
                 != data["location"]
         .buttons
             a.button.register-button(href="https://www.eventbrite.com/", alt="Register") Register
-            a.button.video-button(href="https://www.eventbrite.com/", alt="Last Edition Video") Last Edition Video
+            a.button.video-button(alt="Last Edition Video", onclick="videoOn()") Last Edition Video
     .bg-video
+        span#toggle(onclick="videoOff()") ╳
         #player
 
 mixin videos()

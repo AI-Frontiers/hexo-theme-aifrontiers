@@ -1,7 +1,7 @@
 .module-speakers {
     box-sizing: border-box;
     background-color: #015EC3;
-    min-width: 1250px;
+    min-width: $website-width;
     width: 100%;
     padding: 70px 0;
     .module-title {
@@ -13,12 +13,12 @@
     }
     .speakers {
         display: flex;
-        width: 1250px;
+        width: $website-width;
         box-sizing: border-box;
         margin: auto;
         position: relative;
         flex-flow: row wrap;
-        padding: 0 125px;
+        padding: 0;
     }
     .speaker-card {
         display: flex;

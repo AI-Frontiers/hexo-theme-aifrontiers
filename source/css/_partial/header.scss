@@ -1,6 +1,6 @@
 header {
-    width: 1250px;
-    height: 60px;
+    width: $website-width;
+    height: 48px;
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -14,6 +14,12 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
+    align-content: center;
+    .logo-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
     .logo-link {
         img {
             width: 160px;
@@ -22,14 +28,13 @@ header {
     .conf-date {
         font-size: 14px;
         color: #494A5E;
-        align-self: flex-end;
-        padding-bottom: 8px;
+        width: 155px;
+        padding-top: 10px;
         padding-left: 17px;
     }
 }
 
 .navigation {
-    width: 640px;
     ul.nav {
         display: block;
         flex-direction: row;
@@ -40,7 +45,7 @@ header {
             display: inline-block;
         }
         a.nav-list-link {
-            font-size: 14px;
+            font-size: 13px;
             color: #494A5E;
             font-weight: bold;
         }
@@ -60,6 +65,10 @@ header {
 
 .slicknav_menu {
     display: none;
+}
+
+.social-bar {
+    padding: 0 10px;
 }
 
 .buy-tickets {

@@ -1,17 +1,17 @@
 .module-sponsors {
     width: 100%;
-    min-width: 1250px;
+    min-width: $website-width;
     padding-bottom: 50px;
     .module-title {
         color: #083365;
         letter-spacing: 0;
-        width: 1250px;
+        width: $website-width;
         margin: auto;
         margin-bottom: 20px;
     }
     .sponsors {
         display: flex;
-        width: 1250px;
+        width: $website-width;
         margin: auto;
         flex-flow: row wrap;
     }

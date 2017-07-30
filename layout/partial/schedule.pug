@@ -34,11 +34,6 @@ mixin subsection(title, description)
              .heading-box
                  a.day-heading
                      != day
-                 - if (day == 'Day 1') {
-                     a.day-date November 3
-                 - } else {
-                     a.day-date November 4
-                 - }
              - n = sections.length;
              - for (var i = 0; i < n; i++) {
                    - var section = sections[i];

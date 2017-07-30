@@ -1,5 +1,5 @@
 .module-about {
-    min-width: 1250px;
+    min-width: $website-width;
     margin: auto;
     padding: 40px 0;
     .about {
@@ -28,7 +28,7 @@
         font-weight: 500;
     }
     .wrapper {
-        width: 250px;
+        width: 500px;
         margin: auto;
     }
     .organizers {

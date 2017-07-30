@@ -1,9 +1,9 @@
 .module-schedule {
-    width: 1250px;
+    width: $website-width;
     margin: auto;
-    margin-top: 90px;
-    padding: 0 167px;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    padding: 0 30px;
+    margin-bottom: 10px;
     box-sizing: border-box;
     .module-title {
         width: 100%;
@@ -43,7 +43,7 @@
         box-sizing: border-box;
         padding: 20px 46px 22px;
         margin: auto;
-        width: 1250px;
+        width: $website-width;
         font-size: 22px;
         margin-top: 30px;
         font-weight: normal;
