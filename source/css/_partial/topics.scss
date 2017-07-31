@@ -12,6 +12,8 @@
         position: relative;
         flex-flow: row wrap;
         justify-content: center;
+        max-width: 1250px;
+        margin: auto;
     }
 
     .topic-card {
