@@ -47,6 +47,7 @@ script(type='text/javascript').
   }
 
   function onYouTubeIframeAPIReady() {
+    $('.bg-video').css("background-color", "#000");
     player = new YT.Player('player', {
       videoId: 'WiD_uWWfqaw',
       width: '1250',
