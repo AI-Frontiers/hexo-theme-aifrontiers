@@ -2,13 +2,13 @@
     box-sizing: border-box;
     background-color: #015EC3;
     width: 100%;
-    padding: 70px 0;
+    padding: 50px 0;
     .module-title {
         display: block;
         color: white;
         width: 100%;
         margin: auto;
-        margin-bottom: 55px;
+        margin-bottom: 35px;
     }
     .speakers {
         display: flex;
@@ -24,14 +24,14 @@
         box-sizing: border-box;
         margin-bottom: 20px;
         position: relative;
-        width: 186px;
+        width: 210px;
         flex-direction: column;
         justify-content: start;
     }
 
     .speaker-card .speaker-photo {
-        width: 140px;
-        height: 140px;
+        width: 178px;
+        height: 178px;
         border-radius: 1000px;
         margin: auto;
         margin-bottom: 16px;
