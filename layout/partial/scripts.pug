@@ -44,6 +44,8 @@ script(type='text/javascript').
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  } else {
+      $('.bg-video').css("opacity", ".5");
   }
 
   function onYouTubeIframeAPIReady() {

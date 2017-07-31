@@ -102,6 +102,10 @@ $mobile-width: 600px;
             justify-content: space-between;
         }
         .bg-video {
+            background-size: cover;
+            background-position: right top;
+            background-position-x: -500px;
+            background-image: url(/images/jumbotron-bg.jpg);
             iframe {
                 transform: scale(2.8);
                 transform-origin: center center;
