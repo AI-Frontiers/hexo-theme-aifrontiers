@@ -1,7 +1,5 @@
 .module-venue {
     background: #848ba3;
-    min-width: $website-width;
-    width: 100%;
 
     .wrapper {
     width: 100%;
@@ -12,11 +10,11 @@
     }
 
     iframe {
-        width: 50%;
+        width: 80%;
         margin: 0;
     }
     .venue {
-        width: 50%;
+        width: 600px;
         box-sizing: border-box;
         padding: 45px 55px;
         display: flex;

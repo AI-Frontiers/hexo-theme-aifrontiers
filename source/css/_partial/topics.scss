@@ -1,5 +1,4 @@
 .module-topics {
-    width: $website-width;
     margin: auto;
     margin-bottom: 10px;
     .module-title {
@@ -12,16 +11,16 @@
         padding: 0 6px;
         position: relative;
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: center;
     }
 
     .topic-card {
         display: flex;
-        height: 310px;
-        width: 30%;
-        height: 320px;
+        width: 290px;
+        height: 300px;
         flex-direction: column;
         justify-content: start;
+        margin-right: 30px;
 
         .topic-image-wrapper {
             position: relative;
@@ -35,7 +34,8 @@
                 top: 0;
                 left: 0;
                 position: absolute;
-                width: 100%;
+                width: 290px;
+                height: 193px;
                 border-radius: 5px;
             }
             .topic-image-mask {

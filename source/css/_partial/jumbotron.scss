@@ -7,7 +7,6 @@
     background-position-y: bottom;
     background-position-x: center;
     height: 610px;
-    min-width: $website-width;
     .bg-video {
         z-index: 4;
         position: absolute;
@@ -45,7 +44,6 @@
         position: relative;
         z-index: 5;
         width: 100%;
-        min-width: $website-width;
         display: flex;
         flex-direction: column;
         justify-content: center;

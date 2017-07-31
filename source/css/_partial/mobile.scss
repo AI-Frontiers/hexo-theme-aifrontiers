@@ -111,7 +111,7 @@ $mobile-width: 600px;
 
     .module-topics {
         .topics {
-            padding: 60px;
+            padding: 60px 0;
             padding-bottom: 0;
             margin-bottom: 10px;
         }
@@ -119,10 +119,8 @@ $mobile-width: 600px;
             .topic-title {
                 margin-bottom: 3px;
             }
-            width: 258px;
-            height: auto;
             margin:auto;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
     }
 
@@ -131,7 +129,9 @@ $mobile-width: 600px;
             justify-content: center;
         }
         .speaker-card {
-            width: 80%;
+            width: 34%;
+            min-width: 140px;
+            margin: 20px 10px;
             height: auto;
             .speaker-position, .speaker-company {
                 font-size: 14px;
