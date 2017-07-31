@@ -47,7 +47,7 @@ script(type='text/javascript').
   }
 
   function onYouTubeIframeAPIReady() {
-    $('.bg-video').css("background-color", "#000");
+    $('.bg-video').css("background", "#000");
     player = new YT.Player('player', {
       videoId: 'WiD_uWWfqaw',
       width: '1250',
@@ -177,12 +177,12 @@ script(type='text/javascript').
         $('.jumbotron-wrap').css("display", "none");
         $('.bg-video #toggle').css("display", "block");
         $('.bg-video iframe').css("opacity", "1");
-        player.unMute()
+        player.unMute();
     }
 
     var videoOff = function() {
         $('.jumbotron-wrap').css("display", "flex");
         $('.bg-video #toggle').css("display", "none");
         $('.bg-video iframe').css("opacity", ".5");
-        player.mute()
+        player.mute();
     }
