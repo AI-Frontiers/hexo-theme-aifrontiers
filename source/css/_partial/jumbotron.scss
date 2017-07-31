@@ -3,9 +3,9 @@
     box-sizing: border-box;
     width: 100%;
     background-color: #000;
-    background-size: 100% auto;
-    background-position-y: bottom;
-    background-position-x: center;
+    background-image: url(/images/jumbotron-bg.jpg);
+    background-size: cover;
+    background-position: center center;
     height: 610px;
     .bg-video {
         z-index: 4;
@@ -13,8 +13,9 @@
         display: block;
         width: 100%;
         height: 100%;
-        top: 0;
+        background-color: black;
         opacity: .5;
+        top: 0;
         overflow: hidden;
         pointer-events: none;
         transition: all .218s;
