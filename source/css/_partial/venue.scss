@@ -14,7 +14,8 @@
         margin: 0;
     }
     .venue {
-        width: 600px;
+        min-width: 540px;
+        max-width: 540px;
         box-sizing: border-box;
         padding: 45px 55px;
         display: flex;
