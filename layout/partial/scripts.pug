@@ -175,13 +175,13 @@ script(type='text/javascript').
     var videoOn = function() {
         $('.jumbotron-wrap').css("display", "none");
         $('.bg-video #toggle').css("display", "block");
-        $('.bg-video').css("opacity", "1");
+        $('.bg-video iframe').css("opacity", "1");
         player.unMute()
     }
 
     var videoOff = function() {
         $('.jumbotron-wrap').css("display", "flex");
         $('.bg-video #toggle').css("display", "none");
-        $('.bg-video').css("opacity", ".5");
+        $('.bg-video iframe').css("opacity", ".5");
         player.mute()
     }
