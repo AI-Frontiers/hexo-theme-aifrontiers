@@ -79,7 +79,7 @@ $mobile-width: 600px;
         }
         .conf-theme {
             width: 100%;
-            margin-top: 80px;
+            margin-top: 50px;
             font-size: 45px;
         }
         .conf-info {
@@ -134,11 +134,10 @@ $mobile-width: 600px;
             justify-content: center;
         }
         .speaker-card {
-            width: 34%;
-            min-width: 140px;
             margin: 20px 10px;
             height: auto;
-            .speaker-position, .speaker-company {
+            .speaker-position,
+            .speaker-company {
                 font-size: 14px;
             }
         }
