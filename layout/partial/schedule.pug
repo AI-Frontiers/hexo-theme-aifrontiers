@@ -25,8 +25,8 @@ mixin subsection(title, description)
         | Conference Program
     p.schedule-description
         != site.data.programs_text["conference-description"]
-    p.schedule-subdescription
-        != site.data.programs_text["conference-subdescription"]
+    // p.schedule-subdescription
+    //     != site.data.programs_text["conference-subdescription"]
     .schedule
         - var m = programs.length;
         - for (day in programs) {
