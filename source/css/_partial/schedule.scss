@@ -50,6 +50,7 @@
         height: 72px;
         font-weight: 600;
         letter-spacing: .5px;
+        align-content: baseline;
         a {
             color: white;
         }
@@ -58,6 +59,7 @@
         }
         .day-date {
             float: right;
+            font-size: 18px;
         }
     }
     .section {
