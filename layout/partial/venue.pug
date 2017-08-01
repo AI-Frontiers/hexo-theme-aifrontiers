@@ -17,4 +17,5 @@
                     != data["address-first-line"]
                     br
                     != data["address-second-line"]
-            span.button.register-button register
+            - data = site.data.header
+            a.button.register-button(href=data["register-link"]) register

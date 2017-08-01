@@ -1,5 +1,6 @@
 doctype
 html(lang=config.language)
+    - data = site.data.header
     head
         include head
     body
@@ -16,7 +17,7 @@ html(lang=config.language)
                             include nav-sub
                             include nav-hidden
                         include socialbar
-                        a.button.buy-tickets(href="#") Register
+                        a.button.buy-tickets(href=data["register-link"]) Register
             block jumbotron
             main.container
                 block container
