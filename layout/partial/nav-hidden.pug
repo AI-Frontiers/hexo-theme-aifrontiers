@@ -1,0 +1,39 @@
+ul.nav.nav-hidden.nav-list(style="display:none;")
+    - var controls = site.data.module_controls;
+    - var menuMain = site.data.navigation["menu_main"];
+    - var menuSub = site.data.navigation["menu_sub"];
+    .main-items
+        each value, key in menuMain
+            li.nav-list-item.main-nav-list-item
+                - var re = /^(http|https):\/\/*/gi;
+                - var isOutbound = re.test(value);
+                - var tar = isOutbound ? "_blank" : "_self"
+                - var act = !isOutbound && "/"+page.current_url === value
+                - var lower_key = key.toLowerCase()
+                - var module_switch = (lower_key in controls) && controls[lower_key]
+                - if (!(lower_key in controls) || module_switch) {
+                    if isOutbound
+                        a.nav-list-link(class={active: act} href=url_for(value) onclick="trackOutboundLink('"+url_for(value)+"')" target=tar)
+                            != key.toUpperCase()
+                    else
+                        a.nav-list-link(class={active: act} href=url_for(value) target=tar)
+                            != key.toUpperCase()
+                - }
+
+    .sub-items
+        each value, key in menuSub
+            li.nav-list-item.sub-nav-list-item
+                - var re = /^(http|https):\/\/*/gi;
+                - var isOutbound = re.test(value);
+                - var tar = isOutbound ? "_blank" : "_self"
+                - var act = !isOutbound && "/"+page.current_url === value
+                - var lower_key = key.toLowerCase()
+                - var module_switch = (lower_key in controls) && controls[lower_key]
+                - if (!(lower_key in controls) || module_switch) {
+                    if isOutbound
+                        a.nav-list-link(class={active: act} href=url_for(value) onclick="trackOutboundLink('"+url_for(value)+"')" target=tar)
+                            != key.toUpperCase()
+                    else
+                        a.nav-list-link(class={active: act} href=url_for(value) target=tar)
+                            != key.toUpperCase()
+                - }
