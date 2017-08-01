@@ -1,6 +1,9 @@
 //- Analytics tracking
 - var ga = theme.ga
 
+- var bgPlayer
+- var fgPlayer
+
 script(type='text/javascript').
   window.mobilecheck = function() {
     var check = false;
@@ -27,10 +30,10 @@ script(type='text/javascript',src=url_for("vendor/jquery/jquery.min.js"))
 script(type='text/javascript',src=url_for("vendor/slick/slick.min.js"))
 script(type='text/javascript',src=url_for("vendor/slickNav/jquery.slicknav.min.js"))
 script(type='text/javascript',src="https://player.vimeo.com/api/player.js")
+script(src="/vendor/jquery-modal/jquery.modal.js",type="text/javascript",charset="utf-8")
 
 
 script(type='text/javascript').
-    var player;
     $(document).ready(function(){
         $('.nav-hidden').slicknav({
             label: "",
@@ -45,17 +48,29 @@ script(type='text/javascript').
         $('.jumbotron .video-button').css("display", "none");
         $('.conf-theme').css("margin-top", "60px");
    } else {
-    var options = {
-        id: 227839995,
-        minwidth: 1250,
+    var bgPlayerOptions = {
+        id: 227859594,
         autoplay: true,
         title: false,
         loop: true
     };
-    player = new Vimeo.Player('player', options);
-    player.setVolume(0);
-    player.on('play', function() {
-        console.log('played the video!');
+    var fgPlayerOptions = {
+        id: 227828879,
+        autoplay: false,
+        title: false,
+        height: 500,
+        loop: false
+    };
+    bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
+    fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
+    bgPlayer.setVolume(0);
+    bgPlayer.on('play', function() {
+    });
+    fgPlayer.on('play', function() {
+        bg.pause();
+    });
+    fgPlayer.on('ended', function() {
+        bg.play();
     });
    }
 
@@ -151,17 +166,3 @@ script(type='text/javascript').
       newDate.setDate(45);
       $('.counter').countdown({targetDate: newDate});
     });
-
-    var videoOn = function() {
-        $('.jumbotron-wrap').css("display", "none");
-        $('.bg-video #toggle').css("display", "block");
-        $('.bg-video iframe').css("opacity", "1");
-        player.setVolume(1);
-    }
-
-    var videoOff = function() {
-        $('.jumbotron-wrap').css("display", "flex");
-        $('.bg-video #toggle').css("display", "none");
-        $('.bg-video iframe').css("opacity", ".5");
-        player.setVolume(0);
-    }

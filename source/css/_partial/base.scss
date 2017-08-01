@@ -110,3 +110,25 @@ table {
     font-weight: 600;
     text-transform: uppercase;
 }
+
+.jquery-modal.blocker {
+    z-index: 999999;
+    background-color: rgba(0,0,0,0.85);
+}
+#fg-player {
+    iframe {
+        margin: 0!important;
+        height: 500px!important;
+    }
+}
+iframe {
+    margin: 0!important;
+}
+
+.modal {
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    height: 500px!important;
+    max-width: 880px;
+}

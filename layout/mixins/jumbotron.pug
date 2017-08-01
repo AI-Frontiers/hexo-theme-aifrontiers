@@ -3,6 +3,7 @@ include countdown
 
 .jumbotron
     - var data = site.data.header;
+    #fgPlayer(style="display: none")
     .jumbotron-wrap
         img.conf-logo(src="/images/logo-horizontal-white.png")
         span.conf-title
@@ -20,10 +21,9 @@ include countdown
                 != data["location"]
         .buttons
             a.button.register-button(href="https://www.eventbrite.com/", alt="Register") Register
-            a.button.video-button(alt="Last Edition Video", onclick="videoOn()") Last Edition Video
+            a.button.video-button(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") Video Highlight
     .bg-video
-        span#toggle(onclick="videoOff()") ╳
-        #player
+        #bgPlayer
 
 mixin videos()
     div.intro-video
