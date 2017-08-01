@@ -296,11 +296,11 @@ $mobile-width: 600px;
         border-radius: 0;
     }
     .video-button {
-        // &.desktop {
-        //     display: none!important;
-        // }
-        // &.mobile {
-        //     display: block!important;
-        // }
+        &.desktop {
+            display: none!important;
+        }
+        &.mobile {
+            display: block!important;
+        }
     }
 }
