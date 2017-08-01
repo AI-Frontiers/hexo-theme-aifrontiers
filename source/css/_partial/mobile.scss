@@ -57,6 +57,8 @@ $mobile-width: 600px;
                 .nav-list-link {
                     background-color: #0070E8;
                     border-radius: 0;
+                    font-family: $Avenir-Next;
+                    text-align: center;
                     &:hover {
                         color: #FFF;
                     }
