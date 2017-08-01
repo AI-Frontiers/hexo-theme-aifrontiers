@@ -276,8 +276,6 @@ $mobile-width: 600px;
     }
 
     #fg-player {
-        position: relative;
-        bottom: 150px;
         iframe {
             margin: 0!important;
             height: 220px!important;
@@ -288,17 +286,21 @@ $mobile-width: 600px;
     }
 
     .modal {
+        position: fixed;
+        left: 15px;
+        top: 15px;
+        width: calc(100vw - 30px);
+        height: calc(100vh - 30px);
         padding: 0;
         background-color: transparent;
         border-radius: 0;
-        height: 220px!important;
     }
-}
-.video-button {
-    &.desktop {
-        display: none!important;
-    }
-    &.mobile {
-        display: block!important;
+    .video-button {
+        // &.desktop {
+        //     display: none!important;
+        // }
+        // &.mobile {
+        //     display: block!important;
+        // }
     }
 }
