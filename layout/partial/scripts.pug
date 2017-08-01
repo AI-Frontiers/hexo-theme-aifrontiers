@@ -58,13 +58,13 @@ script(type='text/javascript').
     if (window.mobilecheck()) {
        $('.bg-video').css("opacity", ".5");
        $('.bg-video').css("background-image", "url(/images/jumbotron-bg.jpg)");
-       // var fgPlayerOptions = {
-       //     id: 227828879,
-       //     autoplay: false,
-       //     title: false,
-       //     height: 220,
-       //     loop: false
-       // };
+       var fgPlayerOptions = {
+           id: 227828879,
+           autoplay: false,
+           title: false,
+           height: 220,
+           loop: false
+       };
    }
    else {
        bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);

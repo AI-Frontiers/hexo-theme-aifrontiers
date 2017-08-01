@@ -9,7 +9,7 @@ ul.nav.nav-sub.nav-list
             - var act = !isOutbound && "/"+page.current_url === value
             if isOutbound
                 a.nav-list-link(class={active: act} href=url_for(value) onclick="trackOutboundLink('"+url_for(value)+"')" target=tar)
-                    != key.toUpperCase()
+                    != key
             else
                 a.nav-list-link(class={active: act} href=url_for(value) target=tar)
-                    != key.toUpperCase()
+                    != key

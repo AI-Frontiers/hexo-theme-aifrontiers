@@ -14,10 +14,10 @@ ul.nav.nav-hidden.nav-list(style="display:none;")
                 - if (!(lower_key in controls) || module_switch) {
                     if isOutbound
                         a.nav-list-link(class={active: act} href=url_for(value) onclick="trackOutboundLink('"+url_for(value)+"')" target=tar)
-                            != key.toUpperCase()
+                            != key
                     else
                         a.nav-list-link(class={active: act} href=url_for(value) target=tar)
-                            != key.toUpperCase()
+                            != key
                 - }
 
     .sub-items
@@ -32,8 +32,8 @@ ul.nav.nav-hidden.nav-list(style="display:none;")
                 - if (!(lower_key in controls) || module_switch) {
                     if isOutbound
                         a.nav-list-link(class={active: act} href=url_for(value) onclick="trackOutboundLink('"+url_for(value)+"')" target=tar)
-                            != key.toUpperCase()
+                            != key
                     else
                         a.nav-list-link(class={active: act} href=url_for(value) target=tar)
-                            != key.toUpperCase()
+                            != key
                 - }

@@ -113,6 +113,9 @@
             letter-spacing: .6px;
             color: #0070E8;
             cursor: pointer;
+            &.mobile {
+                display: none;
+            }
         }
     }
 }
