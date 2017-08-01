@@ -41,9 +41,10 @@ script(type='text/javascript').
 script(type='text/javascript').
     if (window.mobilecheck()) {
         $('.bg-video').css("opacity", ".5");
+        $('.bg-video').css("background-image", "url(/images/jumbotron-bg.jpg)");
         $('.jumbotron .video-button').css("display", "none");
+        $('.conf-theme').css("margin-top", "60px");
    } else {
-        $('.bg-video').css("background", "#000");
     var options = {
         id: 227839995,
         minwidth: 1250,

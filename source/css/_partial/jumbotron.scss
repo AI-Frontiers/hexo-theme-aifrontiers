@@ -1,5 +1,7 @@
 @media (max-width:1250px) {
-    margin-left: calc(50vw - 625px);
+    .bg-video {
+        margin-left: calc(50vw - 625px);
+    }
 }
 .jumbotron {
     position: relative;

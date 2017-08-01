@@ -1,9 +1,5 @@
 $mobile-width: 600px;
 @media (max-width: $mobile-width) {
-    .bg-video {
-        display: none;
-        background: #000;
-    }
     // width reset
     header,
     .jumbotron,
@@ -148,6 +144,7 @@ $mobile-width: 600px;
         height: 480px;
         background-size: auto 140%;
         background-position-y: bottom;
+        overflow: hidden;
         .jumbotron-wrap {
             transform: none;
         }
@@ -184,13 +181,9 @@ $mobile-width: 600px;
             justify-content: space-between;
         }
         .bg-video {
-            background-size: cover;
-            background-position: right top;
-            background-position-x: -500px;
-            background-image: url(/images/jumbotron-bg.jpg);
+            width: 100%;
+            overflow: hidden;
             iframe {
-                transform: scale(2.8);
-                transform-origin: center center;
             }
         }
     }
