@@ -190,14 +190,6 @@ $mobile-width: 600px;
             margin-top: 5px;
         }
     }
-    .video-button {
-        &.desktop {
-            display: none!important;
-        }
-        &.mobile {
-            display: block!important;
-        }
-    }
 
     .module-venue {
         position: relative;
@@ -300,5 +292,13 @@ $mobile-width: 600px;
         background-color: transparent;
         border-radius: 0;
         height: 220px!important;
+    }
+}
+.video-button {
+    &.desktop {
+        display: none!important;
+    }
+    &.mobile {
+        display: block!important;
     }
 }
