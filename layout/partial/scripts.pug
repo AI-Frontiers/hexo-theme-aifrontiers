@@ -75,8 +75,7 @@ script(type='text/javascript').
        if (bgPlayer) bgPlayer.pause();
    });
    $("#fgPlayer").on($.modal.OPEN, function(event, modal) {
-       console.log("triggered");
-       if (fgPlayer) fgPlayer.play();
+       if (!window.mobilecheck()) {if (fgPlayer) fgPlayer.play()};
    });
    $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
        if (bgPlayer) bgPlayer.play();
