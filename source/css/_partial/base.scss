@@ -116,6 +116,8 @@ table {
     background-color: rgba(0,0,0,0.85);
 }
 #fg-player {
+    position: relative;
+    bottom: 70px;
     iframe {
         margin: 0!important;
         height: 500px!important;
