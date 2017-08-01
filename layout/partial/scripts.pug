@@ -26,8 +26,11 @@ if ga
 script(type='text/javascript',src=url_for("vendor/jquery/jquery.min.js"))
 script(type='text/javascript',src=url_for("vendor/slick/slick.min.js"))
 script(type='text/javascript',src=url_for("vendor/slickNav/jquery.slicknav.min.js"))
+script(type='text/javascript',src="https://player.vimeo.com/api/player.js")
+
 
 script(type='text/javascript').
+    var player;
     $(document).ready(function(){
         $('.nav-main').slicknav({
             label: "",
@@ -36,51 +39,23 @@ script(type='text/javascript').
     })
 
 script(type='text/javascript').
-  var player;
+    if (window.mobilecheck()) {
+        $('.bg-video').css("opacity", ".5");
+        $('.jumbotron .video-button').css("display", "none");
+   }
 
-  var tag = document.createElement('script');
-
-  if (!window.mobilecheck()) {
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  } else {
-      $('.bg-video').css("opacity", ".5");
-      $('.jumbotron .video-button').css("display", "none");
-  }
-
-  function onYouTubeIframeAPIReady() {
-    $('.bg-video').css("background", "#000");
-    player = new YT.Player('player', {
-      videoId: 'WiD_uWWfqaw',
-      playerVars: {
-          'autoplay': '1',
-          'controls': '1',
-          'disablekb': '1',
-          'enablejsapi': '1',
-          'loop': '1',
-          'rel': '0',
-          'showinfo': '0',
-          'start': '9'
-      },
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
+    var options = {
+        id: 227839995,
+        minwidth: 1250,
+        autoplay: true,
+        title: false,
+        loop: true
+    };
+    player = new Vimeo.Player('player', options);
+    player.setVolume(0);
+    player.on('play', function() {
+        console.log('played the video!');
     });
-  }
-
-  function onPlayerReady(event) {
-    event.target.mute();
-    event.target.playVideo();
-  }
-
-  var done = false;
-  function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-      done = true;
-    }
-  }
 
     (function ($) {
       $.fn.countdown = function(options){
@@ -178,12 +153,12 @@ script(type='text/javascript').
         $('.jumbotron-wrap').css("display", "none");
         $('.bg-video #toggle').css("display", "block");
         $('.bg-video iframe').css("opacity", "1");
-        player.unMute();
+        player.setVolume(1);
     }
 
     var videoOff = function() {
         $('.jumbotron-wrap').css("display", "flex");
         $('.bg-video #toggle').css("display", "none");
         $('.bg-video iframe').css("opacity", ".5");
-        player.mute();
+        player.setVolume(0);
     }
