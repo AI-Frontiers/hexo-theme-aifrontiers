@@ -1,6 +1,6 @@
 .module-contact {
     margin: auto;
-    padding: 30px 0 40px;
+    padding: 30px 0 10px;
     background-color: #015EC3;
     color: white;
     .module-title {
@@ -52,6 +52,7 @@
             background-color: #083365;
             text-transform: uppercase;
             color: white;
+            font-weight: 600;
         }
     }
     .company-address {
@@ -59,6 +60,7 @@
         width: 100%;
         text-align: center;
         margin-top: 25px;
+        margin-bottom: 30px;
         letter-spacing: .7px;
         padding-bottom: 10px;
         font-size: 14px;

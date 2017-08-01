@@ -64,7 +64,7 @@ $mobile-width: 600px;
     }
 
     .jumbotron {
-        height: 500px;
+        height: 480px;
         background-size: auto 140%;
         background-position-y: bottom;
         .jumbotron-wrap {
@@ -79,7 +79,7 @@ $mobile-width: 600px;
         }
         .conf-theme {
             width: 100%;
-            margin-top: 50px;
+            margin-top: 30px;
             font-size: 45px;
         }
         .conf-info {
@@ -115,35 +115,66 @@ $mobile-width: 600px;
     }
 
     .module-topics {
+        .module-title {
+            margin: 10px 0 0!important;
+        }
         .topics {
-            padding: 30px 0;
+            padding: 10px 0;
             padding-bottom: 0;
             margin-bottom: 10px;
         }
         .topic-card {
+            width: 348px;
+            height: auto;
+            margin:auto;
+            margin-bottom: 20px;
+            .topic-image-wrapper {
+                width: 348px;
+                height: 232px;
+            }
             .topic-title {
                 margin-bottom: 3px;
             }
-            margin:auto;
-            margin-bottom: 10px;
+            .topic-description {
+                margin-top: 8px;
+                text-align: left;
+                color: #000;
+            }
         }
     }
 
     .module-speakers {
+        .module-title {
+            margin: 10px 0 0!important;
+        }
         .speakers {
             justify-content: center;
         }
         .speaker-card {
-            margin: 20px 10px;
+            margin: 20px 10px 5px;
             height: auto;
+            width: 220px;
+            .speaker-photo {
+                width: 220px;
+                height: 220px;
+                margin-bottom: 5px;
+            }
+            .speaker-name {
+                line-height: 20px!important;
+            }
+            .speaker-name,
             .speaker-position,
             .speaker-company {
-                font-size: 14px;
+                font-size: 15px!important;
             }
         }
     }
 
     .module-schedule {
+        margin-top: 20px;
+        .module-title {
+            margin: 10px 0 0!important;
+        }
         box-sizing: border-box;
         .section-title {
             box-sizing: border-box;
@@ -153,6 +184,7 @@ $mobile-width: 600px;
         .schedule-description {
             box-sizing: border-box;
             padding: 0 20px!important;
+            margin-bottom: 8px;
         }
         .schedule-subdescription {
             box-sizing: border-box;
@@ -166,6 +198,12 @@ $mobile-width: 600px;
                 width: 100%;
                 padding: 0!important;
                 margin-bottom: 10px;
+                max-width: none;
+                min-width: none;
+                font-size: 18px;
+            }
+            .section-description {
+                font-size: 14px;
             }
         }
     }
@@ -179,19 +217,42 @@ $mobile-width: 600px;
     }
 
     .module-venue {
+        positon: relative;
         padding-top: 0!important;
         padding-bottom: 0!important;
+        background-size: cover;
+        background-position: left center;
         .wrapper {
             flex-direction: column;
         }
         iframe {
             width: 100%;
+            height: 336px;
         }
         .venue {
+            position: relative;
             flex-direction: column;
-            height: 450px;
+            height: 336px;
             box-sizing: border-box;
             padding: 50px!important;
+            .venue-info {
+                font-weight: 400!important;
+            }
+            * {
+                position: relative;
+                z-index: 5;
+            }
+        }
+        .venue-mask {
+            z-index: 4;
+            text-indent: 99999px;
+            display: block!important;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.2);
+            top: 0;
+            left: 0;
         }
         .register-button {
             width: 300px!important;
@@ -202,8 +263,8 @@ $mobile-width: 600px;
     .module-contact {
         flex-direction: column;
         box-sizing: border-box;
-        padding-left:15px!important;
-        padding-right:15px!important;
+        padding-left:45px!important;
+        padding-right:45px!important;
         form {
             input {
                 width: 100%!important;
@@ -220,6 +281,13 @@ $mobile-width: 600px;
         }
         .heading, .organizers {
             margin-left: 20px;
+        }
+    }
+    footer {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        .social-bar {
+            margin-bottom: 5px;
         }
     }
 }
