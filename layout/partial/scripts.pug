@@ -52,23 +52,23 @@ script(type='text/javascript').
         title: false,
         loop: true
     };
-    var fgPlayerOptions = {
-        id: 227828879,
-        autoplay: false,
-        title: false,
-        height: 500,
-        loop: false
-    };
     bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
-    fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
     bgPlayer.setVolume(0);
     $("#fgPlayer").on($.modal.BEFORE_OPEN, function(event, modal) {
-        bgPlayer.pause();
+       if (bgPlayer) bgPlayer.pause();
     });
     $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
-        bgPlayer.play();
+       if (bgPlayer) bgPlayer.play();
     });
    }
+   var fgPlayerOptions = {
+       id: 227828879,
+       autoplay: false,
+       title: false,
+       height: 500,
+       loop: false
+   };
+   fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
 
 
     (function ($) {

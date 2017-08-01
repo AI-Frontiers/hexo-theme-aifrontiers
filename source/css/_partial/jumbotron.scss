@@ -12,6 +12,7 @@
     overflow: hidden;
     .bg-video {
         margin-top: -50px!important;
+        background-position: left center;
         z-index: 4;
         position: absolute;
         display: block;
@@ -51,6 +52,10 @@
         justify-content: center;
         align-items: center;
         transform-origin: top center;
+    }
+    .speakers-bar {
+        .speaker-photo {
+        }
     }
     .conf-logo {
         margin: auto;
