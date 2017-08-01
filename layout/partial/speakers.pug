@@ -18,3 +18,4 @@ mixin speaker-card(name, photo, position, company)
             - speaker = site.data.speakers[i]
             +speaker-card(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
         - }
+        +speaker-card("","/images/speakers/more-to-come.jpg","","")
