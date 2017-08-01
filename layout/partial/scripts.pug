@@ -67,10 +67,13 @@ script(type='text/javascript').
     bgPlayer.on('play', function() {
     });
     fgPlayer.on('play', function() {
-        bg.pause();
+        bgPlayer.pause();
     });
     fgPlayer.on('ended', function() {
-        bg.play();
+        bgPlayer.play();
+    });
+    $().on($.modal.BEFORE_CLOSE, function(event, modal) {
+        bgPlayer.play();
     });
    }
 

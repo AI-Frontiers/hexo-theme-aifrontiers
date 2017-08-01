@@ -53,6 +53,7 @@ header {
         margin: 0;
         li {
             display: inline-block;
+            text-transform: capitalize;
         }
         a.nav-list-link {
             font-size: 13px;
@@ -88,6 +89,7 @@ header {
     background: #0070E8;
     padding: 9px 18px 11px;
     margin-left: 10px;
+    letter-spacing: .7px;
 }
 
 @media (max-width: 900px) and (min-width: #{$mobile-width}) {
