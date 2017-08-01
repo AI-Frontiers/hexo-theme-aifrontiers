@@ -40,9 +40,7 @@ $mobile-width: 600px;
     }
 
     .jumbotron {
-        height: 440px;
-        background-size: auto 140%;
-        background-position-y: bottom;
+        height: 470px;
         overflow: hidden;
         .jumbotron-wrap {
             transform: none;
@@ -52,17 +50,17 @@ $mobile-width: 600px;
         }
         .conf-title {
             display: none;
-            font-size: 26px;
         }
         .conf-theme {
+            font-weight: 600;
             width: 100%;
-            margin-top: 80px;
+            margin-top: 100px;
             font-size: 30px;
             line-height: 35px;
         }
         .conf-info {
             margin-top: 15px;
-            font-size: 18px;
+            font-size: 15px;
             text-align:center;
             span {
                 display: inline;
@@ -81,10 +79,10 @@ $mobile-width: 600px;
             justify-content: space-between;
         }
         .bg-video {
+            background-position: left top;
+            background-size: auto 100%;
             width: 100%;
             overflow: hidden;
-            iframe {
-            }
         }
     }
 

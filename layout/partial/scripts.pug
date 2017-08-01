@@ -42,23 +42,18 @@ script(type='text/javascript').
     })
 
 script(type='text/javascript').
-    if (window.mobilecheck()) {
-        $('.bg-video').css("opacity", ".5");
-        $('.bg-video').css("background-image", "url(/images/jumbotron-bg.jpg)");
-       var fgPlayerOptions = {
-           id: 227828879,
-           autoplay: false,
-           title: false,
-           height: 220,
-           loop: false
-       };
-   } else {
+   var fgPlayerOptions = {
+       id: 227828879,
+       autoplay: false,
+       title: false,
+       height: 220,
+       loop: false
+   };
     var bgPlayerOptions = {
         id: 227859594,
         autoplay: true,
         title: false,
         loop: true
-
     };
    var fgPlayerOptions = {
        id: 227828879,
@@ -67,15 +62,14 @@ script(type='text/javascript').
        height: 500,
        loop: false
    };
-    bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
-    bgPlayer.setVolume(0);
-    $("#fgPlayer").on($.modal.BEFORE_OPEN, function(event, modal) {
-       if (bgPlayer) bgPlayer.pause();
-    });
-    $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
-       if (bgPlayer) bgPlayer.play();
-    });
-   }
+   bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
+   bgPlayer.setVolume(0);
+   $("#fgPlayer").on($.modal.BEFORE_OPEN, function(event, modal) {
+      if (bgPlayer) bgPlayer.pause();
+   });
+   $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
+      if (bgPlayer) bgPlayer.play();
+   });
    fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
 
 
