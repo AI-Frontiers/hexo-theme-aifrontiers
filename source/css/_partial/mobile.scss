@@ -31,14 +31,17 @@ $mobile-width: 600px;
         display: block;
         position: absolute;
         top: 8px;
+        left: 0;
         padding: 0;
-        right: 20px;
-        background: #FFF;
+        width: 100%;
+        background: transparent;
         .slicknav_btn {
+            positon: absolute;
+            right: 20px;
             background: #FFF;
             margin: 0;
             border: solid 1px #BFBFBF;
-            border-radius: 0;
+            border-radius: 2;
             &.slicknav_open {
                 border: solid 1px #BFBFBF;
                 border-color: #0070E8;
@@ -52,13 +55,33 @@ $mobile-width: 600px;
             }
         }
         .slicknav_nav {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 40px;
+            padding: 60px 0;
             background-color: #0070E8;
             .nav-list-item {
+                padding: 4px;
                 .nav-list-link {
                     background-color: #0070E8;
                     border-radius: 0;
-                    font-family: $Avenir-Next;
+                    font-family: $Helvetica-Neue;
                     text-align: center;
+                    font-weight: bold;
+                    letter-spacing: .5px;
+                    font-size: 15px;
+                    &:hover {
+                        color: #FFF;
+                    }
+                }
+            }
+            .sub-items {
+                margin-top: 20px!important;
+            }
+            .sub-nav-list-item {
+                a {
+                    color: #5BA8F8;
                     &:hover {
                         color: #FFF;
                     }
@@ -93,6 +116,9 @@ $mobile-width: 600px;
                  transform: scale(.75);
                  transform-origin: left center;
             }
+        }
+        .conf-date {
+            display: block;
         }
         .navigation {
             align-items: center;
@@ -130,7 +156,7 @@ $mobile-width: 600px;
         }
         .conf-theme {
             width: 100%;
-            margin-top: 30px;
+            margin-top: 40px;
             font-size: 45px;
         }
         .conf-info {
@@ -268,7 +294,7 @@ $mobile-width: 600px;
     }
 
     .module-venue {
-        positon: relative;
+        position: relative;
         padding-top: 0!important;
         padding-bottom: 0!important;
         background-size: cover;

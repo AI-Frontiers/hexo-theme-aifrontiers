@@ -32,7 +32,7 @@ script(type='text/javascript',src="https://player.vimeo.com/api/player.js")
 script(type='text/javascript').
     var player;
     $(document).ready(function(){
-        $('.nav-main').slicknav({
+        $('.nav-hidden').slicknav({
             label: "",
             appendTo: ".header-wrap"
         });
@@ -42,8 +42,8 @@ script(type='text/javascript').
     if (window.mobilecheck()) {
         $('.bg-video').css("opacity", ".5");
         $('.jumbotron .video-button').css("display", "none");
-   }
-
+   } else {
+        $('.bg-video').css("background", "#000");
     var options = {
         id: 227839995,
         minwidth: 1250,
@@ -56,6 +56,8 @@ script(type='text/javascript').
     player.on('play', function() {
         console.log('played the video!');
     });
+   }
+
 
     (function ($) {
       $.fn.countdown = function(options){
