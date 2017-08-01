@@ -70,9 +70,13 @@ script(type='text/javascript').
        bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
        bgPlayer.setVolume(0);
    }
-   fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
    $("#fgPlayer").on($.modal.BEFORE_OPEN, function(event, modal) {
+       fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
        if (bgPlayer) bgPlayer.pause();
+   });
+   $("#fgPlayer").on($.modal.OPEN, function(event, modal) {
+       console.log("triggered");
+       if (fgPlayer) fgPlayer.play();
    });
    $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
        if (bgPlayer) bgPlayer.play();
