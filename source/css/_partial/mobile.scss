@@ -265,6 +265,8 @@ $mobile-width: 600px;
     }
 
     #fg-player {
+        position: relative;
+        bottom: 150px;
         iframe {
             margin: 0!important;
             height: 300px!important;
