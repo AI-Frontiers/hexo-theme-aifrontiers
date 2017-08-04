@@ -53,6 +53,9 @@ $mobile-width: 600px;
             font-weight: 600;
             line-height: 38px;
             padding-top: 95px;
+            .conf-name {
+                display: block;
+            }
             .conf-nd {
                 font-size: 24px;
                 display: block;
