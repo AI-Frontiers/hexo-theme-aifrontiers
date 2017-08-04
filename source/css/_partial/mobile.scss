@@ -83,13 +83,15 @@ $mobile-width: 600px;
         .conf-info {
             margin-top: 40px;
             font-size: 17px;
-            text-align: center;
             font-weight: 500;
             span {
                 display: inline;
                 &:first-child:after {
                     content:", "
                 }
+            }
+            .conf-date {
+                display: block!important;
             }
             .sep {
                 display: none;
