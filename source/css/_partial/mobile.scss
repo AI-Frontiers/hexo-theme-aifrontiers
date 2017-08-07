@@ -49,11 +49,8 @@ $mobile-width: 600px;
             display: none;
         }
         .conf-title {
-            font-size: 46px;
-            font-weight: 600;
-            line-height: 38px;
-            padding-top: 95px;
             .conf-name {
+                font-size: 46px;
                 display: block;
             }
             .conf-nd {
@@ -77,7 +74,6 @@ $mobile-width: 600px;
             font-size: 25px;
             line-height: 31px;
             .applied, .deep-learning-and {
-                display: block;
             }
         }
         .conf-info {
