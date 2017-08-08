@@ -108,9 +108,13 @@ $mobile-width: 600px;
             background-position-x: center;
             background-position-y: top;
             background-size: auto 115%;
+            margin-top: 0!important;
             width: 100%;
             overflow: hidden;
             height: 100%!important;
+        }
+        #bgPlayer {
+            display: none;
         }
     }
 
