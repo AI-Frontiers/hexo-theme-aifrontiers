@@ -143,5 +143,7 @@
 }
 
 a.close-modal {
-    background: url(/images/close-button.png)!important;
+    background: url(/images/close-button.png) no-repeat 0 0!important;
+    background-size: 100% 100%!important;
+    transform: scale(2);
 }
