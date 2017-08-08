@@ -12,6 +12,8 @@
     overflow: hidden;
     .bg-video {
         background-image: url(/images/jumbotron-bg.jpg);
+        background-size: cover;
+        background-position: center 20%;
         margin-top: -50px!important;
         z-index: 4;
         position: absolute;
