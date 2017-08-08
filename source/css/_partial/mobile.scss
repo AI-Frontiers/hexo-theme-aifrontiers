@@ -49,12 +49,13 @@ $mobile-width: 600px;
             display: none;
         }
         .conf-title {
+            transform: scale(1);
             .conf-name {
-                font-size: 52px;
+                font-size: 46px;
                 display: block;
             }
             .conf-nd {
-                font-size: 32px;
+                font-size: 44px;
                 display: block;
                 font-weight: 500;
                 margin-top: 5px;
