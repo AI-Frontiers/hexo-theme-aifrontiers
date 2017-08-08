@@ -56,7 +56,6 @@ script(type='text/javascript').
        loop: true
    };
     if (window.mobilecheck()) {
-       $('.bg-video').css("background-image", "url(/images/jumbotron-bg-mobile.png)");
        $('.bg-video').css("margin-top", "0!important");
        var fgPlayerOptions = {
            id: 227828879,
@@ -80,7 +79,10 @@ script(type='text/javascript').
    $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
        if (bgPlayer) bgPlayer.play();
    });
-
+    var onPlay = function(data) {
+       $('.bg-video').css("background", "#000");
+    };
+    bgPlayer.on('play', onPlay);
 // script(type='text/javascript').
 //     (function ($) {
 //       $.fn.countdown = function(options){
