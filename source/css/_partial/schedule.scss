@@ -78,15 +78,16 @@
         .section-time-mobile, .section-time {
             display: block;
             white-space: nowrap;
-            min-width: 130px;
-            max-width: 130px;
+            min-width: 110px;
+            max-width: 110px;
             font-weight: 600;
             margin-bottom: 5px;
-            padding-right: 15px;
+            padding-right: 35px;
             font-size: 20px;
             color: #0070E8;
             letter-spacing: 0;
             line-height: 27px;
+            text-align: right;
         }
         .section-time-mobile {
             display: none;
