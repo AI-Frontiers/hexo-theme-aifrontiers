@@ -64,6 +64,7 @@
     }
     .section {
         display: flex;
+        width: 100%;
         flex-direction: row;
         border: solid 1px #E2E2E2;
         border-top: 0;
@@ -73,6 +74,21 @@
             .section-title {
                 color: #083365;
             }
+        }
+        .section-time-mobile {
+            display: none;
+        }
+        .section-time {
+            display: block;
+            min-width: 110px;
+            max-width: 110px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            padding-right: 15px;
+            font-size: 20px;
+            color: #0070E8;
+            letter-spacing: 0;
+            line-height: 27px;
         }
         .section-title {
             display: block;
@@ -87,6 +103,7 @@
             line-height: 27px;
         }
         .section-description {
+            width: 100%;
             font-size: 15px;
             color: #083365;
             letter-spacing: 0;

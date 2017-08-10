@@ -1,12 +1,16 @@
-mixin section(title, description)
+mixin section(time, title, description)
     .section
+        .section-time
+            != time
         .section-title
             != title
         .section-description
             != description
 
-mixin dimsection(title, description)
+mixin dimsection(time, title, description)
     .section.dim
+        .section-time
+            != time
         .section-title
             != title
         .section-description
@@ -43,9 +47,9 @@ mixin subsection(title, description)
              - for (var i = 0; i < n; i++) {
                    - var section = sections[i];
                    - if (!section["dim"]) {
-                       + section(section["title"], section["description"])
+                       + section(section["time"], section["title"], section["description"])
                    - } else {
-                       + dimsection(section["title"], section["description"])
+                       + dimsection(section["time"], section["title"], section["description"])
                    - }
              - }
         - }
