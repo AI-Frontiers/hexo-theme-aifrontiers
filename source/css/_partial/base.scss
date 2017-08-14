@@ -81,6 +81,11 @@ table {
     }
 }
 
+.container {
+    border-top: #EEE 1px solid;
+    border-bottom: #EEE 1px solid;
+}
+
 .social-bar {
     display: flex;
     justify-content: space-between;
