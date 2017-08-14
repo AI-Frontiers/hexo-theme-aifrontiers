@@ -168,12 +168,12 @@ a.close-modal {
     background: url(/images/close-button.png) no-repeat 0 0!important;
     background-size: 100% 100%!important;
     transform: scale(1.5);
-    left: 40%!important;
-    bottom: -50px!important;
-    top: auto!important;
-    text-indent: 40px!important;
+    left: -12.5px!important;
+    top: -12.5px!important;
+    // text-indent: 40px!important;
     color: white;
     line-height: 32px;
     font-size: 20px;
     font-weight: 600;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);}
+    // text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
