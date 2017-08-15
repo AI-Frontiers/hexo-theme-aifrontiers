@@ -29,14 +29,12 @@ include countdown
             a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") Hightlight Video
             a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline") Hightlight Video
 
-    .speakers-bar
-        - var speakers = site.data.speakers;
-        - var m = speakers.length;
-        - for (var k = 0; k < 3; k++) {
-            - for (var i = 0; i < m; i++) {
-                - speaker = site.data.speakers[i]
-                img.speaker-photo(src=speaker["photo"])
-            - }
+    - var speakers = site.data.speakers;
+    - var m = speakers.length;
+    .speakers-bar(style="height: " + 100 / m + "vw;")
+        - for (var i = 0; i < m; i++) {
+            - speaker = site.data.speakers[i]
+            img.speaker-photo(src=speaker["photo"],style="height: " +  100 / m + "vw; width: " +  100 / m + "vw;")
         - }
     .bg-video
         #bgPlayer
