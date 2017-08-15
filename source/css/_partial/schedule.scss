@@ -1,3 +1,4 @@
+$section-title-width: 117px;
 .module-schedule {
     margin: auto;
     margin-top: 50px;
@@ -75,8 +76,20 @@
                 color: #083365!important;
             }
         }
-        .section-time-mobile, .section-time {
-            display: block;
+        .section-time {
+            font-weight: 600;
+            font-size: 16px;
+            color: #083365;
+            min-width: $section-title-width;
+            max-width: $section-title-width;
+            font-weight: 600;
+            padding-right: 25px;
+            br {
+                display: none;
+            }
+        }
+        .section-time-mobile {
+            display: none;
             min-width: 70px;
             max-width: 70px;
             font-weight: 600;
@@ -87,13 +100,10 @@
             letter-spacing: 0;
             line-height: 27px;
         }
-        .section-time-mobile {
-            display: none;
-        }
         .section-title {
             display: block;
-            min-width: 115px;
-            max-width: 115px;
+            min-width: $section-title-width;
+            max-width: $section-title-width;
             font-weight: 600;
             margin-bottom: 5px;
             padding-right: 25px;
@@ -101,6 +111,9 @@
             color: #0070E8;
             letter-spacing: 0;
             line-height: 27px;
+            br {
+                display: none;
+            }
         }
         .section-description {
             width: 100%;
