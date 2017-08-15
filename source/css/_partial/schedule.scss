@@ -78,7 +78,8 @@ $section-title-width: 117px;
         }
         .section-time {
             font-weight: 600;
-            font-size: 16px;
+            font-size: 14px;
+            line-height: 17px;
             color: #083365;
             min-width: $section-title-width;
             max-width: $section-title-width;
@@ -111,9 +112,6 @@ $section-title-width: 117px;
             color: #0070E8;
             letter-spacing: 0;
             line-height: 27px;
-            br {
-                display: none;
-            }
         }
         .section-description {
             width: 100%;
