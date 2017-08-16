@@ -113,6 +113,9 @@ $section-title-width: 117px;
             color: #083365;
             letter-spacing: 0;
             line-height: 26px;
+            ul li {
+                list-style-position: inside;
+            }
         }
     }
 
