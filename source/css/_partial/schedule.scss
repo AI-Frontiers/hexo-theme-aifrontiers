@@ -70,12 +70,6 @@ $section-title-width: 117px;
         border: solid 1px #E2E2E2;
         border-top: 0;
         padding: 19px 28px;
-        &.dim {
-            background: #FAFAFA;
-            * {
-                color: #083365!important;
-            }
-        }
         .section-time {
             font-weight: 600;
             font-size: 14px;
@@ -119,6 +113,17 @@ $section-title-width: 117px;
             color: #083365;
             letter-spacing: 0;
             line-height: 26px;
+        }
+    }
+
+    .section.dim {
+        background: #FAFAFA;
+        * {
+            color: #083365!important;
+        }
+        .section-time {
+            font-size: 16px!important;
+            line-height: 27px!important;
         }
     }
 
