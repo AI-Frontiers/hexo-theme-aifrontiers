@@ -66,6 +66,7 @@ $max-speaker-bar-height: 148px;
         position: absolute;
         z-index: 5;
         bottom: 0;
+        left: 0;
         max-height: $max-speaker-bar-height;
         white-space: nowrap;
         .speaker-photo {
