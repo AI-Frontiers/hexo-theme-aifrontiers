@@ -1,4 +1,4 @@
-$max-speaker-bar-height: 148px;
+$max-speakers-bar-height: 148px;
 @media (max-width:1250px) {
     .bg-video {
         margin-left: calc(50vw - 625px);
@@ -67,11 +67,12 @@ $max-speaker-bar-height: 148px;
         z-index: 5;
         bottom: 0;
         left: 0;
-        max-height: $max-speaker-bar-height;
+        margin:auto;
+        max-height: $max-speakers-bar-height;
         white-space: nowrap;
         .speaker-photo {
-            max-height: $max-speaker-bar-height;
-            max-width: $max-speaker-bar-height;
+            max-height: $max-speakers-bar-height;
+            max-width: $max-speakers-bar-height;
         }
     }
     .conf-logo {
