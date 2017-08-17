@@ -51,17 +51,17 @@ $mobile-width: 600px;
         .conf-title {
             padding-top: 8px;
             .conf-name {
-                font-size: 38px;
+                font-size: 34px;
                 display: block;
                 line-height: 32px;
-                letter-spacing: -3px!important;
-                text-shadow: 0 2px 30px rgba(6,172,255,.7), 0 2px 2px rgba(0,0,0,1);
+                letter-spacing: -2px!important;
+                text-shadow: 0 2px 30px rgba(6,172,255,.5), 0 2px 2px rgba(0,0,0,1);
             }
             .conf-nd {
                 font-size: 21px;
                 display: block;
                 font-weight: 600;
-                letter-spacing: 1px;
+                letter-spacing: 2px;
             }
             // &:after {
             //     display: block;
