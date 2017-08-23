@@ -1,7 +1,6 @@
 .countdown {
     display: block;
     height: 40px;
-    padding-top: 10px;
     .font-size {
         font-weight: 800;
     }
@@ -26,7 +25,7 @@
     $label-bg: transparent;
 
     .counter {
-        font-size: 32px; /* <<<<adjust this value to change the size of the counter*/
+        font-size: 34px; /* <<<<adjust this value to change the size of the counter*/
         width: 10em;
         height: 3em;
         left: 0;
