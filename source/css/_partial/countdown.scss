@@ -1,4 +1,7 @@
 .countdown {
+    display: block;
+    height: 40px;
+    padding-top: 10px;
     .font-size {
         font-weight: 800;
     }
@@ -20,28 +23,30 @@
 
     //less variables
     $counter-bg: transparent;
+    $label-bg: transparent;
 
     .counter {
         font-size: 32px; /* <<<<adjust this value to change the size of the counter*/
         width: 10em;
-        height: 2em;
+        height: 3em;
         left: 0;
         right: 0; // this is used to center the coutner, in a real application it would be positioned as need
         position: absolute;
-        font-family: arial, helvetica, sans-serif;
+        font-family: $Avenir-Next;
         text-align: center;
-        line-height: 2em;
         margin: 0 auto;
         background: $counter-bg;
 
         > ul {
             display: inline-block;
             color: #000;
+            text-shadow: 0 2px 2px rgba(0,0,0,.5);
+            font-weight: 500;
 
             &:after {
                 content: ":";
                 color: #fff;
-                margin: 0 .1em;
+                margin: 0 .5em;
             }
 
             &:last-of-type:after {
@@ -52,17 +57,18 @@
             li {
                 line-height: 1em;
                 display: inline-block;
-                background: #F79405;
+                background: $label-bg;
                 color: white;
-                padding: .15em;
+                padding-top: .15em;
+                padding-bottom: .15em;
                 border-radius: 6px;
-                &:first-child{
-                    margin-right:.1em;
+                &:first-child {
+                    padding-right: 0;
                 }
             }
         }
         .labels {
-            padding-left: .6em;
+            text-shadow: 0 2px 2px rgba(0,0,0,.5);
             li {
                 list-style-type: none!important;
                 width: 25%;

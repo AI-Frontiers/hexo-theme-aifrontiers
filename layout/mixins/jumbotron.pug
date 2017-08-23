@@ -24,6 +24,7 @@ include countdown
                 != ", "
             span.conf-location
                 != data["location"]
+        +countdown()
         .buttons
             a.button.register-button(href=data["register-link"], alt="Register") Register
             a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") Watch Video
