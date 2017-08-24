@@ -33,6 +33,11 @@
         margin: 0 auto;
         background: $counter-bg;
 
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
         > ul {
             display: inline-block;
             color: #000;
