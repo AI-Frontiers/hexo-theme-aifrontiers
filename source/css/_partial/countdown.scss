@@ -23,8 +23,8 @@
     $label-bg: transparent;
 
     .counter {
-        font-size: 38px; /* <<<<adjust this value to change the size of the counter*/
-        width: 7.4em;
+        font-size: 50px; /* <<<<adjust this value to change the size of the counter*/
+        width: 6.6em;
         // position: absolute;
         // left: 0;
         // right: 0;
@@ -50,7 +50,7 @@
                 display: inline-block;
                 content: ":";
                 color: #fff;
-                margin: 0 .3em;
+                margin: 0 .2em;
             }
 
             &:last-of-type:after {
@@ -75,7 +75,7 @@
             text-shadow: 0 2px 2px rgba(0,0,0,.5);
             margin-top: -.4em;
             padding-left: .1em;
-            padding-right: .04em;
+            padding-right: .03em;
             ul {
                 line-height: .5em;
             }
@@ -83,7 +83,7 @@
                 display: inline-block;
                 list-style-type: none!important;
                 width: 25%;
-                font-size: .54em;
+                font-size: .45em;
                 text-align: center;
                 color: white;
                 background: $counter-bg;

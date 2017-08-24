@@ -113,7 +113,8 @@ $max-speakers-bar-height: 148px;
         color: white;
         font-size: 27px;
         font-weight: 600;
-        margin-top: 25px;
+        margin-top: 15px;
+        margin-bottom: 5px;
         width: 700px;
         text-align: center;
         text-shadow: rgba(0, 0, 0, 0.3) 0px 4px 3px;
@@ -136,7 +137,7 @@ $max-speakers-bar-height: 148px;
         justify-content: space-between;
         width: 432px;
         height: 45px;
-        margin-top: 15px;
+        margin-top: 20px;
         .button {
             display: inline-block;
             width: 204px;
