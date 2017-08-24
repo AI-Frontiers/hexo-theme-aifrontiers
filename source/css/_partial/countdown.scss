@@ -23,8 +23,8 @@
     $label-bg: transparent;
 
     .counter {
-        font-size: 50px; /* <<<<adjust this value to change the size of the counter*/
-        width: 6.8em;
+        font-size: 48px; /* <<<<adjust this value to change the size of the counter*/
+        width: 7.1em;
         // position: absolute;
         // left: 0;
         // right: 0;
@@ -50,7 +50,7 @@
                 display: inline-block;
                 content: ":";
                 color: #fff;
-                margin: 0 .2em;
+                margin: 0 .25em;
             }
 
             &:last-of-type:after {
