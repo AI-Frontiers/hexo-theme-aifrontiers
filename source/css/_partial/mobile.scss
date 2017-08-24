@@ -44,9 +44,8 @@ $mobile-width: 600px;
         overflow: hidden;
 
         .countdown {
-            padding-top: 5px;
             .counter {
-                font-size: 27px; /* <<<<adjust this value to change the size of the counter*/
+                font-size: 38px; /* <<<<adjust this value to change the size of the counter*/
             }
         }
 
@@ -87,6 +86,7 @@ $mobile-width: 600px;
             font-size: 20px;
             line-height: 31px;
             padding-top: 5px;
+            margin-bottom: 0;
             .applied, .deep-learning-and, .reinforcement-learning {
             font-size: 25px;
             }
