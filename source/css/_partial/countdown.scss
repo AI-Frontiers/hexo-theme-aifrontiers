@@ -23,7 +23,7 @@
     $label-bg: transparent;
 
     .counter {
-        font-size: 36px; /* <<<<adjust this value to change the size of the counter*/
+        font-size: 38px; /* <<<<adjust this value to change the size of the counter*/
         width: 7.4em;
         // position: absolute;
         // left: 0;
@@ -75,7 +75,7 @@
             text-shadow: 0 2px 2px rgba(0,0,0,.5);
             margin-top: -.4em;
             padding-left: .1em;
-            padding-right: .07em;
+            padding-right: .04em;
             ul {
                 line-height: .5em;
             }
@@ -83,7 +83,7 @@
                 display: inline-block;
                 list-style-type: none!important;
                 width: 25%;
-                font-size: .47em;
+                font-size: .54em;
                 text-align: center;
                 color: white;
                 background: $counter-bg;
