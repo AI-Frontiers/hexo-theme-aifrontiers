@@ -1,4 +1,6 @@
 mixin sponsor-card(name, img, height, offset)
+    - height = height ? height : 40;
+    - offset = offset ? offset : 0;
     img.sponsor-logo(src=img, alt=name, style="height: " + height + "px; top: " + offset + "px;")
 
 .module.module-sponsors
