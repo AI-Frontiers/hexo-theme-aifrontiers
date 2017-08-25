@@ -15,7 +15,7 @@ mixin speaker-card(name, photo, position, company)
         - var speakers = site.data.speakers;
         - var m = speakers.length;
         - for (var i = 0; i < m; i++) {
-            - speaker = site.data.speakers[i]
+            - speaker = speakers[i]
             +speaker-card(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
         - }
         +speaker-card("","/images/speakers/more-to-come.jpg","","")

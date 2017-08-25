@@ -1,9 +1,17 @@
-mixin sponsor-card(logo)
-    img.sponsor-logo(src=logo)
+mixin sponsor-card(name, img, height, offset)
+    img.sponsor-logo(src=img, alt=name, style="height: " + height + "px; top: " + offset + "px;")
 
 .module.module-sponsors
     a.module-title(name="sponsors")
         | Sponsors
+    span.last-years-sponsors
+        | Last Year's Sponsors
+    .sponsors
+        - var sponsors = site.data.sponsors;
+        - var m = sponsors.length;
+        - for (var i = 0; i < m; i++) {
+            - sponsor = sponsors[i]
+            +sponsor-card(sponsor["name"], sponsor["logo"], sponsor["height"], sponsor["offset"])
+        - }
     a.button.sponsorship-letter(href="sponsor-us")
         | Be Our Sponsor
-    .sponsors
