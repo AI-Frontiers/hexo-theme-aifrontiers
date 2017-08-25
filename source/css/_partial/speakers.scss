@@ -29,12 +29,14 @@
         flex-direction: column;
         justify-content: start;
     }
-.speaker-card .speaker-photo {
+    .speaker-card .speaker-photo {
         width: 150px;
         height: 150px;
         border-radius: 1000px;
         margin: auto;
         margin-bottom: 16px;
+        background-image: url(/images/speakers/placeholder.png);
+        background-size: 100%;
     }
 
     .speaker-card .speaker-name {
