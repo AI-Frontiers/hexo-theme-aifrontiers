@@ -258,7 +258,7 @@ $mobile-width: 600px;
         .map-wrapper {
             background-image: url("/images/map.png");
             background-position: right center;
-            background-size: auto 100%;
+            background-size: cover;
             height: 300px;
             width: 100%;
             iframe {
