@@ -1,4 +1,4 @@
-.module-sponsors {
+.module-spnrs {
     padding-bottom: 50px;
     max-width: 1250px;
     margin: auto;
@@ -8,12 +8,12 @@
         margin: auto;
         margin-bottom: 20px;
     }
-    .sponsors {
+    .spnrs {
         display: flex;
         margin: auto;
         flex-flow: row wrap;
     }
-    .last-years-sponsors {
+    .last-years-spnrs {
         display: block;
         font-size: 14px;
         font-weight: bold;
@@ -23,7 +23,7 @@
     .speaker-logo {
         width: 192px;
     }
-    .sponsorship-letter {
+    .spnrship-letter {
         box-sizing: border-box;
         display: block;
         text-align: center;
@@ -43,12 +43,12 @@
             color: white;
         }
     }
-    .sponsors {
+    .spnrs {
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    img.sponsor-logo {
+    img.spnr-logo {
         position: relative;
         height: 60px;
         padding: 10px 20px;

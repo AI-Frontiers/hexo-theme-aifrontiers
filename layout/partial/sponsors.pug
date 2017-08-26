@@ -1,19 +1,19 @@
-mixin sponsor-card(name, img, height, offset)
+mixin spnr-card(name, img, height, offset)
     - height = height ? height : 40;
     - offset = offset ? offset : 0;
-    img.sponsor-logo(src=img, alt=name, style="height: " + height + "px; top: " + offset + "px;")
+    img.spnr-logo(src=img, alt=name, style="height: " + height + "px; top: " + offset + "px;")
 
-.module.module-sponsors
-    a.module-title(name="sponsors")
+.module.module-spnrs
+    a.module-title(name="spnrs")
         | Sponsors
-    span.last-years-sponsors
-        | Last Year's Sponsors
-    .sponsors
-        - var sponsors = site.data.sponsors;
-        - var m = sponsors.length;
+    span.last-years-spnrs
+        | Last Year's sponsors
+    .spnrs
+        - var spnrs = site.data.sponsors;
+        - var m = spnrs.length;
         - for (var i = 0; i < m; i++) {
-            - sponsor = sponsors[i]
-            +sponsor-card(sponsor["name"], sponsor["logo"], sponsor["height"], sponsor["offset"])
+            - spnr = spnrs[i]
+            +spnr-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
         - }
-    a.button.sponsorship-letter(href="sponsor-us")
-        | Be Our Sponsor
+    a.button.spnrship-letter(href="spnr-us")
+        | Be Our sponsor
