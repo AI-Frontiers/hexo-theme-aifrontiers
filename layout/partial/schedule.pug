@@ -29,6 +29,8 @@ mixin session(title, time, description, speeches)
         .left
             .time
                 != time
+            .session-title
+                != title
             - if (speeches) {
                 .speakers
                     - var sessionSpeaker = []

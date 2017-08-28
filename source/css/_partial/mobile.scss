@@ -174,16 +174,16 @@ $mobile-width: 600px;
             margin: 20px 10px 15px;
             height: auto;
             width: 255px;
-            .speaker-photo {
+            .photo {
                 width: 220px;
                 height: 220px;
                 margin-bottom: 2px;
             }
-            .speaker-name {
+            .name {
             }
-            .speaker-name,
-            .speaker-position,
-            .speaker-company {
+            .name,
+            .position,
+            .company {
                 font-size: 18px!important;
                 line-height: 22px!important;
             }
@@ -196,18 +196,18 @@ $mobile-width: 600px;
             margin: 10px 0 0!important;
         }
         box-sizing: border-box;
-        .section-time {
+        .session-time {
             margin-bottom: 0!important;
             display: none!important;
         }
-        .section-title {
+        .session-title {
             box-sizing: border-box;
             font-size: 20px;
             padding: 0 20px!important;
             br {
                 display: none;
             }
-            .section-time-mobile {
+            .session-time-mobile {
                 display: inline;
                 font-size: 18px;
                 padding-right: 15px;
@@ -223,10 +223,10 @@ $mobile-width: 600px;
             opacity: .55;
             padding: 0 20px!important;
         }
-        .section {
+        .session {
             flex-direction: column;
             padding: 30px 28px;
-            .section-title {
+            .session-title {
                 width: 100%;
                 padding: 0!important;
                 margin-bottom: 10px;
@@ -235,30 +235,48 @@ $mobile-width: 600px;
                 font-size: 18px;
                 letter-spacing: -.3px;
             }
-            .section-description {
+            .session-description {
                 font-size: 14px;
             }
         }
     }
 
     .module-schedule {
+        .programs-description {
+            box-sizing: border-box;
+            padding: 0 20px!important;
+            margin-bottom: 8px;
+        }
+        .programs-subdescription {
+            box-sizing: border-box;
+            opacity: .55;
+            padding: 0 20px!important;
+        }
         .session {
             flex-direction: column;
+            .left {
+                padding-bottom: 0;
+            }
+            .right {
+                padding-top: 0;
+            }
             &.dim {
-                .left {
-                    padding-bottom: 0;
-                }
-                .right {
-                    padding-top: 0;
-                }
                 .session-title {
                     text-align: center;
                 }
             }
             .left {
                 border-right: none;
+                    .session-title {
+                        display: block;
+                    }
                 .speakers {
-                    margin-bottom: -35px;
+                    margin-top: 25px;
+                }
+            }
+            .right {
+                .session-title {
+                    display: none;
                 }
             }
         }
