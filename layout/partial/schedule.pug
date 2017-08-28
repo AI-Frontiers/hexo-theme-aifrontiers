@@ -12,14 +12,16 @@ mixin speaker(name, photo, position, company)
             != company
 
 mixin speech(speaker, title, description)
-    .speech
-        .speech-title
-            b
-                != speaker
-            | :&nbsp;
-            != title
-        .speech-description
-            != description
+    - if (title) {
+        .speech
+            .speech-title
+                b
+                    != speaker
+                | :&nbsp;
+                != title
+            .speech-description
+                != description
+    - }
 
 mixin session(title, time, description, speeches)
     - if (speeches) {
