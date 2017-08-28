@@ -242,15 +242,10 @@ $mobile-width: 600px;
     }
 
     .module-schedule {
-        .programs-description {
+        .schedule-description {
             box-sizing: border-box;
             padding: 0 20px!important;
             margin-bottom: 8px;
-        }
-        .programs-subdescription {
-            box-sizing: border-box;
-            opacity: .55;
-            padding: 0 20px!important;
         }
         .session {
             flex-direction: column;
