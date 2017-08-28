@@ -1,21 +1,20 @@
-mixin speaker-card(name, photo, position, company)
-    .speaker-card
-        img.speaker-photo(src=photo)
-        span.speaker-name
+- var speakers = site.data.speakers
+
+mixin speaker(name, photo, position, company)
+    .speaker
+        img.photo(src=photo)
+        span.name
             != name
-        span.speaker-position
+        span.position
             != position
-        span.speaker-company
+        span.company
             != company
 
 .module.module-speakers
     a.module-title(name="speakers")
         | Speakers
     .speakers
-        - var speakers = site.data.speakers;
-        - var m = speakers.length;
-        - for (var i = 0; i < m; i++) {
-            - speaker = speakers[i]
-            +speaker-card(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
-        - }
-        +speaker-card("","/images/speakers/more-to-come.jpg","","")
+        each speaker in speakers
+            +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
+        // add more-to-come below
+        +speaker("","/images/speakers/more-to-come.jpg","","")

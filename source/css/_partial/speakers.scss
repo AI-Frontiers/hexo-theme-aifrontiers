@@ -20,7 +20,7 @@
         justify-content: center;
         max-width: 1250px;
     }
-    .speaker-card {
+    .speaker {
         display: flex;
         box-sizing: border-box;
         margin-bottom: 40px;
@@ -29,7 +29,7 @@
         flex-direction: column;
         justify-content: start;
     }
-    .speaker-card .speaker-photo {
+    .speaker .photo {
         width: 150px;
         height: 150px;
         border-radius: 1000px;
@@ -39,22 +39,22 @@
         background-size: 100%;
     }
 
-    .speaker-card .speaker-name {
+    .speaker .name {
         font-weight: 600;
     }
 
-    .speaker-card .speaker-name,
-    .speaker-card .speaker-position,
-    .speaker-card .speaker-company {
+    .speaker .name,
+    .speaker .position,
+    .speaker .company {
         font-size: 15px;
         line-height: 18px;
         color: white;
         text-align: center;
         white-space: nowrap;
     }
-    .speaker-card:last-of-type {
+    .speaker:last-of-type {
         transform-origin: center center;
-        .speaker-photo {
+        .photo {
             margin: auto;
             margin-top: 0!important;
         }

@@ -1,0 +1,47 @@
+mixin session(time, title, description, speakers, dim)
+    - if (!session["dim"]) {
+        .session
+            .session-title
+                .session-time
+                    != time
+                - if (time) {
+                    .session-time-mobile
+                        != time
+                - }
+                != title
+            .session-description
+                != description
+    - } else {
+        .session.dim
+            .session-time
+                != time
+            .session-title
+                != title
+            .session-description
+                != description
+    - }
+
+- var programs = site.data.programs;
+.module.module-program
+    a.module-title(name="program")
+        | program
+    p.program-description
+        != site.data.programs_text["conference-description"]
+    .program
+        - var m = programs.length;
+        - for (day in programs) {
+             - sessions = programs[day];
+             .heading-box
+                 a.day-heading
+                     != day
+                 - if (day == "Day 1") {
+                 span.day-date November 3, 2017
+                 - } else {
+                 span.day-date November 4, 2017
+                 - }
+             - n = sessions.length;
+             - for (var i = 0; i < n; i++) {
+                   - var session = sessions[i];
+                       + session(session["time"], session["title"], session["description"], session["speakers"], session["dim"])
+             - }
+        - }

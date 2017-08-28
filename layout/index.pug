@@ -15,6 +15,9 @@ block container
         - if (module == "speakers" && controls[module]) {
             include partial/speakers
         - }
+        - if (module == "programs" && controls[module]) {
+            include partial/programs
+        - }
         - if (module == "schedule" && controls[module]) {
             include partial/schedule
         - }
@@ -31,13 +34,6 @@ block container
             include partial/contact
         - }
     - }
-    // include partial/topics
-    // include partial/speakers
-    // include partial/schedule
-    // include partial/sponsors
-    // include partial/venue
-    // include partial/about
-    // include partial/contact
 
 block pagination
     include mixins/paginator

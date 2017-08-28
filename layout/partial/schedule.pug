@@ -1,59 +1,66 @@
-mixin section(time, title, description)
-    .section
-        .section-title
-            .section-time
+- var schedule = site.data.schedule;
+- var speakers = site.data.speakers;
+
+mixin speaker(name, photo, position, company)
+    .speaker
+        img.photo(src=photo)
+        span.name
+            != name
+        span.position
+            != position
+        span.company
+            != company
+
+mixin speech(speaker, title, description)
+    .speech
+        .speech-title
+            != title
+        .speech-description
+            != description
+
+mixin session(title, time, description, speeches)
+    .session
+        .left
+            .time
                 != time
-            - if (time) {
-                .section-time-mobile
-                    != time
+            .speakers
+                - var sessionSpeaker = []
+                each speech in speeches
+                    // get the speaker from the speaker database
+                    each speaker in speakers
+                        - if (speech["speaker"] == speaker["name"])
+                            - console.log(speaker)
+                            - sessionSpeaker.push(speaker)
+                each speaker in sessionSpeaker
+                    +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
+        .right
+            .session-title
+                != title
+            - if (description) {
+                .session-description
+                    != description
             - }
-            != title
-        .section-description
-            != description
+            each speech in speeches
+                .speech
+                    +speech(speech["speaker"], speech["title"], speech["description"])
 
-mixin dimsection(time, title, description)
-    .section.dim
-        .section-time
-            != time
-        .section-title
-            != title
-        .section-description
-            != description
-
-mixin subsection(title, description)
-    .subsection
-        .subsection-title
-            != title
-        .subsection-description
-            != description
 
 .module.module-schedule
-    - var programs = site.data.programs;
     a.module-title(name="schedule")
-        | Conference Program
+        | Schedule
     p.schedule-description
         != site.data.programs_text["conference-description"]
-    // p.schedule-subdescription
-    //     != site.data.programs_text["conference-subdescription"]
     .schedule
-        - var m = programs.length;
-        - for (day in programs) {
-             - sections = programs[day];
-             .heading-box
-                 a.day-heading
-                     != day
-                 - if (day == "Day 1") {
-                 span.day-date November 3, 2017
-                 - } else {
-                 span.day-date November 4, 2017
-                 - }
-             - n = sections.length;
-             - for (var i = 0; i < n; i++) {
-                   - var section = sections[i];
-                   - if (!section["dim"]) {
-                       + section(section["time"], section["title"], section["description"])
-                   - } else {
-                       + dimsection(section["time"], section["title"], section["description"])
-                   - }
-             - }
+        - for (day in schedule) {
+            - sessions = schedule[day];
+            .heading-box
+                a.day-heading
+                    != day
+                - if (day == "Day 1") {
+                span.day-date November 3, 2017
+                - } else {
+                span.day-date November 4, 2017
+                - }
+            each session in sessions
+               +session(session["title"], session["time"], session["description"], session["speeches"])
         - }
