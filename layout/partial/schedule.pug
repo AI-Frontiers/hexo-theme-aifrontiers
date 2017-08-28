@@ -14,6 +14,9 @@ mixin speaker(name, photo, position, company)
 mixin speech(speaker, title, description)
     .speech
         .speech-title
+            b
+                != speaker
+            | :&nbsp;
             != title
         .speech-description
             != description
