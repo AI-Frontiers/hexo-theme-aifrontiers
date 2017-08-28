@@ -19,6 +19,7 @@ mixin speech(speaker, title, description)
             != description
 
 mixin session(title, time, description, speeches)
+    - if (speeches) {
     .session
         .left
             .time
@@ -29,7 +30,6 @@ mixin session(title, time, description, speeches)
                     // get the speaker from the speaker database
                     each speaker in speakers
                         - if (speech["speaker"] == speaker["name"])
-                            - console.log(speaker)
                             - sessionSpeaker.push(speaker)
                 each speaker in sessionSpeaker
                     +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
@@ -43,7 +43,15 @@ mixin session(title, time, description, speeches)
             each speech in speeches
                 .speech
                     +speech(speech["speaker"], speech["title"], speech["description"])
-
+    - } else {
+        .session.dim
+            .left
+                .time
+                    != time
+            .right
+                .session-title
+                    != title
+    - }
 
 .module.module-schedule
     a.module-title(name="schedule")

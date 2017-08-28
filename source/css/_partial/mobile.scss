@@ -12,6 +12,9 @@ $mobile-width: 600px;
     .module-title,
     a.module-title,
     .speakers,
+    .programs-description,
+    .programs-subdescription,
+    .programs,
     .schedule-description,
     .schedule-subdescription,
     .schedule,
@@ -187,7 +190,7 @@ $mobile-width: 600px;
         }
     }
 
-    .module-schedule {
+    .module-programs {
         margin-top: 20px;
         .module-title {
             margin: 10px 0 0!important;
@@ -210,12 +213,12 @@ $mobile-width: 600px;
                 padding-right: 15px;
             }
         }
-        .schedule-description {
+        .programs-description {
             box-sizing: border-box;
             padding: 0 20px!important;
             margin-bottom: 8px;
         }
-        .schedule-subdescription {
+        .programs-subdescription {
             box-sizing: border-box;
             opacity: .55;
             padding: 0 20px!important;
@@ -234,6 +237,29 @@ $mobile-width: 600px;
             }
             .section-description {
                 font-size: 14px;
+            }
+        }
+    }
+
+    .module-schedule {
+        .session {
+            flex-direction: column;
+            &.dim {
+                .left {
+                    padding-bottom: 0;
+                }
+                .right {
+                    padding-top: 0;
+                }
+                .session-title {
+                    text-align: center;
+                }
+            }
+            .left {
+                border-right: none;
+                .speakers {
+                    margin-bottom: -35px;
+                }
             }
         }
     }
