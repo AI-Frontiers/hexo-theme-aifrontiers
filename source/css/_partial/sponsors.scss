@@ -13,12 +13,13 @@
         margin: auto;
         flex-flow: row wrap;
     }
-    .last-years-spnrs {
+    .last-years-spnrs, .this-years-spnrs {
         display: block;
         font-size: 14px;
         font-weight: bold;
         text-align: center;
-        margin-bottom: 12px;
+        margin-bottom: 6px;
+        margin-top: 12px;
     }
     .speaker-logo {
         width: 192px;

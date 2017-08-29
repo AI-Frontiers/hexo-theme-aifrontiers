@@ -3,16 +3,21 @@ mixin sponsor-card(name, img, height, offset)
     - offset = offset ? offset : 0;
     img.spnr-logo(src=img, alt=name, style="height: " + height + "px; top: " + offset + "px;")
 
+-
+    var lastSpnrs = site.data.sponsors["last-years-sponsors"]
+    var thisSpnrs = site.data.sponsors["this-years-sponsors"]
 .module.module-spnrs
     a.module-title(name="spnrs")
         | Sponsors
     span.last-years-spnrs
-        | Last Year's sponsors
+        | Last Year's Sponsors
     .spnrs
-        -
-            var spnrs = site.data.sponsors
-            var m = spnrs.length
-        each spnr in spnrs
+        each spnr in lastSpnrs
             +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
+    // span.this-years-spnrs
+    //     | This Year's Sponsors
+    // .spnrs
+    //     each spnr in thisSpnrs
+    //         +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
     a.button.spnrship-letter(href="sponsor-us")
         | Be Our sponsor
