@@ -16,13 +16,13 @@ include countdown
             span.deep-learning-and  Deep Learning &
             span.reinforcement-learning  Reinforcement Learning
         span.conf-info
-            // span.conf-date
-            //     != data["date"]
-            // span.sep
-            //     != ", "
+            span.conf-date
+                != data["date"]
+            span.sep
+                != ", "
             span.conf-location
                 != data["location"]
-        +countdown()
+        // +countdown()
         .buttons
             a.button.register-button(href=data["register-link"], alt="Register") Register
             a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") Watch Video
