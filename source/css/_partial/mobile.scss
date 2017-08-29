@@ -267,11 +267,25 @@ $mobile-width: 600px;
                     }
                 .speakers {
                     margin-top: 25px;
+                    .name {
+                        font-size: 14px;
+                        padding-bottom: 2px;
+                    }
+                    .position, .company {
+                        font-size: 14px;
+                        line-height: 17px;
+                    }
                 }
             }
             .right {
                 .session-title {
                     display: none;
+                }
+                .session-description {
+                    font-size: 14.5px;
+                }
+                .speech {
+                    font-size: 14.5px;
                 }
             }
         }

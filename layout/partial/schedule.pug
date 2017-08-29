@@ -15,9 +15,9 @@ mixin speech(speaker, title, description)
     - if (title) {
         .speech
             .speech-title
-                b
+                span.speaker-name
                     != speaker
-                | :&nbsp;
+                | &nbsp;:&nbsp;
                 != title
             .speech-description
                 != description
