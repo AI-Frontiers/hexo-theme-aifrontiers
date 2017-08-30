@@ -33,7 +33,9 @@ include countdown
     .speakers-bar(style="height: " + 100 / m + "vw;")
         - for (var i = 0; i < m; i++) {
             - speaker = site.data.speakers[i]
-            img.speaker-photo(src=speaker["photo"],style="height: " +  100 / m + "vw; width: " +  100 / m + "vw;")
+            - if (!speaker["hidden"]) {
+                img.speaker-photo(src=speaker["photo"],style="height: " +  100 / m + "vw; width: " +  100 / m + "vw;")
+            - }
         - }
     .bg-video
         #bgPlayer
