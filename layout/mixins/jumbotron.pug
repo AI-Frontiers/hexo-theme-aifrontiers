@@ -29,7 +29,10 @@ include countdown
             a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline") Watch Video
 
     - var speakers = site.data.speakers;
-    - var m = speakers.length;
+    - var m = 0;
+    each speaker in speakers
+        if (!speaker["hidden"])
+           - m++;
     .speakers-bar(style="height: " + 100 / m + "vw;")
         - for (var i = 0; i < m; i++) {
             - speaker = site.data.speakers[i]

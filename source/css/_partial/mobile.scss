@@ -294,6 +294,9 @@ $mobile-width: 600px;
     .module-sponsors {
         padding-top: 0!important;
         padding-bottom: 30px!important;
+        .level {
+          margin-top: 20px;
+        }
         .sponsorship-letter {
             margin-top: 5px;
         }
