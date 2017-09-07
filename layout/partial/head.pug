@@ -5,7 +5,10 @@ title
     block site_title
         = config.title
 block description
-    meta(name="description", content= config.description ? config.description : 'A Blog Powered By Hexo')
+    meta(name="og:title", content= config.title)
+    meta(name="og:type", content= "homepage")
+    meta(name="og:description", content= config.description)
+    meta(name="description", content= config.description)
 
 meta(name="viewport", content="width=device-width, initial-scale=1")
 link(rel="icon", href=url_for(theme.favicon))
