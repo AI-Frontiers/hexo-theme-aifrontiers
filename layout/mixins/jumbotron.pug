@@ -28,18 +28,15 @@ include countdown
             a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") Watch Video
             a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline") Watch Video
 
-    - var speakers = site.data.speakers;
-    - var m = 0;
+    - var speakers = site.data.speakers
+    - var m = 0
     each speaker in speakers
         if (!speaker["hidden"])
-           - m++;
+           - m++
     .speakers-bar(style="height: " + 100 / m + "vw;")
-        - for (var i = 0; i < m; i++) {
-            - speaker = site.data.speakers[i]
-            - if (!speaker["hidden"]) {
-                img.speaker-photo(src=speaker["photo"],style="height: " +  100 / m + "vw; width: " +  100 / m + "vw;")
-            - }
-        - }
+        each speaker in speakers
+            if (!speaker["hidden"])
+                img.speaker-photo(src=speaker["photo"], style="height: " +  100 / m + "vw; width: " +  100 / m + "vw;")
     .bg-video
         #bgPlayer
 
