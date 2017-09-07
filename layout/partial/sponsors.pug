@@ -12,6 +12,8 @@ mixin sponsor-card(name, img, height, offset)
 .module.module-spnrs
     a.module-title(name="spnrs")
         | Sponsors
+    a.button.spnrship-letter(href="sponsor-us")
+        | Be Our sponsor
     // span.last-years-spnrs
     //     | Last Year's Sponsors
     // .spnrs
@@ -47,5 +49,3 @@ mixin sponsor-card(name, img, height, offset)
         .spnrs
             each spnr in knowledge
                 +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
-    a.button.spnrship-letter(href="sponsor-us")
-        | Be Our sponsor
