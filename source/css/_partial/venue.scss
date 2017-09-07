@@ -1,5 +1,5 @@
 .module-venue {
-    background: #848ba3;
+    background-color: #F6F6F7;
 
     .wrapper {
     width: 100%;
@@ -18,9 +18,6 @@
         height: 300px;
     }
     .venue {
-        .venue-mask {
-            display: none;
-        }
         min-width: 500px;
         box-sizing: border-box;
         padding: 45px 25px;
@@ -30,6 +27,9 @@
         background: url(/images/santa-clara-convention-center.jpg);
         background-size: cover;
         background-position: left center;
+        .venue-mask {
+            display: none;
+        }
         .conf-info {
             width: 220px;
             font-family: $Avenir-Next;
@@ -64,6 +64,52 @@
             bottom: 40px;
             color: white;
             letter-spacing: .7px;
+        }
+    }
+    .hotel {
+        display: flex;
+        flex-direction: row;
+        box-sizing: border-box;
+        padding: 13px 62px;
+        max-width: 800px;
+        margin: auto;
+        .left {
+            width: 65%;
+            span.suggested-hotel {
+                font-family: $Avenir-Next;
+                font-size: 15px;
+                color: #083365;
+                line-height: 32px;
+            }
+            .hotel-name {
+                font-family: $Avenir-Next;
+                font-weight: 600;
+                font-size: 31px;
+                color: #0070E8;
+                line-height: 32px;
+                padding-top: 8px;
+                padding-bottom: 3px;
+            }
+            .hotel-address {
+                font-family: $Avenir-Next;
+                font-size: 15px;
+                color: #083365;
+                line-height: 32px;
+            }
+        }
+        .right {
+            display: flex;
+            width: 35%;
+            justify-content: flex-end;
+            align-items: center;
+            .button {
+                border: 1px solid #083365;
+                border-radius: 4px;
+                &:hover {
+                    background-color: #083365;
+                    color: #F6F6F7;
+                }
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
+- var venue = site.data.venue
+- var hotel = site.data.hotel
 .module.module-venue
-    - var data = site.data.venue_text
     a.module-title(name="venue",style="visibility: hidden")
     .wrapper
         .map-wrapper
@@ -13,10 +14,25 @@
                 //     span.time-content.content 8:30am - 8:30pm
             .venue-info
                 span.venue-name
-                    != data["venue-name"]
+                    != venue["name"]
                 span.venue-address
-                    != data["address-first-line"]
+                    != venue["address-first-line"]
                     br
-                    != data["address-second-line"]
+                    != venue["address-second-line"]
             - data = site.data.header
             a.button.register-button(href=data["register-link"]) register
+    .hotel
+        .left
+            span.suggested-hotel
+                | Suggested Hotel
+            .hotel-name
+                != hotel["name"]
+            .hotel-address
+                span.hotel-address-first-line
+                != hotel["address-first-line"] + ", "
+                span.hotel-address-first-line
+                != hotel["address-second-line"]
+        .right
+            a.button(href=hotel["link"])
+                | Check Availability
+
