@@ -12,6 +12,7 @@ $mobile-width: 600px;
     .module-title,
     a.module-title,
     .speakers,
+    .moderators,
     .programs-description,
     .programs-subdescription,
     .programs,
@@ -167,7 +168,7 @@ $mobile-width: 600px;
         .module-title {
             margin: 10px 0 0!important;
         }
-        .speakers {
+        .speakers, .moderators {
             justify-content: center;
         }
         .speaker {
@@ -265,7 +266,7 @@ $mobile-width: 600px;
                     .session-title {
                         display: block;
                     }
-                .speakers {
+                .speakers, .moderators {
                     margin-top: 25px;
                     .name {
                         font-size: 14px;

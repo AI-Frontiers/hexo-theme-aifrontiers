@@ -15,8 +15,13 @@ mixin speaker(name, photo, position, company)
         | Speakers
     .speakers
         each speaker in speakers
-            - if (!speaker["hidden"]) {
+            if (!speaker["hidden"] && !speaker["moderator"])
                 +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
-            - }
+    a.module-title(name="speakers")
+        | Moderators
+    .moderators
+        each speaker in speakers
+            if (!speaker["hidden"] && speaker["moderator"])
+                +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
         // add more-to-come below
         // +speaker("","/images/speakers/more-to-come.jpg","","")

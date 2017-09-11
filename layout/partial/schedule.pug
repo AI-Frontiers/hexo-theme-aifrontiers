@@ -12,7 +12,7 @@ mixin speaker(name, photo, position, company)
             != company
 
 mixin speech(speaker, title, description)
-    - if (title) {
+    if title
         .speech
             .speech-title
                 span.speaker-name
@@ -21,39 +21,35 @@ mixin speech(speaker, title, description)
                 != title
             .speech-description
                 != description
-    - }
 
 mixin session(title, time, description, speeches)
     - if (speeches || description) {
-    .session
-        .left
-            .time
-                != time
-            .session-title
-                != title
-            - if (speeches) {
-                .speakers
-                    - var sessionSpeaker = []
+        .session
+            .left
+                .time
+                    != time
+                .session-title
+                    != title
+                if speeches
+                    .speakers
+                        - var sessionSpeaker = []
+                        each speech in speeches
+                            // get the speaker from the speaker database
+                            each speaker in speakers
+                                - if (speech["speaker"] == speaker["name"])
+                                    - sessionSpeaker.push(speaker)
+                        each speaker in sessionSpeaker
+                            +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
+            .right
+                .session-title
+                    != title
+                if description
+                    .session-description
+                        != description
+                if speeches
                     each speech in speeches
-                        // get the speaker from the speaker database
-                        each speaker in speakers
-                            - if (speech["speaker"] == speaker["name"])
-                                - sessionSpeaker.push(speaker)
-                    each speaker in sessionSpeaker
-                        +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
-            - }
-        .right
-            .session-title
-                != title
-            - if (description) {
-                .session-description
-                    != description
-            - }
-            - if (speeches) {
-                each speech in speeches
-                    .speech
-                        +speech(speech["speaker"], speech["title"], speech["description"])
-            - }
+                        .speech
+                            +speech(speech["speaker"], speech["title"], speech["description"])
     - } else {
         .session.dim
             .left

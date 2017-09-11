@@ -10,7 +10,7 @@
         margin: auto;
         margin-bottom: 25px;
     }
-    .speakers {
+    .speakers, .moderators {
         display: flex;
         box-sizing: border-box;
         margin: auto;
@@ -51,13 +51,6 @@
         color: white;
         text-align: center;
         white-space: nowrap;
-    }
-    .speaker:last-of-type {
-        transform-origin: center center;
-        .photo {
-            margin: auto;
-            margin-top: 0!important;
-        }
     }
 }
 
