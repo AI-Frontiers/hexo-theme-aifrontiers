@@ -1,20 +1,10 @@
 mixin mailChimp()
-    // form.subscribe-form(action="//AIFrontiers.us14.list-manage.com/subscribe/post?u=de145912b09007eeae1b898e9&amp;id=c9295d15d9",method="post",id="mc-embedded-subscribe-form",name="mc-embedded-subscribe-form",class="validate",target="_blank",novalidate)
-    //     input.email(placeholder="Enter your email",type="email",value="",name="EMAIL",required,id="mce-EMAIL")
-    //     div(id="mce-responses",style="display:none")
-    //         div(class="response",id="mce-error-response",style="display:none")
-    //         div(class="response",id="mce-error-success",style="display:none")
-    //     input(type="submit",value="Subscribe",name="subscribe",id="mc-embedded-subscribe",class="button")
-    #mc_embed_signup
-        form#mc-embedded-subscribe-form(action='//AIFrontiers.us14.list-manage.com/subscribe/post?u=de145912b09007eeae1b898e9&id=c9295d15d9', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate)
-            #mc_embed_signup_scroll
-                .mc-field-group
-                    input#mce-EMAIL.required.email(placeholder="Enter your email", type='email', value='', name='EMAIL')
-            #mce-responses.clear
-                #mce-error-response.response(style='display:none')
-                #mce-success-response.response(style='display:none')
-            // real people should not fill this in and expect good things - do not remove this or risk form bot signups
-            div(style='position: absolute; left: -5000px;', aria-hidden='true')
-                input(type='text', name='b_de145912b09007eeae1b898e9_c9295d15d9', tabindex='-1', value='')
-            .clear
-                input#mc-embedded-subscribe(type='submit', value='Subscribe', name='subscribe')
+    form#mc-embedded-subscribe-form(action='//AIFrontiers.us14.list-manage.com/subscribe/post?u=de145912b09007eeae1b898e9&id=c9295d15d9', method='post', name='mc-embedded-subscribe-form', target='_blank', novalidate)
+        input#mce-EMAIL.required.email(placeholder="Enter your email", type='email', value='', name='EMAIL')
+        #mce-responses.clear
+            #mce-error-response.response(style='display:none')
+            #mce-success-response.response(style='display:none')
+        // real people should not fill this in and expect good things - do not remove this or risk form bot signups
+        div(style='position: absolute; left: -5000px;', aria-hidden='true')
+            input(type='text', name='b_de145912b09007eeae1b898e9_c9295d15d9', tabindex='-1', value='')
+        input#mc-embedded-subscribe(type='submit', value='Subscribe', name='subscribe')
