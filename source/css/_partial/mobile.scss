@@ -469,28 +469,28 @@ $mobile-width: 600px;
         }
         form {
             width: 100%;
-            // flex-direction: column;
+            flex-direction: column;
             input {
                 height: 40px;
                 font-size: 15px;
                 line-height: 18px;
                 padding-left: 10px;
                 padding-right: 10px;
-                // padding-top: 2px;
+                padding-top: 2px;
             }
             input[type="email"] {
                 width: 100%;
                 min-width: 200px;
                 margin-right: 0;
-                // margin-bottom: 10px;
-                border-top-right-radius: 0;
-                border-bottom-right-radius: 0;
+                margin-bottom: 10px;
+                // border-top-right-radius: 0;
+                // border-bottom-right-radius: 0;
             }
             input[type="submit"] {
                 width: 25%;
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-                padding: 0 10px!important;
+                // border-top-left-radius: 0;
+                // border-bottom-left-radius: 0;
+                // padding: 0 10px!important;
             }
         }
     }
