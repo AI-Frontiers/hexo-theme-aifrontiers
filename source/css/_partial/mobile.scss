@@ -460,7 +460,7 @@ $mobile-width: 600px;
         box-sizing: border-box;
 
         .text {
-            font-size: 24px!important;
+            font-size: 22px!important;
             margin-bottom: 8px!important;
         }
         .subscribe-wrap {
@@ -469,19 +469,28 @@ $mobile-width: 600px;
         }
         form {
             width: 100%;
+            // flex-direction: column;
             input {
                 height: 40px;
                 font-size: 15px;
                 line-height: 18px;
                 padding-left: 10px;
                 padding-right: 10px;
+                // padding-top: 2px;
             }
             input[type="email"] {
-                width: 65%;
+                width: 100%;
                 min-width: 200px;
+                margin-right: 0;
+                // margin-bottom: 10px;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
             }
             input[type="submit"] {
-                width: 30%;
+                width: 25%;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                padding: 0 10px!important;
             }
         }
     }
