@@ -3,26 +3,8 @@ conf_theme: Deep Learning and Beyond
 conf_date: November 3-4, 2017
 conf_venue: Santa Clara Convention Center, California
 
-#menu_main:
-#    "Topics": "#topics"
-#    "Speakers": "#speakers"
-#    "Schedule": "#schedule"
-#    "Register": "#"
-#    "Sponsor": "/sponsor-us"
-#    "Venue": "#venue"
-
-#menu_sub:
-#    "Last Conference": "https://2017.aifrontiers.com/"
-#    "About Us": "#about"
-#    "Contact Us": "#contact"
-#    #Rss: /atom.xml
-
 favicon: /images/favicon.png
 logo: /images/logo-horizontal.png
-
-# Comment
-# disqus:
-# duoshuo:
 
 # Google Analytics:
 ga: UA-88635436-2

@@ -16,7 +16,7 @@
         margin: auto;
         max-width: 1250px;
         flex-flow: row wrap;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         .news-card {
             display: flex;
@@ -48,12 +48,12 @@
                 padding: 0 10px;
                 a {
                     transition: all .218s;
-                    &:before {
-                        content: "“";
-                    }
-                    &:after {
-                        content: "”";
-                    }
+                    // &:before {
+                    //     content: "“";
+                    // }
+                    // &:after {
+                    //     content: "”";
+                    // }
                     &:hover {
                         text-decoration: underline;
                     }
