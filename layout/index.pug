@@ -2,8 +2,6 @@ extends partial/layout
 
 block jumbotron
     include mixins/jumbotron
-    // +videos()
-    +subscribe()
 
 block container
     - var controls = site.data.module_controls;
@@ -14,6 +12,7 @@ block container
         - }
         - if (module == "speakers" && controls[module]) {
             include partial/speakers
+            +subscribe()
         - }
         - if (module == "programs" && controls[module]) {
             include partial/programs
@@ -44,3 +43,10 @@ block pagination
 
 block copyright
     include partial/copyright
+
+mixin subscribe()
+    div.subscribe
+        .subscribe-wrap
+            span.text
+                | Sign up for news updates
+            +mailChimp()

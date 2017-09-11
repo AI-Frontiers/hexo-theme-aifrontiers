@@ -45,10 +45,3 @@ mixin videos()
         span.video-heading
             != data["intro-video-title"]
         iframe(src="https://www.youtube.com/embed/WiD_uWWfqaw?ecver=2",width="408",height="240",frameborder="0",allowfullscreen)
-
-mixin subscribe()
-    div.subscribe
-        .subscribe-wrap
-            span.quote.unselectable
-                | #{theme.quote}
-            +mailChimp()

@@ -2,18 +2,20 @@
 
 @import "variables";
 @import "normalize";
+
+// fonts
 @import "_fonts/Helvetica-Neue";
 @import "_fonts/Avenir-Next";
 @import "_fonts/Audiowide";
+
 @import "_partial/base";
-@import "_partial/patterns";
 @import "_partial/header";
 @import "_partial/post-list";
 @import "_partial/post";
-@import "_partial/jobs";
 @import "_partial/footer";
 @import "_partial/copyright";
 @import "_partial/jumbotron";
+@import "_partial/subscribe";
 @import "_partial/countdown";
 @import "_partial/module";
 @import "_partial/topics";
