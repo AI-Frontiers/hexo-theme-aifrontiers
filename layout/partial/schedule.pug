@@ -40,15 +40,6 @@ mixin session(title, time, description, speeches)
                                     - sessionSpeaker.push(speaker)
                         each speaker in sessionSpeaker
                             +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
-                    .moderators
-                        - var sessionModerators = []
-                        each moderator in speech["moderators"]
-                            // get the speaker from the speaker database
-                            each speaker in speakers
-                                - if (speech["speaker"] == speaker["name"])
-                                    - sessionSpeaker.push(speaker)
-                        each speaker in sessionSpeaker
-                            +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
             .right
                 .session-title
                     != title
