@@ -452,4 +452,37 @@ $mobile-width: 600px;
             display: block!important;
         }
     }
+
+    .subscribe {
+        width: 100%;
+        margin: 30px 0 0 0;
+        padding: 8px;
+        box-sizing: border-box;
+
+        .text {
+            font-size: 24px!important;
+            margin-bottom: 8px!important;
+        }
+        .subscribe-wrap {
+            padding: 25px 30px;
+            min-width: 100%!important;
+        }
+        form {
+            width: 100%;
+            input {
+                height: 40px;
+                font-size: 15px;
+                line-height: 18px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            input[type="email"] {
+                width: 65%;
+                min-width: 200px;
+            }
+            input[type="submit"] {
+                width: 30%;
+            }
+        }
+    }
 }

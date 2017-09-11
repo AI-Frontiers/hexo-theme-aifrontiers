@@ -1,12 +1,19 @@
 .subscribe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
     .subscribe-wrap {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        border: #DDD 5px dashed;
+        width: 60%;
+        min-width: 530px;
         padding: 35px 46px;
         box-sizing: border-box;
     }
@@ -22,7 +29,13 @@
     }
     form {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
         flex-direction: row;
+        input {
+            height: 50px;
+        }
         input[type="email"] {
             font-family: $Helvetica-Neue;
             font-size: 14px;
@@ -31,9 +44,10 @@
             box-sizing: border-box;
             border: 1px solid #FF5D82;
             border-radius: 4px;
-            width: 300px;
-            padding-left: 5px;
-            padding-right: 5px;
+            width: 40%;
+            min-width: 300px;
+            padding-left: 10px;
+            padding-right: 10px;
             margin-right: 20px;
         }
         input[type="submit"] {
