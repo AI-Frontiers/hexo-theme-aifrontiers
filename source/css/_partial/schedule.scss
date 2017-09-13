@@ -171,6 +171,10 @@
             flex-direction: column;
             justify-content: start;
         }
+        .speaker .narrow {
+            font-family: "Helvetica Narrow";
+            letter-spacing: -.3px;
+        }
         .speaker .photo {
             width: 75px;
             height: 75px;

@@ -169,3 +169,13 @@ script(type='text/javascript').
       newDate.setDate(45);
       $('.counter').countdown({targetDate: newDate});
     });
+
+script(type='text/javascript').
+    $(document).ready(function() {
+        $.each($(".speakers span"), function(index, el){
+            $el = $(el);
+            if(el.scrollWidth > $el.parent().width()+1) {
+                $el.addClass("narrow")
+            }
+        });
+    });
