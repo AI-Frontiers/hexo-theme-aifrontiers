@@ -69,6 +69,10 @@
         flex-direction: row;
         border: solid 1px #E2E2E2;
         border-top: 0;
+        a {
+          color: #0070E8;
+          text-decoration: underline;
+        }
         &.dim {
             background: #FAFAFA;
             * {
@@ -131,7 +135,9 @@
             font-size: 13px;
             line-height: 22px;
             color: #083365;
-            ul li {
+            ul li, ol li {
+                padding-left: 15px;
+                text-indent: -15px;
                 list-style-position: inside;
             }
         }
@@ -173,7 +179,7 @@
         }
         .speaker .narrow {
             font-family: "Helvetica Narrow";
-            letter-spacing: -.3px;
+            letter-spacing: -1px;
             transform: scaleY(1.1);
         }
         .speaker .photo {
