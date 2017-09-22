@@ -36,8 +36,12 @@ mixin session(time, title, description, speakers, dim)
                      != day
                  - if (day == "Day 1") {
                  span.day-date November 3, 2017
-                 - } else {
+                 - }
+                 - if (day == "Day 2") {
                  span.day-date November 4, 2017
+                 - }
+                 - if (day == "Day 3") {
+                 span.day-date November 5, 2017
                  - }
              - n = sessions.length;
              - for (var i = 0; i < n; i++) {
