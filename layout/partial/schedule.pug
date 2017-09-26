@@ -23,34 +23,70 @@ mixin speech(speaker, title, description)
                 != description
 
 mixin session(title, time, description, speeches)
-    - if (speeches || description) {
-        .session
-            .left
-                .time
-                    != time
-                .session-title
-                    != title
-                if speeches
-                    .speakers
-                        - var sessionSpeaker = []
+    if (speeches || description)
+        - if (title.indexOf("Banquet") == -1) {
+            .session
+                .left
+                    .time
+                        != time
+                    .session-title
+                        != title
+                    if speeches
+                        .speakers
+                            - var sessionSpeaker = []
+                            each speech in speeches
+                                each speaker in speakers
+                                    - if (speech["speaker"] == speaker["name"])
+                                        - sessionSpeaker.push(speaker)
+                            each speaker in sessionSpeaker
+                                +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
+                .right
+                    .session-title
+                        != title
+                    if description
+                        .session-description
+                            != description
+                    if speeches
                         each speech in speeches
-                            // get the speaker from the speaker database
-                            each speaker in speakers
-                                - if (speech["speaker"] == speaker["name"])
-                                    - sessionSpeaker.push(speaker)
-                        each speaker in sessionSpeaker
-                            +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
-            .right
-                .session-title
-                    != title
-                if description
-                    .session-description
-                        != description
-                if speeches
-                    each speech in speeches
-                        .speech
-                            +speech(speech["speaker"], speech["title"], speech["description"])
-    - } else {
+                            .speech
+                                +speech(speech["speaker"], speech["title"], speech["description"])
+        - } else {
+            .session.banquet
+                .left
+                    .time
+                        != time
+                    .session-title
+                        != title
+                    if speeches
+                        .speakers
+                            - var sessionSpeaker = []
+                            each speech in speeches
+                                each speaker in speakers
+                                    - if (speech["speaker"] == speaker["name"])
+                                        - sessionSpeaker.push(speaker)
+                            each speaker in sessionSpeaker
+                                +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
+                    .banquet-images
+                        img(src="/images/banquet-1.jpg", alt="banquet")
+                        img(src="/images/banquet-2.jpg", alt="banquet")
+                .right
+                    .session-title
+                        != title
+                    if speeches
+                        span.keynote-speech
+                            | Keynote speech
+                        each speech in speeches
+                            .speech
+                                +speech(speech["speaker"], speech["title"], speech["description"])
+                    if description
+                        .session-description
+                            br
+                            b Banquet and Networking
+                            br
+                            != description
+
+        - }
+    else
         .session.dim
             .left
                 .time
@@ -58,7 +94,6 @@ mixin session(title, time, description, speeches)
             .right
                 .session-title
                     != title
-    - }
 
 .module.module-schedule
     a.module-title(name="schedule")

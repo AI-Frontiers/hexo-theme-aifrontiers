@@ -1,9 +1,13 @@
 doctype
-html(lang=config.language)
+html(lang=config.language, prefix="og: http://ogp.me/ns#")
     - data = site.data.header
     head
         include head
     body
+        // Google Tag Manager (noscript)
+        noscript
+            iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-K869LBB", height="0", width="0", style="display:none;visibility:hidden")
+        // End Google Tag Manager (noscript)
         .wrap
             header
                 .header-wrap
@@ -25,3 +29,4 @@ html(lang=config.language)
                 block pagination
                 block copyright
         include scripts
+

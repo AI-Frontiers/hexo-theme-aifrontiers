@@ -5,10 +5,10 @@ title
     block site_title
         = config.title
 block description
-    meta(name="og:title", content= config.title)
-    meta(name="og:type", content= "homepage")
-    meta(name="og:description", content= config.description)
-    meta(name="description", content= config.description)
+    meta(property="og:title", content= config.title)
+    meta(property="og:image", content="//www.aifrontiers.com/images/poster.jpg")
+    meta(property="og:description", content= config.description)
+    meta(property="og:url", content= "//www.aifrontiers.com")
 
 meta(name="viewport", content="width=device-width, initial-scale=1")
 link(rel="icon", href=url_for(theme.favicon))
@@ -18,6 +18,12 @@ link(rel="stylesheet", href=url_for("vendor/slickNav/slicknav.css"))
 link(rel="stylesheet", href=url_for("vendor/jquery-modal/jquery.modal.css"), type="text/css", media="screen")
 link(rel="stylesheet", href=url_for("css/main.css"))
 link(href="https://fonts.googleapis.com/css?family=Libre+Baskerville",rel="stylesheet")
+
+// Google Tag Manager
+script.
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K869LBB');
+// End Google Tag Manager
+
 
 - var xml = config.url + '/atom.xml'
     link(rel="search", type="application/opensearchdescription+xml", href=xml, title=config.title)
