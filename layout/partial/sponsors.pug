@@ -35,17 +35,17 @@ mixin sponsor-card(name, img, height, offset)
         .spnrs
             each spnr in gold
                 +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
-    if media
-        span.level
-            | Media Partner
-        .spnrs
-            each spnr in media
-                +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
     if knowledge
         span.level
             | Knowledge Partner
         .spnrs
             each spnr in knowledge
+                +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
+    if media
+        span.level
+            | Media Partner
+        .spnrs
+            each spnr in media
                 +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
     a.button.spnrship-letter(href="sponsor-us")
         | Be Our sponsor
