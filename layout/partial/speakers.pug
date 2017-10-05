@@ -17,7 +17,7 @@ mixin speaker(name, photo, position, company)
         each speaker in speakers
             if (!speaker["hidden"] && !speaker["moderator"])
                 +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
-    a.module-title(name="speakers")
+    a.moderator-title
         | Moderators
     .moderators
         each speaker in speakers

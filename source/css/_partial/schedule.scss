@@ -39,7 +39,7 @@
     .heading-box {
         display: block;
         box-sizing: border-box;
-        padding: 20px 28px 22px;
+        padding: 0 28px 22px;
         margin: auto;
         width: 100%;
         font-size: 22px;
@@ -52,6 +52,7 @@
         letter-spacing: .5px;
         align-content: baseline;
         a {
+            padding-top: 20px;
             color: white;
         }
         .day-heading {
@@ -59,6 +60,7 @@
         }
         .day-date {
             float: right;
+            padding-top: 20px;
             font-size: 18px;
         }
     }
@@ -209,14 +211,14 @@
         }
 
         .speaker .name {
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 600;
             line-height: 15px;
         }
 
         .speaker .position,
         .speaker .company {
-            font-size: 10px;
+            font-size: 11px;
             line-height: 13px;
         }
 

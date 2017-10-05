@@ -10,6 +10,17 @@
         margin: auto;
         margin-bottom: 25px;
     }
+    .moderator-title {
+        display: block;
+        color: white;
+        font-weight: 600;
+        text-align: center;
+        font-size: 25px;
+        width: 100%;
+        margin: auto;
+        margin-top: 25px;
+        margin-bottom: 25px;
+    }
     .speakers, .moderators {
         display: flex;
         box-sizing: border-box;
