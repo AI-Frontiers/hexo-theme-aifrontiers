@@ -16,7 +16,6 @@ script.
   gtag('config', 'UA-88635436-1');
 
 script(type='text/javascript',src=url_for("vendor/jquery/jquery.min.js"))
-// script(type='text/javascript',src=url_for("vendor/slick/slick.min.js"))
 script(type='text/javascript',src=url_for("vendor/slickNav/jquery.slicknav.min.js"))
 script(type='text/javascript',src=url_for("vendor/jquery-modal/jquery.modal.js"))
 script(type='text/javascript',src="https://player.vimeo.com/api/player.js")
@@ -31,47 +30,47 @@ script(type='text/javascript').
     })
 
 script(type='text/javascript').
-   var bgPlayer = false;
-   var fgPlayer = false;
-   var fgPlayerOptions = {
-       id: 227828879,
-       autoplay: false,
-       title: false,
-       height: 500,
-       loop: false
-   };
-   var bgPlayerOptions = {
-       id: 227859594,
-       autoplay: true,
-       title: false,
-       loop: true
-   };
-    if (window.mobilecheck()) {
-       var fgPlayerOptions = {
+    if ($('body').hasClass('index')) {
+        var bgPlayer = false;
+        var fgPlayer = false;
+        var fgPlayerOptions = {
            id: 227828879,
            autoplay: false,
            title: false,
-           height: 220,
+           height: 500,
            loop: false
-       };
-   }
-   else {
-       bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
-       bgPlayer.setVolume(0);
-   }
-   $("#fgPlayer").on($.modal.BEFORE_OPEN, function(event, modal) {
-       fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
-       if (bgPlayer) bgPlayer.pause();
-   });
-   $("#fgPlayer").on($.modal.OPEN, function(event, modal) {
-       if (!window.mobilecheck()) {if (fgPlayer) fgPlayer.play()};
-   });
-   $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
-       if (bgPlayer) bgPlayer.play();
-   });
-    // var onPlay = function(data) {
-    // };
-    // bgPlayer.on('play', onPlay);
+        };
+        var bgPlayerOptions = {
+           id: 227859594,
+           autoplay: true,
+           title: false,
+           loop: true
+        };
+        if (window.mobilecheck()) {
+           var fgPlayerOptions = {
+               id: 227828879,
+               autoplay: false,
+               title: false,
+               height: 220,
+               loop: false
+           };
+        }
+        else {
+           bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
+           bgPlayer.setVolume(0);
+        }
+        $("#fgPlayer").on($.modal.BEFORE_OPEN, function(event, modal) {
+           fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
+           if (bgPlayer) bgPlayer.pause();
+        });
+        $("#fgPlayer").on($.modal.OPEN, function(event, modal) {
+           if (!window.mobilecheck()) {if (fgPlayer) fgPlayer.play()};
+        });
+        $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
+           if (bgPlayer) bgPlayer.play();
+        });
+    }
+
 script(type='text/javascript').
     (function ($) {
       $.fn.countdown = function(options){
@@ -161,15 +160,6 @@ script(type='text/javascript').
       $('.counter').countdown({targetDate: newDate});
     });
 
-// script(type='text/javascript').
-//     $(document).ready(function() {
-//         $.each($(".speakers span"), function(index, el){
-//             $el = $(el);
-//             if(el.scrollWidth > $el.parent().width()+1) {
-//                 $el.addClass("narrow")
-//             }
-//         });
-//     });
 script(type="text/javascript").
     _linkedin_data_partner_id = "91636";
 script(type="text/javascript").
@@ -178,6 +168,6 @@ script(type="text/javascript").
     b.type = "text/javascript";b.async = true;
     b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
     s.parentNode.insertBefore(b, s);})();
+
 noscript
     img(height="1", width="1", style="display:none;", alt="", src="https://dc.ads.linkedin.com/collect/?pid=91636&fmt=gif")
-
