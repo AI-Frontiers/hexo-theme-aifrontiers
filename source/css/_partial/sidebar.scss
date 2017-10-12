@@ -1,0 +1,17 @@
+aside.sidebar {
+    margin-top: 40px;
+    margin-left: 50px;
+    font-size: 90%;
+    span.tags-title, span.posts-title {
+        font-weight: 600;
+    }
+    .section {
+        margin-bottom: 10px;
+    }
+    ul, ol {
+        margin-left: 17px;
+        li {
+            list-style-position: outside;
+        }
+    }
+}

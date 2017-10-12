@@ -24,7 +24,7 @@ mixin speech(speaker, title, description)
 
 mixin session(title, time, description, speeches)
     if (speeches || description)
-        - if (title.indexOf("Banquet") == -1) {
+        if (title.indexOf("Banquet") == -1)
             .session
                 .left
                     .time
@@ -50,7 +50,7 @@ mixin session(title, time, description, speeches)
                         each speech in speeches
                             .speech
                                 +speech(speech["speaker"], speech["title"], speech["description"])
-        - } else {
+        else
             .session.banquet
                 .left
                     .time
@@ -84,8 +84,6 @@ mixin session(title, time, description, speeches)
                             b Banquet and Networking
                             br
                             != description
-
-        - }
     else
         .session.dim
             .left
@@ -112,15 +110,12 @@ mixin session(title, time, description, speeches)
             .heading-box
                 a.day-heading(name=day)
                     != day
-                - if (day == "Day 1") {
-                span.day-date November 3, 2017
-                - }
-                - if (day == "Day 2") {
-                span.day-date November 4, 2017
-                - }
-                - if (day == "Day 3") {
-                span.day-date November 5, 2017
-                - }
+                if (day == "Day 1")
+                    span.day-date November 3, 2017
+                if (day == "Day 2")
+                    span.day-date November 4, 2017
+                if (day == "Day 3")
+                    span.day-date November 5, 2017
             each session in sessions
                +session(session["title"], session["time"], session["description"], session["speeches"])
         - }

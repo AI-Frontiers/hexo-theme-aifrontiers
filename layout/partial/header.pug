@@ -1,0 +1,14 @@
+- data = site.data.header
+header
+    .header-wrap
+        .logo-group
+            a.logo-link(href=url_for())
+                img(src=url_for(theme.logo) alt="logo")
+            span.conf-date November 3-5, 2017
+        .header-right
+            .navigation
+                include nav-main
+                include nav-sub
+                include nav-hidden
+            include socialbar
+            a.button.buy-tickets(href=data["register-link"]) Register

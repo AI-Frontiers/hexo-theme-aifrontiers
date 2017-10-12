@@ -1,36 +1,50 @@
-mixin postInfo(item)
-    .post-info
-        // != full_date(item.date, 'll')
-        if item.from && (is_home() || is_post())
-            a.post-from(href=item.from target="_blank" title=item.from) 翻译 · 原文地址
-
-//- Index Page
 mixin posts()
-    ul.home.post-list.container-left
-        - page.posts.each(function (item) {
-            li.post-list-item
-                article.post-block
-                    +postInfo(item)
-                    h2.post-title
-                        a.post-title-link(href= url_for(item.path))
-                            != item.title
-                    if item.feature
-                        if item.feature.substring(0,8).toLowerCase() == "youtube/"
-                            a.post-feature
-                                iframe(src="//www.youtube.com/embed/"+ item.feature.substring(8),frameborder="0",allowfullscreen="")
-                        else
-                            a.post-feature(href= url_for(item.path))
-                                img(src="/" + item.feature)
-                    .post-content
-                        != item.content
-                    //a.read-more(href= url_for(item.path))!= __('more')
+    ul.post-list.container-left
+        - site.posts.data = site.posts.data.sort(function(a, b){return new Date(b.date) - new Date(a.date);})
+        - site.posts.each(function (item) {
+            - pass = false
+            if page.tag
+                for tag in item.tags.data
+                    if (tag.name == page.tag)
+                        - pass = true
+            else
+                - pass = true
+
+            if pass
+                li.post-list-item
+                    article.post-block
+                        .post-info
+                            != full_date(item.date, 'll')
+                        h2.post-title
+                            a.post-title-link(href= url_for(item.path))
+                                != item.title
+                        if item.feature
+                            if item.feature.substring(0,8).toLowerCase() == "youtube:"
+                                a.post-feature
+                                    iframe(src="//www.youtube.com/embed/"+ item.feature.substring(8),frameborder="0",allowfullscreen="")
+                            else
+                                a.post-feature(href= url_for(item.path))
+                                    img(src=item.feature)
+                        .post-content
+                            != item.content
+                        //a.read-more(href= url_for(item.path))!= __('more')
+                        if item.tags.data.length != 0
+                            .post-tags
+                                span.post-tags-label
+                                    | Tags:&nbsp
+                                ul.post-tags-list
+                                    for tag in item.tags.data
+                                        li.post-tag
+                                            a(href="/tags/"+tag.name.replace(/\s+/g, '-'))
+                                                != tag.name
         - })
 
 //- Post Page
 mixin post(item)
-    .post
+    article.post
         article.post-block
-            +postInfo(item)
+            .post-info
+                != full_date(item.date, 'll')
             h1.post-title
                 != item.title
             if item.feature
@@ -39,6 +53,6 @@ mixin post(item)
                         iframe(src="//www.youtube.com/embed/"+ item.feature.substring(8),frameborder="0",allowfullscreen="")
                 else
                     .post-feature
-                        img(src="/" + item.feature)
+                        img(src=item.feature)
             .post-content
                 != item.content

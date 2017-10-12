@@ -1,27 +1,33 @@
+if page.layout
+    // page
+    - var type = page.layout
+else if page.tags
+    // post
+    - var type = "post"
+else if page.path == "index.html"
+    // index
+    - var type = "index"
+else if page.archive
+    // archive
+    - var type = "archive"
+else if page.category
+    // category
+    - var type = "category"
+else if page.tag
+    // tag
+    - var type = "tag"
+
 doctype
 html(lang=config.language, prefix="og: http://ogp.me/ns#")
-    - data = site.data.header
     head
         include head
-    body
+    body(class=type)
         // Google Tag Manager (noscript)
         noscript
             iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-K869LBB", height="0", width="0", style="display:none;visibility:hidden")
         // End Google Tag Manager (noscript)
         .wrap
-            header
-                .header-wrap
-                    .logo-group
-                        a.logo-link(href=url_for())
-                            img(src=url_for(theme.logo) alt="logo")
-                        span.conf-date November 3-5, 2017
-                    .header-right
-                        .navigation
-                            include nav-main
-                            include nav-sub
-                            include nav-hidden
-                        include socialbar
-                        a.button.buy-tickets(href=data["register-link"]) Register
+            include header
             block jumbotron
             main.container
                 block container
@@ -29,4 +35,3 @@ html(lang=config.language, prefix="og: http://ogp.me/ns#")
                 block pagination
                 block copyright
         include scripts
-

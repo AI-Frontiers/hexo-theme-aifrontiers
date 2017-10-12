@@ -1,17 +1,16 @@
 mixin session(time, title, description, speakers, dim)
-    - if (!session["dim"]) {
+    if (!session["dim"])
         .session
             .session-title
                 .session-time
                     != time
-                - if (time) {
+                if time
                     .session-time-mobile
                         != time
-                - }
                 != title
             .session-description
                 != description
-    - } else {
+    else
         .session.dim
             .session-time
                 != time
@@ -19,7 +18,6 @@ mixin session(time, title, description, speakers, dim)
                 != title
             .session-description
                 != description
-    - }
 
 - var programs = site.data.programs;
 .module.module-program

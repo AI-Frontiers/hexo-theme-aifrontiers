@@ -1,0 +1,19 @@
+aside.sidebar.container-right
+    .posts.section
+        span.posts-title
+            | All Posts
+        ul.posts-list
+            - site.posts.each(function (item) {
+                li.posts-list-item
+                    a(href=url_for(item.path))
+                        != item.title
+            - })
+    .tags.section
+        span.tags-title
+            | Tags
+        ul.tags-list
+            - site.tags.each(function (item) {
+                li.tags-list-item
+                    a(href="/tags/"+item.name.replace(/\s+/g, '-'))
+                        != item.name
+            - })

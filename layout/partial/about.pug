@@ -4,7 +4,6 @@
     .about
         p.about-description
             != site.data.about_us_text["top-text"]
-
         .wrapper
             .heading
                 | Conference Organizer
@@ -15,20 +14,17 @@
                     - var m = names.length;
                     span.title
                         != position + ":"
-                        - if (position != "Conference Chair") {
+                        if (position != "Conference Chair")
                             br
-                        - }
-                    - if (position == "Conference Chair") {
+                    if (position == "Conference Chair")
                         span.name
                             != " " + names[0]
                             br
-                    - }
-                    - else {
+                    else
                         - for (var i = 0; i < m; i++) {
                             span.name.indent
                                 != names[i]
                         - }
-                    - }
                 - }
         p.organizer-description
             != site.data.about_us_text["bottom-text"]
