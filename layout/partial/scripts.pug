@@ -169,5 +169,31 @@ script(type="text/javascript").
     b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
     s.parentNode.insertBefore(b, s);})();
 
+script(type="text/javascript").
+    $(".module-speakers .speakers .speaker").click(function(e) {
+        var target = $(e.target);
+        if (target.hasClass("close-button")) {
+            $details = target.parent();
+            $details.css("opacity", "0");
+            $details.css("display", "none");
+            $(this).css("cursor", "pointer");
+        }
+        else {
+            $details = $(".details", this);
+            $details.css("display", "flex");
+            $details.css("opacity", "1");
+            $(this).css("cursor", "auto");
+        }
+    });
+    $(document).keyup(function(e) {
+        $details = $(".module-speakers .speakers .speaker .details");
+        console.log(e.which);
+        if (e.which == 27) {
+            $details.css("opacity", "0");
+            $details.css("display", "none");
+            $details.parent().css("cursor", "pointer");
+        }
+    });
+
 noscript
     img(height="1", width="1", style="display:none;", alt="", src="https://dc.ads.linkedin.com/collect/?pid=91636&fmt=gif")

@@ -188,6 +188,41 @@ $mobile-width: 600px;
                 font-size: 18px!important;
                 line-height: 22px!important;
             }
+            .details {
+                overflow-y: scroll!important;
+                img.photo {
+                    width: 130px;
+                    height: 130px;
+                    margin-bottom: 10px;
+                }
+                .wrap {
+                    .name, .position, .company {
+                        font-size: 15px!important;
+                        line-height: 15px!important;
+                        br {
+                            display: none;
+                        }
+                    }
+                    .bio {
+                        font-size: 12px!important;
+                        padding: 8px 0!important;
+                        line-height: 20px!important;
+                    }
+                    .sessions {
+                        padding: 8px 0!important;
+                        .title {
+                            font-size: 16px!important;
+                            line-height: 20px!important;
+                            padding: 0;
+                        }
+                        .description {
+                            font-size: 12px!important;
+                            padding: 8px 0!important;
+                            line-height: 20px!important;
+                        }
+                    }
+                }
+            }
         }
     }
 

@@ -3,6 +3,7 @@
     background-color: #015EC3;
     width: 100%;
     padding: 25px 0;
+    user-select: none;
     .module-title {
         display: block;
         color: white;
@@ -34,29 +35,37 @@
     .speaker {
         display: flex;
         box-sizing: border-box;
+        justify-content: start;
+        align-items: center;
         margin-bottom: 40px;
         position: relative;
         width: 200px;
         flex-direction: column;
-        justify-content: start;
-        align-items: center;
+        // cursor: pointer;
     }
-    .speaker .photo {
+    .speaker > .photo {
+        box-sizing: border-box;
         width: 150px;
         height: 150px;
         border-radius: 1000px;
         margin-bottom: 16px;
         background-image: url(/images/speakers/placeholder.png);
         background-size: 100%;
+        border: #015EC3 3px solid;
     }
+    // .speakers .speaker > .photo {
+    //     transition: border .2s, opacity .2s;
+    //     &:hover {
+    //         border: rgba(255,255,255,.5) 3px solid;
+    //         opacity: .7;
+    //     }
+    // }
 
     .speaker .name {
         font-weight: 600;
     }
 
-    .speaker .name,
-    .speaker .position,
-    .speaker .company {
+    .speaker span {
         font-size: 15px;
         line-height: 18px;
         color: white;
@@ -68,6 +77,84 @@
         font-family: "Helvetica Narrow";
         letter-spacing: -1.4px;
         transform: scaleY(1.1);
+    }
+    .speaker .details {
+        display: flex;
+        display: none;
+        opacity: 0;
+        transition: opacity 2s;
+        flex-direction: column;
+        position: fixed;
+        z-index: 100;
+        width: 100vw;
+        height: 100vh;
+        box-sizing: border-box;
+        padding: 45px;
+        justify-content: start;
+        align-items: center;
+        background: rgba(0,0,0, .9);
+        left: 0;
+        top: 0;
+        .close-button {
+            position: fixed;
+            cursor: pointer;
+            font-size: 100px;
+            width: 58px;
+            height: 58px;
+            text-indent: 1000000px;
+            top: 10px;
+            right: 10px;
+            background:url(/images/cross-close-button.png) no-repeat 100% 100%;
+        }
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            max-width: 660px;
+            .photo {
+                box-sizing: border-box;
+                width: 150px;
+                height: 150px;
+                border-radius: 1000px;
+                margin-bottom: 16px;
+            }
+            span {
+                margin: 2px 0;
+            }
+            .bio {
+                padding: 24px 0;
+                width: 100%;
+                border-bottom: 1px solid rgba(255,255,255,.1);
+                line-height: 24px;
+                text-align: justify;
+            }
+            .sessions {
+                width: 100%;
+                padding: 24px 0;
+                span {
+                    display: block;
+                }
+                .title {
+                    font-size: 20px;
+                    line-height: 26px;
+                    text-align: left;
+                    padding-bottom: 10px;
+                }
+                .day {
+                    padding-right: 8px;
+                    font-weight: 600;
+                }
+                .day, .time {
+                    display: inline-block;
+                    color: #777;
+                }
+                .description {
+                    text-align: justify;
+                    line-height: 24px;
+                }
+            }
+        }
     }
 }
 

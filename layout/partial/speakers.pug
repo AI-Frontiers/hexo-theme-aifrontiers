@@ -1,4 +1,32 @@
-- var speakers = site.data.speakers
+-
+    var speakers = site.data.speakers
+    var schedule = site.data.schedule
+    var speeches = []
+    var dict = {}
+    for (day in schedule) {
+        for (i in schedule[day]) {
+            if (schedule[day][i]["speeches"]) {
+                currSpeeches = schedule[day][i]["speeches"];
+                for (j in currSpeeches) {
+                    currSpeeches[j]["day"] = day;
+                    currSpeeches[j]["time"] = schedule[day][i]["time"];
+                }
+                speeches = speeches.concat(currSpeeches);
+            }
+        }
+    }
+    for (idx in speeches) {
+        speech = speeches[idx];
+        if(speech["speaker"]) {
+            if (dict[speech["speaker"]]) {
+                dict[speech["speaker"]].push(speech);
+            }
+            else {
+                dict[speech["speaker"]] = [];
+                dict[speech["speaker"]].push(speech);
+            }
+        }
+    }
 
 mixin speaker(name, photo, position, company)
     .speaker
@@ -9,6 +37,31 @@ mixin speaker(name, photo, position, company)
             != position
         span.company
             != company
+        // .details
+        //     span.close-button
+        //         | ⨉
+        //     .wrap
+        //         img.photo(src=photo)
+        //         span.name
+        //             != name
+        //         span.position
+        //             != position
+        //         span.company
+        //             != company
+        //         span.bio
+        //             | Andrew Ng is VP & Chief Scientist of Baidu; Co-Chairman and Co-Founder of Coursera; and an Adjunct Professor at Stanford University.  In 2011 he led the development of Stanford University’s main MOOC (Massive Open Online Courses) platform and also taught an online Machine Learning class that was offered to over 100,000 students, leading to the founding of Coursera.
+        //         .sessions
+        //             if dict[name]
+        //                 each session in dict[name]
+        //                     .session
+        //                         span.day
+        //                             != session["day"]
+        //                         span.time
+        //                             != session["time"]
+        //                         span.title
+        //                             != session["title"]
+        //                         span.description
+        //                             != session["description"]
 
 .module.module-speakers
     a.module-title(name="speakers")
@@ -23,4 +76,3 @@ mixin speaker(name, photo, position, company)
         each speaker in speakers
             if (!speaker["hidden"] && speaker["moderator"])
                 +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
-        // +speaker("","/images/speakers/more-to-come.jpg","","")
