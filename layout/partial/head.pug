@@ -24,3 +24,11 @@ script.
 
 - var xml = config.url + '/atom.xml'
     link(rel="search", type="application/opensearchdescription+xml", href=xml, title=config.title)
+
+// Global site tag (gtag.js) - Google AdWords: 830904628
+script(async, src="https://www.googletagmanager.com/gtag/js?id=AW-830904628")
+script.
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-830904628');
