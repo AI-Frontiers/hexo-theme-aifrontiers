@@ -1,8 +1,6 @@
 include countdown
 
 .jumbotron
-    script.
-        console.log(window.url)
     - var data = site.data.header
     #fgPlayer(style="display: none")
     .jumbotron-wrap
@@ -22,7 +20,7 @@ include countdown
             span.conf-location
                 != data["location"]
         .buttons
-            a.button.register-button(href=data["register-link"], alt="Register") Register
+            a.button.register-button(href="/register", alt="Register") Register
             a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") Watch Video
             a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline") Watch Video
 

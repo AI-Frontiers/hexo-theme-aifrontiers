@@ -3,10 +3,13 @@
 doctype
 html(lang=config.language, prefix="og: http://ogp.me/ns#")
     head
-        include head
+        include partial/head
     body(class=type)
         // Google Tag Manager (noscript)
         noscript
             iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-K869LBB", height="0", width="0", style="display:none;visibility:hidden")
         // End Google Tag Manager (noscript)
-        window.location.replace("http://aifrontiers.eventbrite.com/");
+
+        - var data = site.data.header
+        script.
+            window.location.replace("!{data['register-link']}");
