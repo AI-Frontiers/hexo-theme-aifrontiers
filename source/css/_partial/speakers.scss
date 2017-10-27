@@ -41,7 +41,7 @@
         position: relative;
         width: 200px;
         flex-direction: column;
-        // cursor: pointer;
+        cursor: pointer;
     }
     .speaker > .photo {
         box-sizing: border-box;
@@ -53,13 +53,13 @@
         background-size: 100%;
         border: #015EC3 3px solid;
     }
-    // .speakers .speaker > .photo {
-    //     transition: border .2s, opacity .2s;
-    //     &:hover {
-    //         border: rgba(255,255,255,.5) 3px solid;
-    //         opacity: .7;
-    //     }
-    // }
+    .speaker > .photo {
+        transition: border .2s, opacity .2s;
+    }
+    .speaker:hover > .photo {
+        border: rgba(255,255,255,.5) 3px solid;
+        opacity: .85;
+    }
 
     .speaker .name {
         font-weight: 600;
@@ -82,6 +82,7 @@
         display: flex;
         display: none;
         opacity: 0;
+        overflow-y: scroll;
         transition: opacity 2s;
         flex-direction: column;
         position: fixed;
@@ -92,7 +93,7 @@
         padding: 45px;
         justify-content: start;
         align-items: center;
-        background: rgba(0,0,0, .9);
+        background: #015EC3;
         left: 0;
         top: 0;
         .close-button {
@@ -122,12 +123,19 @@
             span {
                 margin: 2px 0;
             }
-            .bio {
+            .bio .content {
                 padding: 24px 0;
                 width: 100%;
                 border-bottom: 1px solid rgba(255,255,255,.1);
                 line-height: 24px;
                 text-align: justify;
+            }
+            .bio .title {
+                display: block;
+                font-size: 20px;
+                line-height: 26px;
+                text-align: left!important;
+                padding-bottom: 10px;
             }
             .sessions {
                 width: 100%;
@@ -147,7 +155,7 @@
                 }
                 .day, .time {
                     display: inline-block;
-                    color: #777;
+                    color: rgba(255,255,255,.6);
                 }
                 .description {
                     text-align: justify;

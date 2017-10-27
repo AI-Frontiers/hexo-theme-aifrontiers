@@ -1,7 +1,8 @@
-mixin sponsor-card(name, img, height, offset)
+mixin sponsor-card(name, link, img, height, offset)
     - height = height ? height : 40;
     - offset = offset ? offset : 0;
-    img.spnr-logo(src=img, alt=name, style="height: " + height + "px; top: " + offset + "px;")
+    a(href=link)
+        img.spnr-logo(src=img, alt=name, style="height: " + height + "px; top: " + offset + "px;")
 
 -
     var diamond   = site.data.sponsors["diamond"]
@@ -22,30 +23,30 @@ mixin sponsor-card(name, img, height, offset)
             | Diamond
         .spnrs
             each spnr in diamond
-                +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
+                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
     if platinum
         span.level
             | Platinum
         .spnrs
             each spnr in platinum
-                +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
+                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
     if gold
         span.level
             | Gold
         .spnrs
             each spnr in gold
-                +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
+                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
     if knowledge
         span.level
             | Knowledge Partner
         .spnrs
             each spnr in knowledge
-                +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
+                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
     if media
         span.level
             | Media Partner
         .spnrs
             each spnr in media
-                +sponsor-card(spnr["name"], spnr["logo"], spnr["height"], spnr["offset"])
+                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
     a.button.spnrship-letter(href="sponsor-us")
         | Be Our sponsor

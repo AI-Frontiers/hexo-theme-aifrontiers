@@ -14,14 +14,16 @@ script.
   function gtag(){dataLayer.push(arguments)};
   gtag('js', new Date());
   gtag('config', 'UA-88635436-1');
-
-// Event tag for GoogleAds1013 conversion page
-script(type='text/javascript').
-  gtag('event', 'conversion', {
-      'send_to': 'AW-830904628/0S7YCISiw3YQtLKajAM',
-      'transaction_id': ''
-  });
-
+  var trackOutboundLink = function(url) {
+    console.log("Outbound!");
+    ga('send', 'event', 'outbound', 'click', url, {
+        'transport': 'beacon',
+        'hitCallback': function(){
+          console.log("callback");
+          document.location = url;
+      }
+    });
+  };
 
 script(type='text/javascript',src=url_for("vendor/jquery/jquery.min.js"))
 script(type='text/javascript',src=url_for("vendor/slickNav/jquery.slicknav.min.js"))
@@ -178,7 +180,7 @@ script(type="text/javascript").
     s.parentNode.insertBefore(b, s);})();
 
 script(type="text/javascript").
-    $(".module-speakers .speakers .speaker").click(function(e) {
+    $(".module-speakers .speakers .speaker, .module-speakers .moderators .speaker").click(function(e) {
         var target = $(e.target);
         if (target.hasClass("close-button")) {
             $details = target.parent();
@@ -194,8 +196,7 @@ script(type="text/javascript").
         }
     });
     $(document).keyup(function(e) {
-        $details = $(".module-speakers .speakers .speaker .details");
-        console.log(e.which);
+        $details = $(".module-speakers .speakers .speaker .details, .module-speakers .moderators .speaker .details");
         if (e.which == 27) {
             $details.css("opacity", "0");
             $details.css("display", "none");

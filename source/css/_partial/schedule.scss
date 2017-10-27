@@ -196,44 +196,52 @@
         position: relative;
         flex-flow: row wrap;
         justify-content: center;
-        .speaker {
-            display: flex;
-            box-sizing: border-box;
-            margin-bottom: 35px;
-            position: relative;
-            width: 50%;
-            flex-direction: column;
-            justify-content: start;
-            align-items: center;
-        }
-        .speaker .photo {
-            width: 75px;
-            height: 75px;
-            border-radius: 100%;
-            margin-bottom: 7px;
-            background-image: url(/images/speakers/placeholder.png);
-            background-size: 100%;
-        }
+    }
+    .moderator .title {
+        font-weight: bold;
+        padding-left: 60px;
+        font-size: 90%;
+    }
+    .moderator .speaker {
+        margin: auto;
+    }
+    .speaker {
+        display: flex;
+        box-sizing: border-box;
+        margin-bottom: 35px;
+        position: relative;
+        width: 50%;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+    }
+    .speaker .photo {
+        width: 75px;
+        height: 75px;
+        border-radius: 100%;
+        margin-bottom: 7px;
+        background-image: url(/images/speakers/placeholder.png);
+        background-size: 100%;
+    }
 
-        .speaker .name {
-            font-size: 11px;
-            font-weight: 600;
-            line-height: 15px;
-        }
+    .speaker .name {
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 15px;
+    }
 
-        .speaker .position,
-        .speaker .company {
-            font-size: 11px;
-            line-height: 13px;
-        }
+    .speaker .position,
+    .speaker .company {
+        font-size: 11px;
+        line-height: 13px;
+    }
 
-        .speaker .name,
-        .speaker .position,
-        .speaker .company {
-            color: #414E52;
-            text-align: center;
-            // white-space: nowrap;
-        }
+    .speaker .name,
+    .speaker .position,
+    .speaker .company {
+        color: #414E52;
+        text-align: center;
+        // white-space: nowrap;
     }
     .day-buttons {
         height: 72px;

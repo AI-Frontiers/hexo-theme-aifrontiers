@@ -22,7 +22,7 @@ mixin speech(speaker, title, description)
             .speech-description
                 != description
 
-mixin session(title, time, description, speeches)
+mixin session(title, time, description, speeches, moderator)
     if (speeches || description)
         if (title.indexOf("Banquet") == -1)
             .session
@@ -40,6 +40,13 @@ mixin session(title, time, description, speeches)
                                         - sessionSpeaker.push(speaker)
                             each speaker in sessionSpeaker
                                 +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
+                        if moderator
+                            .moderator
+                                .title
+                                    | moderator:
+                                each speaker in speakers
+                                    - if (moderator == speaker["name"])
+                                        +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
                 .right
                     .session-title
                         != title
@@ -117,5 +124,5 @@ mixin session(title, time, description, speeches)
                 if (day == "Day 3")
                     span.day-date November 5, 2017
             each session in sessions
-               +session(session["title"], session["time"], session["description"], session["speeches"])
+                +session(session["title"], session["time"], session["description"], session["speeches"], session["moderator"])
         - }

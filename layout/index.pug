@@ -1,46 +1,37 @@
 extends partial/layout
 
 block jumbotron
-    include mixins/jumbotron
+    include partial/jumbotron
 
 block container
-    - var controls = site.data.module_controls;
-    - var m = controls.length;
+    - var controls = site.data.module_controls
     - for (module in controls) {
-        - if (module == "topics" && controls[module]) {
+        if (module == "topics" && controls[module])
             include partial/topics
-        - }
-        - if (module == "speakers" && controls[module]) {
+        if (module == "speakers" && controls[module])
             include partial/speakers
             +subscribe()
-        - }
-        - if (module == "programs" && controls[module]) {
+        if (module == "programs" && controls[module])
             include partial/programs
-        - }
-        - if (module == "schedule" && controls[module]) {
+        if (module == "schedule" && controls[module])
             include partial/schedule
-        - }
-        - if (module == "sponsors" && controls[module]) {
+        if (module == "sponsors" && controls[module])
             include partial/sponsors
-        - }
-        - if (module == "news" && controls[module]) {
+        if (module == "news" && controls[module])
             include partial/news
-        - }
-        - if (module == "venue" && controls[module]) {
+        if (module == "venue" && controls[module])
             include partial/venue
-        - }
-        - if (module == "about" && controls[module]) {
+        if (module == "about" && controls[module])
             include partial/about
-        - }
-        - if (module == "contact" && controls[module]) {
+        if (module == "contact" && controls[module])
             include partial/contact
-        - }
     - }
 
 block copyright
     include partial/copyright
 
 mixin subscribe()
+    include mixins/mailChimp
     div.subscribe
         .subscribe-wrap
             span.text

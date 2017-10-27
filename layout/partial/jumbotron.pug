@@ -1,8 +1,9 @@
-include mailChimp
 include countdown
 
 .jumbotron
-    - var data = site.data.header;
+    script.
+        console.log(window.url)
+    - var data = site.data.header
     #fgPlayer(style="display: none")
     .jumbotron-wrap
         img.conf-logo(src="/images/logo-horizontal-white.png")
@@ -11,10 +12,8 @@ include countdown
             span.conf-nd
                 | Conference
         span.conf-theme
-            // | Theme:
             span.applied  Applied
             span.deep-learning-and  Deep Learning
-            // span.reinforcement-learning  Reinforcement Learning
         span.conf-info
             span.conf-date
                 != data["date"]
@@ -22,7 +21,6 @@ include countdown
                 != ", "
             span.conf-location
                 != data["location"]
-        // +countdown()
         .buttons
             a.button.register-button(href=data["register-link"], alt="Register") Register
             a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") Watch Video
