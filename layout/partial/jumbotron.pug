@@ -1,4 +1,6 @@
-include countdown
+- var general  = site.data.general
+- var speakers = site.data.speakers
+- var controls = site.data.module_controls
 
 .jumbotron
     - var data = site.data.header
@@ -6,7 +8,8 @@ include countdown
     .jumbotron-wrap
         img.conf-logo(src="/images/logo-horizontal-white.png")
         span.conf-title
-            span.conf-name AI Frontiers
+            span.conf-name 
+                != general["conference-name"]
             span.conf-nd
                 | Conference
         span.conf-theme
@@ -18,21 +21,22 @@ include countdown
             span.sep
                 != ", "
             span.conf-location
-                != data["location"]
+                != general["venue-name"]
         .buttons
             a.button.register-button(href="/register", alt="Register") Register
             a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") Watch Video
             a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline") Watch Video
 
-    - var speakers = site.data.speakers
-    - var m = 0
-    each speaker in speakers
-        if (!speaker["hidden"])
-           - m++
-    .speakers-bar(style="height: " + 100 / m + "vw;")
+    if controls["speakers"]
+        - var m = 0
         each speaker in speakers
             if (!speaker["hidden"])
-                img.speaker-photo(src=speaker["photo"], style="height: " +  100 / m + "vw; width: " +  100 / m + "vw;")
+            - m++
+        .speakers-bar(style="height: " + 100 / m + "vw;")
+            each speaker in speakers
+                if (!speaker["hidden"])
+                    img.speaker-photo(src=speaker["photo"], style="height: " +  100 / m + "vw; width: " +  100 / m + "vw;")
+
     .bg-video
         #bgPlayer
 
