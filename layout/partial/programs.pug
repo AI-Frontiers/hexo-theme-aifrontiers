@@ -19,31 +19,31 @@ mixin session(time, title, description, speakers, dim)
             .session-description
                 != description
 
-- var programs = site.data.programs;
+- var programs = site.data.programs
 .module.module-program
     a.module-title(name="program")
         | Conference Program
     p.program-description
         != site.data.programs_text["conference-description"]
     .program
-        - var m = programs.length;
+        - var m = programs.length
         - for (day in programs) {
-             - sessions = programs[day];
+             - sessions = programs[day]
              .heading-box
                  a.day-heading
                      != day
                  - if (day == "Day 1") {
-                 span.day-date November 3, 2017
+                 span.day-date November 9, 2018
                  - }
                  - if (day == "Day 2") {
-                 span.day-date November 4, 2017
+                 span.day-date November 10, 2018
                  - }
                  - if (day == "Day 3") {
-                 span.day-date November 5, 2017
+                 span.day-date November 11, 2018
                  - }
-             - n = sessions.length;
+             - n = sessions.length
              - for (var i = 0; i < n; i++) {
-                   - var session = sessions[i];
+                   - var session = sessions[i]
                        + session(session["time"], session["title"], session["description"], session["speakers"], session["dim"])
              - }
         - }

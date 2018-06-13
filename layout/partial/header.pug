@@ -4,7 +4,8 @@ header
         .logo-group
             a.logo-link(href=url_for())
                 img(src=url_for(theme.logo) alt="logo")
-            span.conf-date November 3-5, 2017
+            span.conf-date
+                !=data["date"]
         .header-right
             .navigation
                 include nav-main
