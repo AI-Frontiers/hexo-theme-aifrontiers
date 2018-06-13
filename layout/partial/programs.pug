@@ -1,3 +1,4 @@
+- var general = site.data.general
 mixin session(time, title, description, speakers, dim)
     if (!session["dim"])
         .session
@@ -22,9 +23,9 @@ mixin session(time, title, description, speakers, dim)
 - var programs = site.data.programs
 .module.module-program
     a.module-title(name="program")
-        | Conference Program
+        != general["programs-title"]
     p.program-description
-        != site.data.programs_text["conference-description"]
+        != general["programs-intro"]
     .program
         - var m = programs.length
         - for (day in programs) {

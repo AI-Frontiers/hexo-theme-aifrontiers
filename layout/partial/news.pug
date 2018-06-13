@@ -9,7 +9,7 @@ mixin news-card(name, img, description, link)
 - var quotes = site.data.news
 .module.module-news
     a.module-title(name="news")
-        | In the News
+        != general["news-title"]
     .news
         each quote in quotes
             +news-card(quote["name"], quote["logo"], quote["description"], quote["link"])

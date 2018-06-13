@@ -12,8 +12,7 @@
             span.conf-nd
                 | Conference
         span.conf-theme
-            span.applied  Applied
-            span.deep-learning-and  Deep Learning
+            != general["conference-theme"]
         span.conf-info
             span.conf-date #{date(general["beginning-date"], "MMMM D-" + date(general["ending-date"], "D") + ", YYYY")}
             span.sep
@@ -21,9 +20,12 @@
             span.conf-location
                 != general["venue-name"]
         .buttons
-            a.button.register-button(href="/register", alt="Register") Register
-            a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") Watch Video
-            a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline") Watch Video
+            a.button.register-button(href="/register", alt="Register") 
+                != general["jumbotron-register-button-text"]
+            a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") 
+                != general["jumbotron-watch-video-button-text"]
+            a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline") 
+                != general["jumbotron-watch-video-button-text"]
 
     if controls["speakers"]
         - var m = 0

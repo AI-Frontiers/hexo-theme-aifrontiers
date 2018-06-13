@@ -1,3 +1,4 @@
+- var general  = site.data.general;
 - var schedule = site.data.schedule;
 - var speakers = site.data.speakers;
 
@@ -102,9 +103,9 @@ mixin session(title, time, description, speeches, moderator)
 
 .module.module-schedule
     a.module-title(name="schedule")
-        | Schedule
+        != general["schedule-title"]
     p.schedule-description
-        != site.data.programs_text["conference-description"]
+        != general["schedule-intro"]
     .schedule
         .day-buttons
             - for (day in schedule) {

@@ -1,11 +1,9 @@
 - var general = site.data.general
-- var venue = site.data.venue
-- var hotel = site.data.hotel
 .module.module-venue
     a.module-title(name="venue",style="visibility: hidden;")
     .wrapper
         .map-wrapper
-            iframe(src=venue["google-map-embed-url"],width="600",height="300",frameborder="0",style="border:0",allowfullscreen)
+            iframe(src=general["google-map-embed-url"],width="600",height="300",frameborder="0",style="border:0",allowfullscreen)
         .venue
             .venue-mask
             .conf-info
@@ -19,7 +17,8 @@
                     != general["venue-address-line-1"]
                     br
                     != general["venue-address-line-2"]
-            a.button.register-button(href=general["register-link"]) register
+            a.button.register-button(href=general["register-link"]) 
+                != general["venue-register-button-text"]
     .hotel
         .left
             span.suggested-hotel
@@ -33,4 +32,4 @@
                 != general["hotel-address-line-2"]
         .right
             a.button(href=general["hotel-book-link"])
-                != hotel["book-button-text"]
+                != general["hotel-book-button-text"]

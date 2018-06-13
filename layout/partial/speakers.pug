@@ -81,13 +81,14 @@ mixin speaker(name, photo, position, company, bio)
 
 .module.module-speakers
     a.module-title(name="speakers")
-        | Speakers
+        != general["speakers-title"]
+
     .speakers
         each speaker in speakers
             if (!speaker["hidden"] && !speaker["moderator"])
                 +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
     a.moderator-title
-        | Moderators
+        != general["moderators-title"]
     .moderators
         each speaker in speakers
             if (!speaker["hidden"] && speaker["moderator"])

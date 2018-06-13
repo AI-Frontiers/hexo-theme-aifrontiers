@@ -2,7 +2,7 @@
 .module.module-contact
     .contact
         a.module-title(name="contact")
-            | Contact Us
+            != general["contact-title"]
         form(method='POST', action='https://formspree.io/info@aifrontiers.com')
             input(class='input-name', type='name', name='name', placeholder='Name', value='', required='')
             input(class='input-email', type='email', name='_replyto', placeholder='Email', value='', required='')
