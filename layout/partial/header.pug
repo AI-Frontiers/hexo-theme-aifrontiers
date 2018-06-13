@@ -1,15 +1,15 @@
-- data = site.data.header
+- var general  = site.data.general
 header
     .header-wrap
         .logo-group
             a.logo-link(href=url_for())
                 img(src=url_for(theme.logo) alt="logo")
-            span.conf-date
-                !=data["date"]
+            span.conf-date #{date(general["beginning-date"], "MMMM D-" + date(general["ending-date"], "D") + ", YYYY")}
         .header-right
             .navigation
                 include nav-main
                 include nav-sub
                 include nav-mobile
             include social-bar
-            a.button.buy-tickets(href=data["register-link"]) Register
+            a.button.buy-tickets(href=general["register-link"])
+                != general["header-register-button-text"]

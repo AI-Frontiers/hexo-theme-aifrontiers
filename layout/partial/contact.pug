@@ -1,3 +1,4 @@
+- var general  = site.data.general
 .module.module-contact
     .contact
         a.module-title(name="contact")
@@ -9,7 +10,7 @@
             textarea(class='input-message', name='message', rows='5', placeholder='Message', required='')
             input(class='submit-button', type='submit')
         span.company-address
-            | 940 Stewart Dr Sunnyvale, CA 94085
+            != general["company-address-line-1"] + ". " + general["company-address-line-2"]
             br
-            a(href="mailto:info@aifrontiers.com")
-                | info@aifrontiers.com
+            a(href="mailto:" + general["conference-email"])
+                != general["conference-email"]

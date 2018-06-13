@@ -3,7 +3,6 @@
 - var controls = site.data.module_controls
 
 .jumbotron
-    - var data = site.data.header
     #fgPlayer(style="display: none")
     .jumbotron-wrap
         img.conf-logo(src="/images/logo-horizontal-white.png")
@@ -16,8 +15,7 @@
             span.applied  Applied
             span.deep-learning-and  Deep Learning
         span.conf-info
-            span.conf-date
-                != data["date"]
+            span.conf-date #{date(general["beginning-date"], "MMMM D-" + date(general["ending-date"], "D") + ", YYYY")}
             span.sep
                 != ", "
             span.conf-location
@@ -42,6 +40,4 @@
 
 mixin videos()
     div.intro-video
-        span.video-heading
-            != data["intro-video-title"]
         iframe(src="https://www.youtube.com/embed/WiD_uWWfqaw?ecver=2",width="408",height="240",frameborder="0",allowfullscreen)

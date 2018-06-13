@@ -1,35 +1,36 @@
+- var general = site.data.general
 - var venue = site.data.venue
 - var hotel = site.data.hotel
 .module.module-venue
     a.module-title(name="venue",style="visibility: hidden;")
     .wrapper
         .map-wrapper
-            iframe(src=hotel["google-map-embed-url"],width="600",height="300",frameborder="0",style="border:0",allowfullscreen)
+            iframe(src=venue["google-map-embed-url"],width="600",height="300",frameborder="0",style="border:0",allowfullscreen)
         .venue
             .venue-mask
             .conf-info
                 .venue-date
-                    span.date-content.content NOV 9-11, 2018
+                    span.date-content.content #{date(general["beginning-date"], "MMM D-" + date(general["ending-date"], "D") + ", YYYY")}
+
             .venue-info
                 span.venue-name
-                    != venue["name"]
+                    != general["venue-name"]
                 span.venue-address
-                    != venue["address-first-line"]
+                    != general["venue-address-line-1"]
                     br
-                    != venue["address-second-line"]
-            - data = site.data.header
-            a.button.register-button(href=data["register-link"]) register
+                    != general["venue-address-line-2"]
+            a.button.register-button(href=general["register-link"]) register
     .hotel
         .left
             span.suggested-hotel
                 | Partner Hotel
             .hotel-name
-                != hotel["name"]
+                != general["hotel-name"]
             .hotel-address
                 span.hotel-address-first-line
-                != hotel["address-first-line"] + ", "
+                != general["hotel-address-line-1"] + ", "
                 span.hotel-address-first-line
-                != hotel["address-second-line"]
+                != general["hotel-address-line-2"]
         .right
-            a.button(href=hotel["book-link"])
+            a.button(href=general["hotel-book-link"])
                 != hotel["book-button-text"]

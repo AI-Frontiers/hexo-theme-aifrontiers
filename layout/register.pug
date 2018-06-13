@@ -10,6 +10,6 @@ html(lang=config.language, prefix="og: http://ogp.me/ns#")
             iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-K869LBB", height="0", width="0", style="display:none;visibility:hidden")
         // End Google Tag Manager (noscript)
 
-        - var data = site.data.header
+        - var data = site.data.general
         script.
-            window.location.replace("!{data['register-link']}");
+            window.location.replace("!{general['register-link']}");
