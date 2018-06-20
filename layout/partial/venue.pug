@@ -17,7 +17,7 @@
                     != general["venue-address-line-1"]
                     br
                     != general["venue-address-line-2"]
-            a.button.register-button(href=general["register-link"]) 
+            a.button.register-button.site-track(href="/register")
                 != general["venue-register-button-text"]
     .hotel
         .left
@@ -31,5 +31,5 @@
                 span.hotel-address-first-line
                 != general["hotel-address-line-2"]
         .right
-            a.button(href=general["hotel-book-link"])
+            a.button.site-track(href=general["hotel-book-link"])
                 != general["hotel-book-button-text"]

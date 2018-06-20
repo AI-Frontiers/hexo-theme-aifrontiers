@@ -3,7 +3,7 @@ $mobile-width: 600px;
     // width reset
     header,
     .jumbotron,
-    .jumbotron-wrap,
+    .jumbotron-fg,
     .intro-video,
     .video-heading,
     .intro-video iframe,
@@ -54,7 +54,7 @@ $mobile-width: 600px;
             }
         }
 
-        .jumbotron-wrap {
+        .jumbotron-fg {
             transform: none;
         }
         .conf-logo {
@@ -148,7 +148,7 @@ $mobile-width: 600px;
             width: 320px;
             height: auto;
             margin:auto;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             .topic-image-wrapper {
                 width: 320px;
                 height: 213px;
@@ -157,9 +157,10 @@ $mobile-width: 600px;
                 margin-bottom: 3px;
             }
             .topic-description {
-                margin-top: 8px;
+                margin-top: 14px;
                 text-align: left;
-                color: #000;
+                font-size: 17px;
+                line-height: 24px;
             }
         }
     }

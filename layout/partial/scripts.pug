@@ -1,3 +1,5 @@
+- var general = site.data.general
+
 script(type='text/javascript').
   window.mobilecheck = function() {
     var check = false;
@@ -28,6 +30,7 @@ script.
 script(type='text/javascript',src=url_for("vendor/jquery/jquery.min.js"))
 script(type='text/javascript',src=url_for("vendor/slickNav/jquery.slicknav.min.js"))
 script(type='text/javascript',src=url_for("vendor/jquery-modal/jquery.modal.js"))
+script(type='text/javascript',src=url_for("vendor/slick/slick.min.js"))
 script(type='text/javascript',src="https://player.vimeo.com/api/player.js")
 
 
@@ -66,8 +69,10 @@ script(type='text/javascript').
            };
         }
         else {
-           bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
-           bgPlayer.setVolume(0);
+           if ($("#bgPlayer").length) {
+              bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
+              bgPlayer.setVolume(0);
+           }
         }
         $("#fgPlayer").on($.modal.BEFORE_OPEN, function(event, modal) {
            fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
@@ -136,13 +141,28 @@ script(type='text/javascript').
       function(key, value) { return key===""?value:decodeURIComponent(value) }):{}
   }
 
-
+// ========= Register Tracker =========
 script.
   $(document).ready(function() {
-    $(".register-button").attr("href", $(".register-button").attr("href") + /.*(\?.*)/.exec(window.location.href)[1]);
+    $(".site-track").attr("href", $(".site-track").attr("href") + /.*(\?.*)/.exec(window.location.href)[1]);
   });
 
-// script(type='text/javascript').
+
+// ========= Jumbotron Slider =========
+script.
+    $(document).ready(function(){
+        $('.slider').slick({
+            autoplay: true,
+            autoplaySpeed: "#{general['slider-play-speed']}",
+            dots: true,
+            prevArrow: '<button type="button" class="slick-prev slick-arrow"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21 41" enable-background="new 0 0 21 41"><polygon points="20.3,40.8 0,20.5 20.3,0.2 21,0.9 1.3,20.5 21,40.1 "></polygon></svg></button>',
+            nextArrow: '<button type="button" class="slick-next slick-arrow"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21 41" enable-background="new 0 0 21 41"><polygon points="20.3,40.8 0,20.5 20.3,0.2 21,0.9 1.3,20.5 21,40.1 "></polygon></svg></button>'
+        });
+    });
+
+
+// ========= Countdown =========
+// script.
 //     var D = 'nov 09, 2018';
 //     (function ($) {
 //       $.fn.countdown = function(options){

@@ -4,10 +4,10 @@
 
 .jumbotron
     #fgPlayer(style="display: none")
-    .jumbotron-wrap
-        img.conf-logo(src="/images/logo-horizontal-white.png")
+    .jumbotron-fg
+        // img.conf-logo(src="/images/logo-horizontal-white.png")
         span.conf-title
-            span.conf-name 
+            span.conf-name
                 != general["conference-name"]
             span.conf-nd
                 | Conference
@@ -20,26 +20,19 @@
             span.conf-location
                 != general["venue-name"]
         .buttons
-            a.button.register-button(href="/register", alt="Register") 
+            a.button.register-button.site-track(href="/register", alt="Register")
                 != general["jumbotron-register-button-text"]
-            a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer") 
+            a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer")
                 != general["jumbotron-watch-video-button-text"]
-            a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline") 
+            a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline")
                 != general["jumbotron-watch-video-button-text"]
 
-    if controls["speakers"]
-        - var m = 0
-        each speaker in speakers
-            if (!speaker["hidden"])
-            - m++
-        .speakers-bar(style="height: " + 100 / m + "vw;")
-            each speaker in speakers
-                if (!speaker["hidden"])
-                    img.speaker-photo(src=speaker["photo"], style="height: " +  100 / m + "vw; width: " +  100 / m + "vw;")
+    include jumbotron-speakers
 
-    .bg-video
-        #bgPlayer
+    if general["bg-video"]
+        .bg-video
+            #bgPlayer
+    else
+        include jumbotron-slider
 
-mixin videos()
-    div.intro-video
-        iframe(src="https://www.youtube.com/embed/WiD_uWWfqaw?ecver=2",width="408",height="240",frameborder="0",allowfullscreen)
+
