@@ -1,0 +1,7 @@
+- var general = site.data.general
+- var slides = site.data.general.slides
+
+.slider
+    each slide in slides
+        .slide
+            .img(style="background-image: url(" + slide + "); filter: brightness(" + general["slider-brightness"] + ");")

@@ -1,0 +1,9 @@
+if controls["speakers"]
+    - var m = 0
+    each speaker in speakers
+        if (!speaker["hidden"])
+        - m++
+    .speakers-bar(style="height: " + 100 / m + "vw;")
+        each speaker in speakers
+            if (!speaker["hidden"])
+                img.speaker-photo(src=speaker["photo"], style="height: " +  100 / m + "vw; width: " +  100 / m + "vw;")
