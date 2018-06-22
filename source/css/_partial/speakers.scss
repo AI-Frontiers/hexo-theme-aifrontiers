@@ -4,6 +4,16 @@
     width: 100%;
     padding: 25px 0;
     user-select: none;
+    .button {
+      border: 1px solid white;
+      color: white;
+      margin: 8px auto 24px;
+      width: 120px;
+      &:hover {
+        background: white;
+        color: #025DC3;
+      }
+    }
     .module-title {
         display: block;
         color: white;

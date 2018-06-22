@@ -72,6 +72,9 @@ script(type='text/javascript').
            if ($("#bgPlayer").length) {
               bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
               bgPlayer.setVolume(0);
+              bgPlayer.ready().then(function() {
+                  bgPlayer.play();
+              });
            }
         }
         $("#fgPlayer").on($.modal.BEFORE_OPEN, function(event, modal) {
@@ -84,6 +87,7 @@ script(type='text/javascript').
         $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
            if (bgPlayer) bgPlayer.play();
         });
+
     }
 
 script(type="text/javascript").
