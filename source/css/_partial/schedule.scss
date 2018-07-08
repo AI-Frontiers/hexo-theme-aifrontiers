@@ -243,6 +243,12 @@
         text-align: center;
         // white-space: nowrap;
     }
+    .schedule > .day {
+        display: none;
+    }
+    .schedule > #day1 {
+        display: block;
+    }
     .day-buttons {
         height: 72px;
         width: 100%;
@@ -250,10 +256,13 @@
         flex-direction: row;
         margin-top: 30px;
         margin-bottom: -30px;
-        a.day-button {
+        .day-button {
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
             width: 33.333333%;
             box-sizing: border-box;
-            padding: 20px 28px 22px;
+            line-height: 72px;
             font-size: 22px;
             font-weight: normal;
             text-align: center;

@@ -38,7 +38,8 @@ script(type='text/javascript').
     $(document).ready(function(){
         $('.nav-mobile').slicknav({
             label: "",
-            appendTo: ".header-wrap"
+            appendTo: ".header-wrap",
+            closeOnClick: true
         });
     })
 
@@ -73,7 +74,7 @@ script(type='text/javascript').
               bgPlayer = new Vimeo.Player('bgPlayer', bgPlayerOptions);
               bgPlayer.setVolume(0);
               bgPlayer.ready().then(function() {
-                  bgPlayer.play();
+                  bgPlayer.pause().then(bgPlayer.play());
               });
            }
         }
@@ -99,6 +100,18 @@ script(type="text/javascript").
     b.type = "text/javascript";b.async = true;
     b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
     s.parentNode.insertBefore(b, s);})();
+
+script(type="text/javascript").
+    $(".program .day-button").click(function(){
+        var idx = $(".day-button").index(this);
+        $("div.day").css("display", "none");
+        $($(".program > .day")[idx]).css("display", "block");
+    });
+    $(".schedule .day-button").click(function(){
+        var idx = $(".day-button").index(this);
+        $("div.day").css("display", "none");
+        $($(".schedule > .day")[idx]).css("display", "block");
+    });
 
 script(type="text/javascript").
     $(".module-speakers .speakers .speaker, .module-speakers .moderators .speaker").click(function(e) {

@@ -92,12 +92,15 @@ header {
     letter-spacing: .7px;
 }
 
-@media (max-width: 1003px) and (min-width: #{$mobile-width}) {
+@media (max-width: 1123px) and (min-width: #{$mobile-width}) {
     header .social-bar {
         display: none;
     }
 }
 @media (max-width: 885px) and (min-width: #{$mobile-width}) {
+    header {
+        padding: 10px 0;
+    }
     header .nav-list-link {
         padding: 8px!important;
     }
