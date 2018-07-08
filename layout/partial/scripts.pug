@@ -103,13 +103,13 @@ script(type="text/javascript").
 
 script(type="text/javascript").
     $(".program .day-button").click(function(){
-        var idx = $(".day-button").index(this);
-        $("div.day").css("display", "none");
+        var idx = $(".program .day-button").index(this);
+        $(".program div.day").css("display", "none");
         $($(".program > .day")[idx]).css("display", "block");
     });
     $(".schedule .day-button").click(function(){
-        var idx = $(".day-button").index(this);
-        $("div.day").css("display", "none");
+        var idx = $(".schedule .day-button").index(this);
+        $(".schedule div.day").css("display", "none");
         $($(".schedule > .day")[idx]).css("display", "block");
     });
 
