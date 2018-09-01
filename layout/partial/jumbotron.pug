@@ -1,5 +1,4 @@
 - var general  = site.data.general
-- var speakers = site.data.speakers
 - var controls = site.data.module_controls
 
 .jumbotron
@@ -7,13 +6,15 @@
     .jumbotron-fg
         // img.conf-logo(src="/images/logo-horizontal-white.png")
         span.conf-title
-            span.conf-name
+            span.conf-name.desktop-only
+                != general["conference-title"]
+            span.conf-name.mobile-only
                 != general["conference-name"]
-            span.conf-nd
+            span.conf-nd.mobile-only
                 | Conference
         span.conf-theme
             != general["conference-theme"]
-        span.conf-info
+        span.conf-info.mobile-only
             span.conf-date #{date(general["beginning-date"], "MMMM D-" + date(general["ending-date"], "D") + ", YYYY")}
             span.sep
                 != ", "
@@ -22,10 +23,10 @@
         .buttons
             a.button.register-button.site-track(href="/register", alt="Register")
                 != general["jumbotron-register-button-text"]
-            a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer")
-                != general["jumbotron-watch-video-button-text"]
-            a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline")
-                != general["jumbotron-watch-video-button-text"]
+            // a.button.video-button.desktop(alt="Last Edition Video", rel="modal:open", href="#fgPlayer")
+            //     != general["jumbotron-watch-video-button-text"]
+            // a.button.video-button.mobile(alt="Last Edition Video", href="http://m.youtube.com/watch?v=WiD_uWWfqaw?autoplay=1&playsinline")
+            //     != general["jumbotron-watch-video-button-text"]
 
     include jumbotron-speakers
 

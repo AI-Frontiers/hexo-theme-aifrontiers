@@ -16,40 +16,40 @@ mixin sponsor-card(name, link, img, height, offset)
 .module.module-spnrs
     a.module-title(name="spnrs")
         != general["sponsors-title"]
-    span.last-years-spnrs
-        != general["sponsor-previous"]
-    .spnrs
-        each spnr in lastSpnrs
-            +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-    //- if diamond
-    //-     span.level
-    //-         != general["sponsor-diamond"]
-    //-     .spnrs
-    //-         each spnr in diamond
-    //-             +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-    //- if platinum
-    //-     span.level
-    //-         != general["sponsor-platinum"]
-    //-     .spnrs
-    //-         each spnr in platinum
-    //-             +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-    //- if gold
-    //-     span.level
-    //-         != general["sponsor-gold"]
-    //-     .spnrs
-    //-         each spnr in gold
-    //-             +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+    a.button.spnrship-letter.site-track(href="sponsor-us")
+        != general["sponsor-button-text"]
+    if diamond
+        span.level
+            != general["sponsor-diamond"]
+        .spnrs
+            each spnr in diamond
+                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+    if platinum
+        span.level
+            != general["sponsor-platinum"]
+        .spnrs
+            each spnr in platinum
+                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+    if gold
+        span.level
+            != general["sponsor-gold"]
+        .spnrs
+            each spnr in gold
+                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
     //- if knowledge
     //-     span.level
     //-         != general["sponsor-knowledge-partner"]
     //-     .spnrs
     //-         each spnr in knowledge
     //-             +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-    //- if media
-    //-     span.level
-    //-         != general["sponsor-media-partner"]
-    //-     .spnrs
-    //-         each spnr in media
-    //-             +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-    a.button.spnrship-letter.site-track(href="sponsor-us")
-        != general["sponsor-button-text"]
+    if media
+        span.level
+            != general["sponsor-media-partner"]
+        .spnrs
+            each spnr in media
+                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+    // span.last-years-spnrs
+    //     != general["sponsor-previous"]
+    // .spnrs
+    //     each spnr in lastSpnrs
+    //         +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])

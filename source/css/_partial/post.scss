@@ -32,7 +32,7 @@ article.post {
         }
     }
     .post-feature img, .post-feature iframe {
-        width: 180px;
+        height: 115px;
         padding: 5px;
         background: #FFF;
         margin: 1em 1.5em .5em 0;
@@ -120,8 +120,7 @@ article.post {
             border-radius: 100%;
             color: #fff;
             font-size: 14px;
-            line-height: 20px;
-            font-weight: bold;
+            line-height: 20px; font-weight: bold;
             text-align: center;
             background-color: #f66;
             font-family: Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -129,6 +128,7 @@ article.post {
     }
     .post-tags {
         font-size: 90%;
+        clear: both;
         .post-tags-label {
             display: inline-block;
             color: #666666;

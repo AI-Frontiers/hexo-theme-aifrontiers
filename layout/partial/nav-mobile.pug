@@ -28,12 +28,9 @@ ul.nav.nav-mobile.nav-list(style="display:none;")
                 - var tar = isOutbound ? "_blank" : "_self"
                 - var act = !isOutbound && "/"+page.current_url === value
                 - var lower_key = key.toLowerCase()
-                - var module_switch = (lower_key in controls) && controls[lower_key]
-                - if (!(lower_key in controls) || module_switch) {
-                    if isOutbound
-                        a.nav-list-link(class={active: act} href=url_for(value) onclick="trackOutboundLink('"+url_for(value)+"')" target=tar)
-                            != key
-                    else
-                        a.nav-list-link(class={active: act} href=url_for(value) target=tar)
-                            != key
-                - }
+                if isOutbound
+                    a.nav-list-link(class={active: act} href=url_for(value) onclick="trackOutboundLink('"+url_for(value)+"')" target=tar)
+                        != key
+                else
+                    a.nav-list-link(class={active: act} href=url_for(value) target=tar)
+                        != key

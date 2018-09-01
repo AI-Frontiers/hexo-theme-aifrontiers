@@ -10,10 +10,10 @@ block container
             include partial/topics
         if (module == "speakers" && controls[module])
             include partial/speakers
-            +subscribe()
         if (module == "programs" && controls[module])
             include partial/programs
         if (module == "schedule" && controls[module])
+            +subscribe()
             include partial/schedule
         if (module == "sponsors" && controls[module])
             include partial/sponsors

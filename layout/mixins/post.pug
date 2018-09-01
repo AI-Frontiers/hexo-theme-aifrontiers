@@ -26,8 +26,8 @@ mixin posts()
                                 a.post-feature(href= url_for(item.path))
                                     img(src=item.feature)
                         .post-content
-                            != item.content
-                        //a.read-more(href= url_for(item.path))!= __('more')
+                            != item.excerpt
+                        a.read-more(href= url_for(item.path))!=_('Read more')
                         if item.tags.data.length != 0
                             .post-tags
                                 span.post-tags-label

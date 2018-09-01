@@ -14,11 +14,13 @@
         flex-flow: row wrap;
     }
     .last-years-spnrs, .this-years-spnrs, .level {
+        color: #062447;
         display: block;
         font-size: 22px;
         font-weight: bold;
         text-align: center;
         margin-top: 25px;
+        margin-bottom: 10px;
     }
     .speaker-logo {
         width: 192px;

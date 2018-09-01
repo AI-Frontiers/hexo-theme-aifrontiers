@@ -23,7 +23,7 @@ mixin speech(speaker, title, description)
             .speech-description
                 != description
 
-mixin session(title, time, description, speeches, moderator)
+mixin session(title, time, description, speeches, moderator, image)
     if (speeches || description)
         if (title.indexOf("Banquet") == -1)
             .session
@@ -32,16 +32,19 @@ mixin session(title, time, description, speeches, moderator)
                         != time
                     .session-title
                         != title
-                    if speeches
+                    if image
+                        img.session-image(src=image)
+                    if speeches && general["schedule-show-speakers-photos"]
                         .speakers
                             - var sessionSpeaker = []
                             each speech in speeches
-                                each speaker in speakers
-                                    - if (speech["speaker"] == speaker["name"])
-                                        - sessionSpeaker.push(speaker)
+                                if !speech["hide"]
+                                    each speaker in speakers
+                                        - if (speech["speaker"] == speaker["name"])
+                                            - sessionSpeaker.push(speaker)
                             each speaker in sessionSpeaker
                                 +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
-                        if moderator
+                        if moderator && general["schedule-show-speakers-photos"]
                             .moderator
                                 .title
                                     | moderator:
@@ -65,7 +68,7 @@ mixin session(title, time, description, speeches, moderator)
                         != time
                     .session-title
                         != title
-                    if speeches
+                    if speeches && general["schedule-show-speakers-photos"]
                         .speakers
                             - var sessionSpeaker = []
                             each speech in speeches
@@ -102,7 +105,7 @@ mixin session(title, time, description, speeches, moderator)
                     != title
 
 .module.module-schedule
-    a.module-title(name="schedule")
+    a.module-title#schedule(name="schedule")
         != general["schedule-title"]
     p.schedule-description
         != general["schedule-intro"]
@@ -122,11 +125,15 @@ mixin session(title, time, description, speeches, moderator)
                     a.day-heading
                         != day
                     if (day == "Day 1")
-                        span.day-date November 3, 2017
+                        span.day-date November 9, 2018
                     if (day == "Day 2")
-                        span.day-date November 4, 2017
+                        span.day-date November 10, 2018
                     if (day == "Day 3")
-                        span.day-date November 5, 2017
+                        span.day-date November 11, 2018
                 each session in sessions
-                    +session(session["title"], session["time"], session["description"], session["speeches"], session["moderator"])
+                    +session(session["title"], session["time"], session["description"], session["speeches"], session["moderator"], session["image"])
         - }
+        .continue-reading
+            a.back-to-top.day-button DAY 1
+            a.back-to-top.day-button DAY 2
+            a.back-to-top.day-button DAY 3

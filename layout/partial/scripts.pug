@@ -102,16 +102,24 @@ script(type="text/javascript").
     s.parentNode.insertBefore(b, s);})();
 
 script(type="text/javascript").
-    $(".program .day-button").click(function(){
-        var idx = $(".program .day-button").index(this);
-        $(".program div.day").css("display", "none");
-        $($(".program > .day")[idx]).css("display", "block");
-    });
-    $(".schedule .day-button").click(function(){
-        var idx = $(".schedule .day-button").index(this);
-        $(".schedule div.day").css("display", "none");
-        $($(".schedule > .day")[idx]).css("display", "block");
-    });
+    if (window.mobilecheck()) {
+        $(".day-buttons").hide();
+        $(".program > .day").css("display", "block");
+        $(".schedule > .day").css("display", "block");
+    } else {
+        $(".program .day-button").click(function(){
+            var idx = $(".program .day-button").index(this);
+            $(".program div.day").css("display", "none");
+            $($(".program > .day")[idx]).css("display", "block");
+        });
+        $(".schedule .day-button").click(function(){
+            window.location.hash = "#schedule";
+            window.location.href = "#schedule";
+            var idx = $(".schedule .day-button").index(this) % 3;
+            $(".schedule div.day").css("display", "none");
+            $($(".schedule > .day")[idx]).css("display", "block");
+        });
+    }
 
 script(type="text/javascript").
     $(".module-speakers .speakers .speaker, .module-speakers .moderators .speaker").click(function(e) {

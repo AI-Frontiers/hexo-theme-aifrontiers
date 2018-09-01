@@ -3,7 +3,6 @@
     background-color: #015EC3;
     width: 100%;
     padding: 25px 0;
-    user-select: none;
     .button {
       border: 1px solid white;
       color: white;
@@ -136,7 +135,6 @@
             .bio .content {
                 padding: 24px 0;
                 width: 100%;
-                border-bottom: 1px solid rgba(255,255,255,.1);
                 line-height: 24px;
                 text-align: justify;
             }

@@ -2,34 +2,45 @@
 .module.module-venue
     a.module-title(name="venue",style="visibility: hidden;")
     .wrapper
-        .map-wrapper
-            iframe(src=general["google-map-embed-url"],width="600",height="300",frameborder="0",style="border:0",allowfullscreen)
+        .hotel
+            .left
+                span.suggested-hotel
+                    | Partner Hotel
+                .hotel-name
+                    != general["hotel-name"]
+                .hotel-address
+                    span.hotel-address-first-line
+                    != general["hotel-address-line-1"] + ", "
+                    span.hotel-address-first-line
+                    != general["hotel-address-line-2"]
+            .right
+                a.button.site-track(href=general["hotel-book-link"])
+                    != general["hotel-book-button-text"]
         .venue
             .venue-mask
             .conf-info
-                .venue-date
-                    span.date-content.content #{date(general["beginning-date"], "MMM D-" + date(general["ending-date"], "D") + ", YYYY")}
-
-            .venue-info
-                // span.venue-name
-                //     != general["venue-name"]
+                span.venue-name
+                    != general["venue-name"]
                 span.venue-address
                     != general["venue-address-line-1"]
                     br
                     != general["venue-address-line-2"]
+                // .venue-date
+                //     span.date-content.content #{date(general["beginning-date"], "MMM D-" + date(general["ending-date"], "D") + ", YYYY")}
+
             a.button.register-button.site-track(href="/register")
                 != general["venue-register-button-text"]
-    .hotel
-        .left
-            span.suggested-hotel
-                | Partner Hotel
-            .hotel-name
-                != general["hotel-name"]
-            .hotel-address
-                span.hotel-address-first-line
-                != general["hotel-address-line-1"] + ", "
-                span.hotel-address-first-line
-                != general["hotel-address-line-2"]
-        .right
-            a.button.site-track(href=general["hotel-book-link"])
-                != general["hotel-book-button-text"]
+    // .hotel
+    //     .left
+    //         span.suggested-hotel
+    //             | Partner Hotel
+    //         .hotel-name
+    //             != general["hotel-name"]
+    //         .hotel-address
+    //             span.hotel-address-first-line
+    //             != general["hotel-address-line-1"] + ", "
+    //             span.hotel-address-first-line
+    //             != general["hotel-address-line-2"]
+    //     .right
+    //         a.button.site-track(href=general["hotel-book-link"])
+    //             != general["hotel-book-button-text"]

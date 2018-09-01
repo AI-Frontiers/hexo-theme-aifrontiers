@@ -2,11 +2,12 @@
     background-color: #F6F6F7;
 
     .wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    color: white;
-    margin: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      color: white;
+      margin: auto;
+      min-height: 300px;
     }
 
     .map-wrapper {
@@ -20,30 +21,17 @@
     .venue {
         min-width: 500px;
         box-sizing: border-box;
-        padding: 45px 25px;
+        padding: 40px 25px;
         display: flex;
         position: relative;
         flex-direction: row;
         background: url("/images/venue-bg.jpg");
         background-size: cover;
-        background-position: left center;
+        background-position: left top;
         .venue-mask {
             display: none;
         }
         .conf-info {
-            width: 220px;
-            font-family: $Avenir-Next;
-            font-size: 28px;
-            color: #FFF;
-            letter-spacing: 0;
-            line-height: 32px;
-            font-weight: 600;
-            margin-right: 60px;
-            .venue-time {
-                font-size: 18px;
-            }
-        }
-        .venue-info {
             font-family: $Avenir-Next;
             font-weight: 600;
             font-size: 13px;
@@ -52,11 +40,16 @@
             line-height: 22px;
             span {
                 display: block;
+                margin-bottom: 15px;
+                font-size: 17px;
+            }
+            .venue-name {
+              font-size: 24px;
             }
         }
         .register-button {
             position: absolute;
-            left: 150px;
+            left: 100px;
             background: #0070E8;
             border-radius: 4px;
             box-sizing: border-box;
@@ -71,21 +64,22 @@
         flex-direction: row;
         box-sizing: border-box;
         padding: 13px 62px;
-        max-width: 800px;
-        margin: auto;
         justify-content: center;
+        align-items: center;
+        width: 100%;
         .left {
             padding-right: 40px;
+            box-sizing: border-box;
             span.suggested-hotel {
                 font-family: $Avenir-Next;
-                font-size: 15px;
+                font-size: 20px;
                 color: #083365;
                 line-height: 32px;
             }
             .hotel-name {
                 font-family: $Avenir-Next;
                 font-weight: 600;
-                font-size: 31px;
+                font-size: 36px;
                 color: #0070E8;
                 line-height: 32px;
                 padding-top: 8px;
@@ -93,25 +87,26 @@
             }
             .hotel-address {
                 font-family: $Avenir-Next;
-                font-size: 15px;
+                font-size: 17px;
                 color: #083365;
                 line-height: 32px;
             }
         }
         .right {
             display: flex;
-            width: 35%;
-            justify-content: flex-end;
+            box-sizing: border-box;
+            justify-content: center;
             align-items: center;
+            margin-top: 25px;
             .button {
-                border: 1px solid #083365;
+                border: 1px solid #0070E8;
+                background-color: #0070E8;
                 border-radius: 4px;
-                &:hover {
-                    background-color: #083365;
-                    color: #F6F6F7;
-                }
+                color: white;
+                margin-left: 50px;
             }
         }
     }
 }
+
 

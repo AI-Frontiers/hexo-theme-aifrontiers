@@ -1,5 +1,17 @@
 $mobile-width: 600px;
+.mobile-only {
+  display: none!important;
+}
+.desktop-only {
+  display: block!important;
+}
 @media (max-width: $mobile-width) {
+  .mobile-only {
+    display: block!important;
+  }
+  .desktop-only {
+    display: none!important;
+  }
     // width reset
     header,
     .jumbotron,
@@ -44,7 +56,7 @@ $mobile-width: 600px;
     }
 
     .jumbotron {
-        height: 492px;
+        height: 400px;
         overflow: hidden;
 
         .countdown {
@@ -61,10 +73,11 @@ $mobile-width: 600px;
             display: none;
         }
         .conf-title {
-            padding-top: 9.6px;
+            padding-top: 40px;
             .conf-name {
+                font-family: "audiowide";
+                text-transform: uppercase;
                 font-size: 40.8px;
-                display: block;
                 line-height: 32px;
                 letter-spacing: -2.4px!important;
                 text-shadow: 0 2.4px 36px rgba(6,172,255,.5), 0 2.4px 2.4px rgba(0,0,0,1);
@@ -87,7 +100,7 @@ $mobile-width: 600px;
         .conf-theme {
             font-weight: 600;
             width: 100%;
-            margin-top: 44px!important;
+            margin-top: 0px!important;
             font-size: 20px;
             line-height: 31px;
             padding-top: 5px;
@@ -96,7 +109,6 @@ $mobile-width: 600px;
             }
        }
         .conf-info {
-            margin-top: 14px;
             font-size: 17px;
             font-weight: 500;
             span {
@@ -133,7 +145,19 @@ $mobile-width: 600px;
         #bgPlayer {
             display: none;
         }
+
+        .speakers-bar {
+          height: 10vw!important;
+          transform: none;
+          left: 0;
+
+          .speaker-photo {
+            height: 10vw!important;
+            width: 10vw!important;
+          }
+        }
     }
+
 
     .module-topics {
         .module-title {
@@ -393,31 +417,6 @@ $mobile-width: 600px;
             width: 300px!important;
             margin: auto;
         }
-        .hotel {
-            flex-direction: column;
-            padding: 35px 0 45px 0;
-            width: 220px;
-            margin: auto;
-            .hotel-name {
-                line-height: 36px!important;
-            }
-            .left, .right {
-                width: 100%;
-            }
-            .right {
-                justify-content: center;
-                .button {
-                    width: 220px;
-                }
-            }
-            .hotel-address {
-                line-height: 24px!important;
-                padding: 10px 0 20px;
-                span {
-                    display: block;
-                }
-            }
-        }
     }
 
     .module-contact {
@@ -526,5 +525,70 @@ $mobile-width: 600px;
         box-sizing: border-box;
         padding-left: 10px!important;
         padding-right: 10px!important;
+    }
+
+    .module-speakers {
+      order: 1;
+    }
+
+    .module-topics {
+      order: 2;
+    }
+
+    .container .subscribe {
+      order: 3;
+    }
+
+    .module-schedule {
+      order: 4;
+    }
+
+    .module-spnrs {
+      order: 6;
+    }
+
+    .module-news {
+      order: 7;
+    }
+
+    .module-venue {
+      order: 8;
+    }
+
+    .module-contact {
+      order: 9;
+    }
+
+}
+
+@media (max-width: 660px) {
+    .hotel {
+        flex-direction: column !important;
+        padding: 35px 0 45px 0 !important;
+        margin: auto;
+        .hotel-name {
+            line-height: 36px!important;
+        }
+        .left, .right {
+            width: 100%;
+        }
+        .left {
+          padding-left: 40px;
+        }
+        .right {
+            padding: 0 40px;
+            justify-content: flex-start;
+            .button {
+                width: 220px;
+                margin: 0;
+            }
+        }
+        .hotel-address {
+            line-height: 24px!important;
+            padding: 10px 0 20px;
+            span {
+                display: block;
+            }
+        }
     }
 }

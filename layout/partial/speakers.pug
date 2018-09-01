@@ -81,20 +81,26 @@ mixin speaker(name, photo, position, company, bio)
 
 .module.module-speakers
 
-    // a(href="/be-our-speaker").button.be-our-speaker.site-track
-    //     != general["be-our-speaker-button-text"]
     a.module-title(name="speakers")
         != general["speakers-title"]
     .speakers
         each speaker in speakers
-            if (!speaker["hidden"] && !speaker["moderator"])
+            if (!speaker["hidden"] && !speaker["moderator"] && !speaker["previous"])
                 +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
+        +speaker("","/images/speakers/more-to-come.jpg","","", "")
     a.moderator-title
         != general["moderators-title"]
     .moderators
         each speaker in speakers
-            if (!speaker["hidden"] && speaker["moderator"])
+            if (!speaker["hidden"] && speaker["moderator"] && !speaker["previous"])
                 +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
+    // a.moderator-title
+    //     != general["previous-speakers-title"]
+    // .speakers
+    //     each speaker in speakers
+    //         if (!speaker["hidden"] && !speaker["moderator"] && speaker["previous"])
+    //             +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
+
 
     // a(href="/be-our-speaker").button.be-our-speaker.site-track
     //     != general["be-our-speaker-button-text"]
