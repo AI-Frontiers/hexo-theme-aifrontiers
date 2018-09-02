@@ -13,10 +13,10 @@ mixin sponsor-card(name, link, img, height, offset)
     var knowledge = site.data.sponsors["knowledge partner"]
     var lastSpnrs = site.data.sponsors["last-years-sponsors"]
 
-.module.module-spnrs
-    a.module-title(name="spnrs")
+.module.module-spnrs#spnrs
+    h1.module-title(name="spnrs")
         != general["sponsors-title"]
-    a.button.spnrship-letter.site-track(href="sponsor-us")
+    a.button.spnrship-letter(href="sponsor-us")
         != general["sponsor-button-text"]
     if diamond
         span.level

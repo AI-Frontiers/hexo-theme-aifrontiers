@@ -26,7 +26,8 @@ mixin speech(speaker, title, description)
 mixin session(title, time, description, speeches, moderator, image)
     if (speeches || description)
         if (title.indexOf("Banquet") == -1)
-            .session
+            - var urlizedTitle = title.toLowerCase().split(' ').join('-')
+            .session(id=urlizedTitle)
                 .left
                     .time
                         != time
@@ -104,8 +105,8 @@ mixin session(title, time, description, speeches, moderator, image)
                 .session-title
                     != title
 
-.module.module-schedule
-    a.module-title#schedule(name="schedule")
+.module.module-schedule#schedule
+    h1.module-title(name="schedule")
         != general["schedule-title"]
     p.schedule-description
         != general["schedule-intro"]

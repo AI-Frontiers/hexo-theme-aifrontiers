@@ -1,0 +1,12 @@
+:root {
+  --link-color: #0070E8;
+  --header-height: 88px;
+  --header-padding-Y: 20px;
+}
+
+@media (max-width: 1080px) {
+  :root {
+    --header-height: 66px;
+    --header-padding-Y: 9px;
+  }
+}

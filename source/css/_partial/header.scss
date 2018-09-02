@@ -1,213 +1,188 @@
 header {
-    height: 48px;
-    margin: auto;
-    margin-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: #EEE 1px solid;
-}
-
-.header-wrap {
-    box-sizing: border-box;
-    margin: auto;
-    min-width: 100%;
-    position: relative;
-    padding: 0 20px;
+  background: white;
+  height: var(--header-height);
+  padding: var(--header-padding-Y) 20px;
+  width: 100vw;
+  border-bottom: #EEE 1px solid;
+  box-sizing: border-box;
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  z-index: 10;
+  .header-right {
     display: flex;
     flex-direction: row;
     align-items: center;
-    align-content: center;
+  }
+  .logo-group {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    height: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  .logo-link {
+    height: 100%;
+    align-self: center;
+    img {
+      height: 100%;
+    }
+  }
+  .conf-date {
+    display: inline-block;
+    color: #494A5E;
+    margin-left: 8px;
+    font-size: 14px;
+    line-height: 14px;
+    align-self: flex-end;
+    white-space: nowrap;
+  }
+  .social-bar {
+    display: flex;
+    box-sizing: border-box;
     justify-content: space-between;
-    .header-right {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+    padding: 10px 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    a {
+      display: inline-block;
+      height: 28px;
+      width: 28px;
     }
-    .logo-group {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+    .social-icons {
+      box-sizing: border-box;
+      width: 28px;
+      height: 28px;
+      padding: 3px;
+      margin: 0;
     }
-    .logo-link {
-        width: 150px;
-        img {
-            width: 160px;
-        }
-    }
-    .conf-date {
-        font-size: 14px;
-        color: #494A5E;
-        width: 150px;
-        padding-top: 9px;
-        padding-left: 17px;
-    }
+  }
 }
 
 .navigation {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    ul.nav {
-        display: block;
-        flex-direction: row;
-        box-sizing: border-box;
-        margin: 0;
-        li {
-            display: inline-block;
-            text-transform: capitalize;
-        }
-        a.nav-list-link {
-            font-size: 13px;
-            color: #494A5E;
-            font-weight: bold;
-        }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  ul.nav {
+    display: block;
+    flex-direction: row;
+    box-sizing: border-box;
+    margin: 0;
+    li {
+      display: inline-block;
+      text-transform: capitalize;
     }
-    ul.nav-sub {
-        a.nav-list-link {
-            padding: 5px 12px;
-        }
+    a.nav-list-link {
+      font-size: 13px;
+      color: #494A5E;
+      font-weight: bold;
     }
-    ul.nav-main {
-        a.nav-list-link {
-            padding: 5px 12px;
-        }
+  }
+  ul.nav-sub, ul.nav-main {
+    a.nav-list-link {
+      padding: 5px 10px;
+      transition: background-color .2s ease-out;
+      &:hover {
+        background-color: #F3F3F3;
+        border-radius: 5px;
+      }
     }
+  }
 }
 
 .slicknav_menu {
-    display: none;
-}
-
-.social-bar {
-    padding: 0 10px;
+  display: none;
 }
 
 .buy-tickets {
-    color: #FFFFFF;
-    width: 113px;
-    height: 20px;
-    background: #0070E8;
-    padding: 9px 18px 11px;
-    margin-left: 10px;
-    letter-spacing: .7px;
+  color: #FFFFFF;
+  width: 80px;
+  height: 20px;
+  background: #0070E8;
+  padding: 9px 18px 11px;
 }
 
-@media (max-width: 1123px) and (min-width: #{$mobile-width}) {
-    header .social-bar {
-        display: none;
-    }
-}
-@media (max-width: 975px) and (min-width: #{$mobile-width}) {
-    header {
-        padding: 10px 0;
-    }
-    header .nav-list-link {
-        padding: 8px!important;
-    }
+@media (max-width: 1200px) {
+  header .social-bar {
+    display: none;
+  }
 }
 
-@media (max-width: 975px) {
-    header {
-        margin: 0!important;
-        .navigation {
-            display: none!important;
-        }
-        .slicknav_menu {
-            display: block!important;
-        }
-        .buy-tickets {
-            display: none;
-        }
-        .social-bar {
-            display: none;
-        }
-        .conf-date {
-            display: block!important;
-        }
-        .logo-link {
-            width: 110px!important;
-        }
+@media (max-width: 1080px) {
+  header {
+    .navigation {
+      display: none;
     }
-
     .slicknav_menu {
-        z-index: 99999;
-        display: block;
-        position: absolute;
-        top: 8px;
-        left: 0;
-        padding: 0;
-        width: 100%;
-        background: transparent;
-        .slicknav_btn {
-            position: absolute;
-            right: 20px;
-            background: #FFF;
-            margin: 0;
-            border: solid 1px #BFBFBF;
-            border-radius: 2;
-            &.slicknav_open {
-                border: solid 1px #BFBFBF;
-                border-color: #0070E8;
-                background-color: #0070E8;
-                .slicknav_icon-bar {
-                    background-color: #FFF;
-                }
-            }
-            .slicknav_icon-bar {
-                background-color: #AAA;
-            }
-        }
-        .slicknav_nav {
-            position: absolute;
-            width: 100%;
-            left: 0;
-            top: 40px;
-            padding: 30px 0;
-            background-color: #0070E8;
-            .nav-list-item {
-                padding: 4px;
-                .nav-list-link {
-                    background-color: #0070E8;
-                    border-radius: 0;
-                    font-family: $Helvetica-Neue;
-                    text-align: center;
-                    font-weight: bold;
-                    letter-spacing: .5px;
-                    font-size: 15px;
-                    color: white!important;
-                     * {
-                       color: white !important;
-                     }
-                    &:hover {
-                        color: #FFF;
-                    }
-                }
-            }
-            .sub-items {
-                margin-top: 20px!important;
-            }
-            .sub-nav-list-item {
-                a {
-                    color: #5BA8F8;
-                    &:hover {
-                        color: #FFF;
-                    }
-                }
-            }
-        }
+      display: block;
     }
-    .header-wrap {
-        flex-direction: row;
-        align-items: center;
-        .logo-link {
-            line-height: 1!important;
-            img {
-                 padding: 5px 0;
-                 transform: scale(0.85);
-                 transform-origin: left center;
-            }
-        }
-        .conf-date {
-            text-align: right;
-        }
+    .buy-tickets {
+      display: none;
     }
-}
+  }
+
+  .slicknav_menu {
+    z-index: 11;
+    display: block;
+    padding: 0;
+    background: transparent;
+    .slicknav_btn {
+      background: #FFF;
+      margin: 0;
+      border: solid 1px #BFBFBF;
+      &.slicknav_open {
+        border: solid 1px #BFBFBF;
+        border-color: #0070E8;
+        background-color: #0070E8;
+        .slicknav_icon-bar {
+          background-color: #FFF;
+        }
+      }
+      .slicknav_icon-bar {
+        background-color: #AAA;
+      }
+    }
+    .slicknav_nav {
+      position: absolute;
+      width: 100vw;
+      left: 0;
+      top: 50px;
+      padding: 30px 0;
+      background-color: #0070E8;
+      .nav-list-item {
+        padding: 4px;
+        .nav-list-link {
+          background-color: #0070E8;
+          border-radius: 0;
+          font-family: $Helvetica-Neue;
+          text-align: center;
+          font-weight: bold;
+          letter-spacing: .5px;
+          font-size: 15px;
+          color: white!important;
+                 * {
+                   color: white !important;
+                 }
+                 &:hover {
+                   color: #FFF;
+                 }
+               }
+             }
+             .sub-items {
+               margin-top: 20px!important;
+             }
+             .sub-nav-list-item {
+               a {
+                 color: #5BA8F8;
+                 &:hover {
+                   color: #FFF;
+                 }
+               }
+             }
+           }
+         }
+       }

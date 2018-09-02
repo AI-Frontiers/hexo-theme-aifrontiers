@@ -1,4 +1,4 @@
 - var general  = site.data.general
 .copyright
     include social-bar
-    p © #{date(Date.now(), 'YYYY')} by #[a(href=config.url)!= general["company-name"]]
+    p © #{date(Date.now(), 'YYYY')} by #[span!= general["company-name"]]

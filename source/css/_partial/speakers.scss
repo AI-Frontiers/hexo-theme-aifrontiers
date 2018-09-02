@@ -76,10 +76,9 @@
 
     .speaker span {
         font-size: 15px;
-        line-height: 18px;
+        line-height: 18.5px;
         color: white;
         text-align: center;
-        // white-space: nowrap;
     }
 
     .speaker .narrow {
@@ -99,7 +98,7 @@
         width: 100vw;
         height: 100vh;
         box-sizing: border-box;
-        padding: 45px;
+        padding: 0 45px;
         justify-content: start;
         align-items: center;
         background: #015EC3;
@@ -107,13 +106,13 @@
         top: 0;
         .close-button {
             position: fixed;
-            cursor: pointer;
             font-size: 100px;
             width: 58px;
             height: 58px;
             text-indent: 1000000px;
             top: 10px;
             right: 10px;
+            pointer-events: none;
             background:url(/images/cross-close-button.png) no-repeat 100% 100%;
         }
         .wrap {
@@ -122,6 +121,7 @@
             justify-content: start;
             align-items: center;
             max-width: 660px;
+            padding: 45px 0;
             .photo {
                 box-sizing: border-box;
                 width: 150px;
@@ -129,11 +129,8 @@
                 border-radius: 1000px;
                 margin-bottom: 16px;
             }
-            span {
-                margin: 2px 0;
-            }
             .bio .content {
-                padding: 24px 0;
+                display: block;
                 width: 100%;
                 line-height: 24px;
                 text-align: justify;

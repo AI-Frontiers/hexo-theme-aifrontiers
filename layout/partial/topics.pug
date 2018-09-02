@@ -1,6 +1,7 @@
 - var general = site.data.general
 mixin topic-card(title, image, description)
-    .topic-card
+    - var urlizedTitle = title.toLowerCase().split(' ').join('-')
+    a.topic-card(href="#" + urlizedTitle)
         .topic-image-wrapper
             img.topic-image(src=image)
             .topic-image-mask
@@ -9,8 +10,8 @@ mixin topic-card(title, image, description)
         span.topic-description
             != description
 
-.module.module-topics
-    a.module-title(name="topics")
+.module.module-topics#topics
+    h1.module-title(name="topics")
         != general["topics-title"]
     .topics
         - for (num in site.data.topics) {

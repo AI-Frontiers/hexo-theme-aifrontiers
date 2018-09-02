@@ -14,7 +14,7 @@
                     span.hotel-address-first-line
                     != general["hotel-address-line-2"]
             .right
-                a.button.site-track(href=general["hotel-book-link"])
+                a.button(href=general["hotel-book-link"])
                     != general["hotel-book-button-text"]
         .venue
             .venue-mask
@@ -28,7 +28,7 @@
                 // .venue-date
                 //     span.date-content.content #{date(general["beginning-date"], "MMM D-" + date(general["ending-date"], "D") + ", YYYY")}
 
-            a.button.register-button.site-track(href="/register")
+            a.button.register-button(href="/register")
                 != general["venue-register-button-text"]
     // .hotel
     //     .left
@@ -42,5 +42,5 @@
     //             span.hotel-address-first-line
     //             != general["hotel-address-line-2"]
     //     .right
-    //         a.button.site-track(href=general["hotel-book-link"])
+    //         a.button(href=general["hotel-book-link"])
     //             != general["hotel-book-button-text"]

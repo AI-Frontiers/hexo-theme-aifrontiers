@@ -37,30 +37,28 @@
         height: 25px;
     }
     .heading-box {
-        display: block;
+        display: flex;
         box-sizing: border-box;
-        padding: 0 28px 22px;
+        padding-left: 22px;
+        padding-right: 22px;
         margin: auto;
         width: 100%;
         font-size: 22px;
-        margin-top: 30px;
         font-weight: normal;
         color: white;
         background: #0070E8;
         height: 72px;
         font-weight: 600;
         letter-spacing: .5px;
-        align-content: baseline;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        align-items: center;
+
         a {
-            padding-top: 20px;
             color: white;
         }
-        .day-heading {
-            float: left;
-        }
+
         .day-date {
-            float: right;
-            padding-top: 20px;
             font-size: 18px;
         }
     }
@@ -263,10 +261,10 @@
         display: flex;
         flex-direction: row;
         margin-top: 30px;
-        margin-bottom: -30px;
         .day-button {
             position: relative;
             z-index: 1;
+            box-sizing: border-box;
             cursor: pointer;
             width: 33.333333%;
             box-sizing: border-box;
@@ -274,16 +272,18 @@
             font-size: 22px;
             font-weight: normal;
             text-align: center;
-            color: white;
-            background: #0057b5;
             height: 72px;
             font-weight: 600;
             letter-spacing: .5px;
             align-content: baseline;
-            border-right: white 2px solid;
-            &:last-of-type {
-                border: 0;
-            }
+            border-bottom: 0;
+            user-select: none;
+            color: #0057b5;
+            background: #e5f0fd;
+        }
+        .day-button--active {
+            background: #0057b5;
+            color: white;
         }
     }
     .continue-reading {

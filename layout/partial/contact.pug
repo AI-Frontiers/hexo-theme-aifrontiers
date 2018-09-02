@@ -1,7 +1,7 @@
 - var general  = site.data.general
-.module.module-contact
+.module.module-contact#contact
     .contact
-        a.module-title(name="contact")
+        h1.module-title(name="contact")
             != general["contact-title"]
         form(method='POST', action='https://formspree.io/info@aifrontiers.com')
             input(class='input-name', type='name', name='name', placeholder='Name', value='', required='')

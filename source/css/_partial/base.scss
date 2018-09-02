@@ -37,8 +37,8 @@ ul.post-list {
     list-style-type: none;
 }
 
-a, a:active {
-    color: $c1;
+a {
+    color: var(--link-color);
     text-decoration: none;
 }
 
@@ -84,26 +84,6 @@ table {
 .container {
     display: flex;
     border-bottom: #EEE 1px solid;
-}
-
-.social-bar {
-    display: flex;
-    justify-content: space-between;
-    width: 120px;
-    padding: 0 28px;
-    box-sizing: border-box;
-    a {
-        display: inline-block;
-        height: 28px;
-        width: 28px;
-    }
-    .social-icons {
-        box-sizing: border-box;
-        width: 28px;
-        height: 28px;
-        padding: 3px;
-        margin: 0;
-    }
 }
 
 .button {

@@ -3,25 +3,32 @@ footer {
     width: 100%;
     margin-top: 20px;
     .social-bar {
+        display: flex;
+        box-sizing: border-box;
+        justify-content: space-between;
+        padding-top: 10px;
+        padding-bottom: 10px;
         margin: auto;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         width: 170px!important;
         padding: 0 15px!important;
         a, img {
-            width: 34px!important;
-            height: 34px!important;
+            box-sizing: border-box;
+            width: 32px !important;
+            height: 32px !important;
+            padding: 3px !important;
         }
     }
     .copyright {
         margin: auto;
         text-align: center;
         p, a {
-            font-size: 14px;
-            color: #000;
+            font-size: 12px;
+            color: #888;
             margin: 0;
         }
         a:hover {
-            color: #888;
+            color: #333;
         }
     }
 }

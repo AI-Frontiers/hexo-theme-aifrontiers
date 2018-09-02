@@ -79,9 +79,8 @@ mixin speaker(name, photo, position, company, bio)
                         span.content
                             != bio
 
-.module.module-speakers
-
-    a.module-title(name="speakers")
+.module.module-speakers#speakers
+    h1.module-title(name="speakers")
         != general["speakers-title"]
     .speakers
         each speaker in speakers
@@ -94,13 +93,3 @@ mixin speaker(name, photo, position, company, bio)
         each speaker in speakers
             if (!speaker["hidden"] && speaker["moderator"] && !speaker["previous"])
                 +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
-    // a.moderator-title
-    //     != general["previous-speakers-title"]
-    // .speakers
-    //     each speaker in speakers
-    //         if (!speaker["hidden"] && !speaker["moderator"] && speaker["previous"])
-    //             +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
-
-
-    // a(href="/be-our-speaker").button.be-our-speaker.site-track
-    //     != general["be-our-speaker-button-text"]

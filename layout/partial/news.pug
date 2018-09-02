@@ -1,10 +1,9 @@
 mixin news-card(name, img, description, link)
-    .news-card
+    a.news-card(href=link)
         .news-logo-wrap
             img.news-logo(src=img, alt=name)
         blockquote.news-quote
-            a(href=link)
-                != description
+            != description
 
 - var quotes = site.data.news
 .module.module-news

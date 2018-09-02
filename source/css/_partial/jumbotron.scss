@@ -6,7 +6,6 @@ $max-speakers-bar-height: 148px;
 }
 .jumbotron {
     position: relative;
-    user-select: none;
     box-sizing: border-box;
     width: 100%;
     background-image: url(/images/jumbotron-bg.jpg);
@@ -51,7 +50,6 @@ $max-speakers-bar-height: 148px;
         }
     }
     .jumbotron-fg {
-        pointer-events: none;
         position: absolute;
         z-index: 7;
         width: 100%;
@@ -140,13 +138,13 @@ $max-speakers-bar-height: 148px;
             position: relative;
             pointer-events: auto;
             display: inline-block;
-            width: 204px;
+            width: 180px;
             box-sizing: border-box;
         }
         .register-button {
             background-color: #0070E8;
             color: white;
-            letter-spacing: 1.01px;
+            letter-spacing: .7px;
         }
         .video-button {
             background-color: white;

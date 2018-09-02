@@ -13,7 +13,6 @@ $mobile-width: 600px;
     display: none!important;
   }
     // width reset
-    header,
     .jumbotron,
     .jumbotron-fg,
     .intro-video,
@@ -41,9 +40,6 @@ $mobile-width: 600px;
         width: 100%!important;
         min-width: 0!important;
         padding: 0!important;
-    }
-    header {
-        padding: 9px 0!important;
     }
     .module {
         padding-top: 5px!important;
@@ -88,14 +84,6 @@ $mobile-width: 600px;
                 font-weight: 600;
                 letter-spacing: 2.4px;
             }
-            // &:after {
-            //     display: block;
-            //     content: " ";
-            //     width: 120px;
-            //     border-bottom: #296CEB 5px solid;
-            //     margin: auto;
-            //     margin-top: 20px;
-            // }
         }
         .conf-theme {
             font-weight: 600;
@@ -234,7 +222,6 @@ $mobile-width: 600px;
                         line-height: 20px!important;
                     }
                     .sessions {
-                        padding: 8px 0!important;
                         .title {
                             font-size: 16px!important;
                             line-height: 20px!important;
