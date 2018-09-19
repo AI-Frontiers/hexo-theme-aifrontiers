@@ -1,11 +1,13 @@
+- var general = site.data.general
+- var controls = site.data.module_controls
+
 mixin sponsor-card(name, link, img, height, offset)
     - height = height ? height : 40;
     - offset = offset ? offset : 0;
-    a(href=link)
+    a(href=link rel=nofollow)
         img.spnr-logo(src=img, alt=name, style="height: " + height + "px; top: " + offset + "px;")
 
 -
-    var general  = site.data.general
     var diamond   = site.data.sponsors["diamond"]
     var platinum  = site.data.sponsors["platinum"]
     var gold      = site.data.sponsors["gold"]
@@ -13,43 +15,44 @@ mixin sponsor-card(name, link, img, height, offset)
     var knowledge = site.data.sponsors["knowledge partner"]
     var lastSpnrs = site.data.sponsors["last-years-sponsors"]
 
-.module.module-spnrs#spnrs
-    h1.module-title(name="spnrs")
-        != general["sponsors-title"]
-    a.button.spnrship-letter(href="sponsor-us")
-        != general["sponsor-button-text"]
-    if diamond
-        span.level
-            != general["sponsor-diamond"]
-        .spnrs
-            each spnr in diamond
-                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-    if platinum
-        span.level
-            != general["sponsor-platinum"]
-        .spnrs
-            each spnr in platinum
-                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-    if gold
-        span.level
-            != general["sponsor-gold"]
-        .spnrs
-            each spnr in gold
-                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-    //- if knowledge
-    //-     span.level
-    //-         != general["sponsor-knowledge-partner"]
-    //-     .spnrs
-    //-         each spnr in knowledge
-    //-             +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-    if media
-        span.level
-            != general["sponsor-media-partner"]
-        .spnrs
-            each spnr in media
-                +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-    // span.last-years-spnrs
-    //     != general["sponsor-previous"]
-    // .spnrs
-    //     each spnr in lastSpnrs
-    //         +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+if controls["sponsors"]
+    .module.module-spnrs
+        h2.module-title#spnrs
+            != general["sponsors-title"]
+        a.button.spnrship-letter(href="sponsor-us")
+            != general["sponsor-button-text"]
+        if diamond
+            span.level
+                != general["sponsor-diamond"]
+            .spnrs
+                each spnr in diamond
+                    +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+        if platinum
+            span.level
+                != general["sponsor-platinum"]
+            .spnrs
+                each spnr in platinum
+                    +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+        if gold
+            span.level
+                != general["sponsor-gold"]
+            .spnrs
+                each spnr in gold
+                    +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+        //- if knowledge
+        //-     span.level
+        //-         != general["sponsor-knowledge-partner"]
+        //-     .spnrs
+        //-         each spnr in knowledge
+        //-             +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+        if media
+            span.level
+                != general["sponsor-media-partner"]
+            .spnrs
+                each spnr in media
+                    +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+        // span.last-years-spnrs
+        //     != general["sponsor-previous"]
+        // .spnrs
+        //     each spnr in lastSpnrs
+        //         +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])

@@ -3,22 +3,22 @@
 
 .jumbotron
     #fgPlayer(style="display: none")
-    .jumbotron-fg
-        // img.conf-logo(src="/images/logo-horizontal-white.png")
-        span.conf-title
-            span.conf-name.desktop-only
-                != general["conference-title"]
-            span.conf-name.mobile-only
-                != general["conference-name"]
-            span.conf-nd.mobile-only
-                | Conference
-        span.conf-theme
-            != general["conference-theme"]
-        span.conf-info.mobile-only
-            span.conf-date #{date(general["beginning-date"], "MMMM D-" + date(general["ending-date"], "D") + ", YYYY")}
+    .jumbotron-fg#main-event
+        .conf-title
+            h1.conf-name
+                // img(src="/images/logo_AI.svg" alt="AI")
+                | AI Frontiers
+                span.conf-nd
+                    |  Conference
+            h2.conf-slogan.desktop-only
+                != general["conference-slogan"]
+        // h2.conf-theme
+        //     != general["conference-theme"]
+        span.conf-info
+            h3.conf-date #{date(general["start-date"], "MMMM D-" + date(general["end-date"], "D") + ", YYYY")}
             span.sep
                 != ", "
-            span.conf-location
+            h3.conf-location
                 != general["venue-name"]
         .buttons
             a.button.register-button(href="/register", alt="Register")

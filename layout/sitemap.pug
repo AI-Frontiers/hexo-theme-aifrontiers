@@ -1,0 +1,46 @@
+- var menu = site.data.navigation["menu_main"]
+- site.posts.data = site.posts.data.sort(function(a, b){return new Date(b.date) - new Date(a.date);})
+
+urlset(xmlns='http://www.sitemaps.org/schemas/sitemap/0.9')
+    url
+        loc
+            != config.url + "/register"
+        changefreq monthly
+        priority 1
+    - var n = 0
+    - var len = Object.keys(menu).length
+    for menuItem in menu
+        url
+            loc
+                != config.url + menuItem
+            changefreq monthly
+            priority
+                != 1 - n
+        - n += .5 / len
+
+    - site.posts.each((item) => {
+        url
+            loc
+                != item.permalink
+
+            lastmod
+                if item.updated
+                    != moment(new Date(item.updated)).format("YYYY-MM-DD")
+                else
+                    if item.date
+                        != moment(new Date(item.date)).format("YYYY-MM-DD")
+    - } );
+
+    - site.pages.each((item) => {
+        url
+            loc
+                != item.permalink
+
+            lastmod
+                if item.updated
+                    != moment(new Date(item.updated)).format("YYYY-MM-DD")
+                else
+                    if item.date
+                        != moment(new Date(item.date)).format("YYYY-MM-DD")
+    - } );
+

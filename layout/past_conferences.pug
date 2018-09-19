@@ -1,0 +1,24 @@
+extend partial/layout
+
+block site_title
+    != page.title + " · " + config.title
+
+block description
+    - var desc = page.desc || page.title + ' - ' + config.author;
+    meta(name="description", content=desc)
+
+block container
+    .past-conferences
+        a.button-effects(href="http://jan2017.aifrontiers.com/")
+            img(src="/images/past-conferences/jan-2017.jpg" alt="Jan 2017 Conference")
+            span
+                | Jan 2017 Conference
+        a.button-effects(href="http://nov2017.aifrontiers.com/")
+            img(src="/images/past-conferences/nov-2017.jpg" alt="Nov 2017 Conference")
+            span
+                | Nov 2017 Conference
+
+block pagination
+
+block copyright
+    include partial/copyright

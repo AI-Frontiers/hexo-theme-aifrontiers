@@ -27,7 +27,6 @@ script.
     });
   };
 
-script(type='text/javascript',src=url_for("vendor/jquery/jquery.min.js"))
 script(type='text/javascript',src=url_for("vendor/jquery-modal/jquery.modal.js"))
 script(type='text/javascript',src=url_for("vendor/slick/slick.min.js"))
 
@@ -37,8 +36,7 @@ script(type='text/javascript').
     $(document).ready(function(){
         $('.nav-mobile').slicknav({
             label: "",
-            appendTo: "#header",
-            closeOnClick: true
+            appendTo: "#header"
         });
         //close menu on lost focus
         $('.slicknav_menu').focusout(function(event){
@@ -104,45 +102,32 @@ script(type="text/javascript").
         s.parentNode.insertBefore(b, s);
     })();
 
-script(type="text/javascript").
-    if (window.mobilecheck()) {
-        $(".day-buttons").hide();
-        $(".schedule > .day").css("display", "block");
-    } else {
-        $($(".schedule .day-button")[0]).addClass("day-button--active");
-        $(".schedule .day-button").click(function(){
-            var idx = $(".schedule .day-button").index(this) % 3;
-            $(".schedule div.day").css("display", "none");
-            $(".schedule .day-button").removeClass("day-button--active");
-            $($(".schedule .day-button")[idx]).addClass("day-button--active");
-            $($(".schedule > .day")[idx]).css("display", "block");
-            if ($(this).hasClass("back-to-top")) {
-                window.location.hash = "#schedule";
-                window.location.href = "#schedule";
-            }
-        });
-    }
+// script(type="text/javascript").
+//     if (window.mobilecheck()) {
+//         $(".day-buttons").hide();
+//         $(".schedule > .day").css("display", "block");
+//     } else {
+//         $($(".schedule .day-button")[0]).addClass("day-button--active");
+//         $(".schedule .day-button").click(function(){
+//             var idx = $(".schedule .day-button").index(this) % 3;
+//             $(".schedule div.day").css("display", "none");
+//             $(".schedule .day-button").removeClass("day-button--active");
+//             $($(".schedule .day-button")[idx]).addClass("day-button--active");
+//             $($(".schedule > .day")[idx]).css("display", "block");
+//             if ($(this).hasClass("back-to-top")) {
+//                 window.location.hash = "#schedule";
+//                 window.location.href = "#schedule";
+//             }
+//         });
+//     }
 
 script(type="text/javascript").
     $(".module-speakers .speakers .speaker, .module-speakers .moderators .speaker").click(function(e) {
-        var target = $(e.target);
-        if (target.hasClass("details")) {
-            $details = target.parent();
-            $details.css("opacity", "0");
-            $details.css("display", "none");
-            $(this).css("cursor", "pointer");
-        }
-        else {
-            $details = $(".details", this);
-            $details.css("display", "flex");
-            $details.css("opacity", "1");
-            $(this).css("cursor", "auto");
-        }
+        $(this).toggleClass("speaker--active")
     });
     $(document).keyup(function(e) {
         $details = $(".module-speakers .speakers .speaker .details, .module-speakers .moderators .speaker .details");
         if (e.which == 27) {
-            $details.css("opacity", "0");
             $details.css("display", "none");
             $details.parent().css("cursor", "pointer");
         }

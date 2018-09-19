@@ -20,8 +20,6 @@ $mobile-width: 600px;
     .intro-video iframe,
     .container,
     .module,
-    .module-title,
-    a.module-title,
     .speakers,
     .moderators,
     .programs-description,
@@ -46,8 +44,6 @@ $mobile-width: 600px;
         padding-bottom: 5px!important;
         .module-title {
             font-size: 30px!important;
-            margin-top: 30px!important;
-            margin-bottom: 15px!important;
         }
     }
 
@@ -69,20 +65,17 @@ $mobile-width: 600px;
             display: none;
         }
         .conf-title {
-            padding-top: 40px;
             .conf-name {
-                font-family: "audiowide";
                 text-transform: uppercase;
-                font-size: 40.8px;
-                line-height: 32px;
-                letter-spacing: -2.4px!important;
+                font-size: 40px;
+                line-height: 40px;
+                font-weight: 700;
                 text-shadow: 0 2.4px 36px rgba(6,172,255,.5), 0 2.4px 2.4px rgba(0,0,0,1);
-            }
-            .conf-nd {
-                font-size: 26.4px;
-                display: block;
-                font-weight: 600;
-                letter-spacing: 2.4px;
+                .conf-nd {
+                    display: block;
+                    font-size: 30px;
+                    font-weight: 400;
+                }
             }
         }
         .conf-theme {
@@ -92,9 +85,6 @@ $mobile-width: 600px;
             font-size: 20px;
             line-height: 31px;
             padding-top: 5px;
-            .applied, .deep-learning-and, .reinforcement-learning {
-            font-size: 25px;
-            }
        }
         .conf-info {
             font-size: 17px;
@@ -149,7 +139,6 @@ $mobile-width: 600px;
 
     .module-topics {
         .module-title {
-            margin: 10px 0 0!important;
         }
         .topics {
             padding: 10px 0;
@@ -179,7 +168,6 @@ $mobile-width: 600px;
 
     .module-speakers {
         .module-title {
-            margin: 10px 0 0!important;
         }
         .speakers, .moderators {
             justify-content: center;
@@ -241,7 +229,6 @@ $mobile-width: 600px;
     .module-programs {
         margin-top: 20px;
         .module-title {
-            margin: 10px 0 0!important;
         }
         box-sizing: border-box;
         .session-time {
@@ -354,7 +341,6 @@ $mobile-width: 600px;
 
     .module-venue {
         position: relative;
-        padding-top: 0!important;
         padding-bottom: 0!important;
         background-size: cover;
         background-position: left center;

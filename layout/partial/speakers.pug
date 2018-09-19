@@ -1,11 +1,13 @@
+- var speakers = site.data.speakers
+- var schedule = site.data.schedule
+- var controls = site.data.module_controls
+
 -
-    var speakers = site.data.speakers
-    var schedule = site.data.schedule
     var speeches = []
     var dict = {}
     for (day in schedule) {
         for (i in schedule[day]) {
-            if (schedule[day][i]["keynote"]) {
+            if (schedule[day][i]["type"] == "keynote" && schedule[day][i]["speeches"]) {
                 speeches = speeches.concat({
                     "day": day,
                     "time": schedule[day][i]["time"],
@@ -40,8 +42,9 @@
     }
 
 mixin speaker(name, photo, position, company, bio)
-    .speaker
-        img.photo(src=photo)
+    - var urlizedName = name.toLowerCase().split(' ').join('-')
+    .speaker(id=urlizedName)
+        img.photo(src=photo alt=name)
         span.name
             != name
         span.position
@@ -52,7 +55,7 @@ mixin speaker(name, photo, position, company, bio)
             span.close-button
                 | ⨉
             .wrap
-                img.photo(src=photo)
+                img.photo(src=photo alt=name)
                 span.name
                     != name
                 span.position
@@ -63,6 +66,7 @@ mixin speaker(name, photo, position, company, bio)
                     if dict[name]
                         each session in dict[name]
                             if session["title"]
+                                - var urlizedTitle = session["title"].toLowerCase().split(' ').join('-')
                                 .session
                                     span.day
                                         != session["day"]
@@ -79,17 +83,18 @@ mixin speaker(name, photo, position, company, bio)
                         span.content
                             != bio
 
-.module.module-speakers#speakers
-    h1.module-title(name="speakers")
-        != general["speakers-title"]
-    .speakers
-        each speaker in speakers
-            if (!speaker["hidden"] && !speaker["moderator"] && !speaker["previous"])
-                +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
-        +speaker("","/images/speakers/more-to-come.jpg","","", "")
-    a.moderator-title
-        != general["moderators-title"]
-    .moderators
-        each speaker in speakers
-            if (!speaker["hidden"] && speaker["moderator"] && !speaker["previous"])
-                +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
+if controls["speakers"]
+    .module.module-speakers
+        h2.module-title#speakers
+            != general["speakers-title"]
+        .speakers
+            each speaker in speakers
+                if (!speaker["hidden"] && !speaker["moderator"] && !speaker["previous"])
+                    +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
+            +speaker("","/images/speakers/more-to-come.jpg","","", "")
+        a.moderator-title
+            != general["moderators-title"]
+        .moderators
+            each speaker in speakers
+                if (!speaker["hidden"] && speaker["moderator"] && !speaker["previous"])
+                    +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])

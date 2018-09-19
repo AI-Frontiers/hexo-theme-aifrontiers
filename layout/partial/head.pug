@@ -1,35 +1,33 @@
-meta(charset="utf-8")
-meta(name="X-UA-Compatible", content="IE=edge")
+-var general = site.data.general
 
-title
-    block site_title
-        = config.title
+mixin head(pageType)
+    meta(charset="utf-8")
+    meta(name="X-UA-Compatible" content="IE=edge")
 
-block description
-    meta(property="og:title", content= config.title)
-    meta(property="og:image", content="//www.aifrontiers.com/images/ogp-image.png?v=2")
-    meta(property="og:description", content= config.description)
-    meta(property="og:url", content= "//www.aifrontiers.com")
+    title
+        block site_title
+            if pageType == "post"
+                != page.title + " | " + general["website-title"]
+            else if pageType == "index" && page.cityKeyword
+                != page.cityKeyword + " " + page.conferenceKeyword + " | " + general["website-title"]
+            else
+                != general["website-title"]
 
-meta(name="viewport", content="width=device-width, initial-scale=1")
-link(rel="icon", href=url_for(theme.favicon))
-link(rel="stylesheet", href=url_for("vendor/slickNav/slicknav.css"))
-link(rel="stylesheet", href=url_for("vendor/slick/slick.css"))
-link(rel="stylesheet", href=url_for("vendor/jquery-modal/jquery.modal.css"), type="text/css", media="screen")
-link(rel="stylesheet", href=url_for("css/main.css") + "?v=4.0")
+    block description
+        if pageType == "index" && page.cityKeyword
+            meta(property="og:title", content= page.cityKeyword + " " + page.conferenceKeyword + " | " + general["website-title"])
+        else
+            meta(property="og:title", content= config.title)
+        meta(property="og:image", content="//www.aifrontiers.com/images/poster.png?v=2")
+        meta(property="og:description", content= config.description)
+        meta(property="og:url", content= "//www.aifrontiers.com")
 
-// Google Tag Manager
-script.
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-K869LBB');
-// End Google Tag Manager
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="icon" href=url_for(theme.favicon))
+    link(rel="stylesheet" href=url_for("vendor/slickNav/slicknav.css"))
+    link(rel="stylesheet" href=url_for("vendor/slick/slick.css"))
+    link(rel="stylesheet" href=url_for("vendor/jquery-modal/jquery.modal.css") type="text/css" media="screen")
+    link(rel="stylesheet" href=url_for("css/main.css") + "?v=4.4")
 
-- var xml = config.url + '/atom.xml'
-    link(rel="search", type="application/opensearchdescription+xml", href=xml, title=config.title)
+    script(type='text/javascript',src=url_for("vendor/jquery/jquery.min.js"))
 
-// Global site tag (gtag.js) - Google AdWords: 830904628
-script(async, src="https://www.googletagmanager.com/gtag/js?id=AW-830904628")
-script.
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-830904628');

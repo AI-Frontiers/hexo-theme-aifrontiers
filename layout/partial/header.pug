@@ -2,14 +2,14 @@
 header#header
     .logo-group
         a.logo-link(href=url_for())
-            img(src=url_for(theme.logo) alt="logo")
+            img(src=url_for(theme.logo) alt="AI Frontiers conference" + " | " + (page.conferenceKeyword || "AI Conference"))
         span.conf-date
-            | #{date(general["beginning-date"], "MMMM D-" + date(general["ending-date"], "D") + ", YYYY")}
+            | #{date(general["start-date"], "MMMM D-" + date(general["end-date"], "D") + ", YYYY")}
     .header-right
         .navigation
-            include nav-main
-            include nav-sub
-            include nav-mobile
+            include navigation/nav-main
+            include navigation/nav-sub
+            include navigation/nav-mobile
         include social-bar
-        a.button.buy-tickets(href="/register")
+        a.button.button-effects.buy-tickets(href="/register")
             != general["header-register-button-text"]

@@ -1,46 +1,47 @@
 - var general = site.data.general
-.module.module-venue
-    a.module-title(name="venue",style="visibility: hidden;")
-    .wrapper
-        .hotel
-            .left
-                span.suggested-hotel
-                    | Partner Hotel
-                .hotel-name
-                    != general["hotel-name"]
-                .hotel-address
-                    span.hotel-address-first-line
-                    != general["hotel-address-line-1"] + ", "
-                    span.hotel-address-first-line
-                    != general["hotel-address-line-2"]
-            .right
-                a.button(href=general["hotel-book-link"])
-                    != general["hotel-book-button-text"]
-        .venue
-            .venue-mask
-            .conf-info
-                span.venue-name
-                    != general["venue-name"]
-                span.venue-address
-                    != general["venue-address-line-1"]
-                    br
-                    != general["venue-address-line-2"]
-                // .venue-date
-                //     span.date-content.content #{date(general["beginning-date"], "MMM D-" + date(general["ending-date"], "D") + ", YYYY")}
+- var controls = site.data.module_controls
 
-            a.button.register-button(href="/register")
-                != general["venue-register-button-text"]
-    // .hotel
-    //     .left
-    //         span.suggested-hotel
-    //             | Partner Hotel
-    //         .hotel-name
-    //             != general["hotel-name"]
-    //         .hotel-address
-    //             span.hotel-address-first-line
-    //             != general["hotel-address-line-1"] + ", "
-    //             span.hotel-address-first-line
-    //             != general["hotel-address-line-2"]
-    //     .right
-    //         a.button(href=general["hotel-book-link"])
-    //             != general["hotel-book-button-text"]
+if controls["venue"]
+    .module.module-venue
+        h2.module-title#venue(style="opacity: 0; position: absolute;") venue
+        .wrapper
+            .hotel
+                .left
+                    span.suggested-hotel
+                        | Partner Hotel
+                    .hotel-name
+                        != general["hotel-name"]
+                    .hotel-address
+                        span.hotel-address-first-line
+                        != general["hotel-address-line-1"] + ", "
+                        span.hotel-address-first-line
+                        != general["hotel-address-line-2"]
+                .right
+                    a.button(href=general["hotel-book-link"])
+                        != general["hotel-book-button-text"]
+            .venue
+                .venue-mask
+                .conf-info
+                    span.venue-name
+                        != general["venue-name"]
+                    span.venue-address
+                        != general["venue-address-line-1"]
+                        br
+                        != general["venue-address-line-2"]
+
+                a.button.register-button(href="/register")
+                    != general["venue-register-button-text"]
+        // .hotel
+        //     .left
+        //         span.suggested-hotel
+        //             | Partner Hotel
+        //         .hotel-name
+        //             != general["hotel-name"]
+        //         .hotel-address
+        //             span.hotel-address-first-line
+        //             != general["hotel-address-line-1"] + ", "
+        //             span.hotel-address-first-line
+        //             != general["hotel-address-line-2"]
+        //     .right
+        //         a.button(href=general["hotel-book-link"])
+        //             != general["hotel-book-button-text"]

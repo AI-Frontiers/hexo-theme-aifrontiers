@@ -4,31 +4,22 @@ block jumbotron
     include partial/jumbotron
 
 block container
-    - var controls = site.data.module_controls
-    - for (module in controls) {
-        if (module == "topics" && controls[module])
-            include partial/topics
-        if (module == "speakers" && controls[module])
-            include partial/speakers
-        if (module == "programs" && controls[module])
-            include partial/programs
-        if (module == "schedule" && controls[module])
-            +subscribe()
-            include partial/schedule
-        if (module == "sponsors" && controls[module])
-            include partial/sponsors
-        if (module == "news" && controls[module])
-            include partial/news
-        if (module == "venue" && controls[module])
-            include partial/venue
-        if (module == "about" && controls[module])
-            include partial/about
-        if (module == "contact" && controls[module])
-            include partial/contact
-    - }
+    include partial/structured_data
+
+    include partial/topics
+    include partial/speakers
+    +subscribe()
+    include partial/schedule
+    +schedule(page.conferenceKeyword, page.cityKeyword)
+    include partial/sponsors
+    include partial/news
+    include partial/venue
+    // include partial/about
+    include partial/contact
 
 block copyright
     include partial/copyright
+    +copyright(page.conferenceKeyword, page.cityKeyword)
 
 mixin subscribe()
     include mixins/mailChimp

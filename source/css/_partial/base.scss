@@ -117,3 +117,28 @@ iframe {
     height: 500px!important;
     max-width: 880px;
 }
+
+.button-effects {
+  transition: all .15s ease;
+  box-shadow: var(--button-shadow);
+  &:hover {
+    box-shadow: var(--button-shadow--hover);
+    transform: translateY(-1px);
+  }
+  &:active {
+    transition: none;
+    transform: translateY(0);
+  }
+}
+
+.module-title {
+  padding-top: calc( var(--header-height) + 15px);
+  margin-top: calc( -1 * var(--header-height));
+}
+
+.day-heading {
+    display: block;
+    padding-top: calc( var(--header-height) + 15px);
+    margin-top: calc( -1 * var(--header-height) - 15px);
+}
+

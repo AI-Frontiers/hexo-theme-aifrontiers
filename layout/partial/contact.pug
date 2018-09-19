@@ -1,16 +1,19 @@
 - var general  = site.data.general
-.module.module-contact#contact
-    .contact
-        h1.module-title(name="contact")
-            != general["contact-title"]
-        form(method='POST', action='https://formspree.io/info@aifrontiers.com')
-            input(class='input-name', type='name', name='name', placeholder='Name', value='', required='')
-            input(class='input-email', type='email', name='_replyto', placeholder='Email', value='', required='')
-            input(class='input-subject', type='subject', name='subject', placeholder='Subject', value='', required='')
-            textarea(class='input-message', name='message', rows='5', placeholder='Message', required='')
-            input(class='submit-button', type='submit')
-        span.company-address
-            != general["company-address-line-1"] + ". " + general["company-address-line-2"]
-            br
-            a(href="mailto:" + general["conference-email"])
-                != general["conference-email"]
+- var controls = site.data.module_controls
+
+if controls["contact"]
+    .module.module-contact#contact
+        .contact
+            h1.module-title(name="contact")
+                != general["contact-title"]
+            form(method='POST', action='https://formspree.io/info@aifrontiers.com')
+                input(class='input-name', type='name', name='name', placeholder='Name', value='', required='')
+                input(class='input-email', type='email', name='_replyto', placeholder='Email', value='', required='')
+                input(class='input-subject', type='subject', name='subject', placeholder='Subject', value='', required='')
+                textarea(class='input-message', name='message', rows='5', placeholder='Message', required='')
+                input(class='submit-button', type='submit')
+            span.company-address
+                != general["company-address-line-1"] + ". " + general["company-address-line-2"]
+                br
+                a(href="mailto:" + general["conference-email"])
+                    != general["conference-email"]

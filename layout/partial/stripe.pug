@@ -1,0 +1,76 @@
+- var general = site.data.general
+- var tickets = site.data.tickets
+
+mixin ticket(name, price, description)
+    - var urlizedName = name.toLowerCase().split(' ').join('-')
+    .ticket
+        .ticket-left
+            span.ticket-name
+                != name
+            span.ticket-price
+                | $
+                != price
+            span.ticket-description
+                != description
+        .ticket-left
+            -var n = 0
+            select.ticket-amount(onchange="calculateCounter()")
+                while n <= general['max-tickets-per-purchase']
+                    option
+                        != n
+                    - n += 1
+
+.module.module-purchase#purchase
+    h1.module-title Purchase
+    .box-office
+        .conference-information
+            span.conference-dates
+                - var format = "ddd, MMM D, YYYY"
+                | #{date(general['start-date'], format)} - #{date(general['end-date'], format)}
+            span.sales-end-date
+                | Sales end on #{date(general['end-date'], format)}
+
+            .promocode
+                input(placeholder="Enter Promotional Code")
+                button apply
+        .tickets
+            each ticket in tickets
+                +ticket(ticket["name"], ticket["price"], ticket["description"])
+        .checkout
+            .counter
+            span.total
+                | Total:
+            form#stripe-form(action='https://us-central1-ai-frontier-stripe.cloudfunctions.net/stripe-charge/' method='POST')
+              script#stripe-button.stripe-button(src='https://checkout.stripe.com/checkout.js' data-key='pk_test_WbhdzBHYRUItMASgPKOLloYQ' data-amount='149500' data-name='AI Frontiers' data-description='Business Pass' data-image='https://stripe.com/img/documentation/checkout/marketplace.png' data-locale='auto' data-zip-code="true")
+
+script.
+    function calculateCounter() {
+        total = 0;
+        var counter = document.querySelector(".box-office .counter");
+        counter.innerHTML = "";
+        var totalDOM = document.querySelector(".box-office .total");
+        var stripeScript = document.querySelector("#stripe-button");
+
+        var tickets = document.querySelectorAll(".ticket");
+        for (var i = 0; i < tickets.length; i ++) {
+            var ticket = tickets[i];
+            var ticketName = ticket.querySelector(".ticket-name").innerHTML;
+            var ticketPrice = parseInt(ticket.querySelector(".ticket-price").innerHTML.replace('$', ''));
+            var ticketAmountSelector = ticket.querySelector(".ticket-amount");
+            var ticketAmount = parseInt(ticketAmountSelector.options[ticketAmountSelector.selectedIndex].innerHTML);
+            total += ticketPrice * ticketAmount;
+            if (ticketAmount != 0) {
+                counter.innerHTML += `<span class="counter-ticket"><b>${ticketName}</b> \$${ticketPrice} x ${ticketAmount}</span>`;
+            }
+        }
+        totalDOM.innerHTML = `Total: \$${total}`;
+        stripeScript.setAttribute("data-amount", total);
+        if (counter.innerHTML) {
+            counter.style.display = "block";
+        } else {
+            counter.style.display = "none";
+        }
+    };
+
+
+

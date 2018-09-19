@@ -1,4 +1,6 @@
 - var general = site.data.general
+- var controls = site.data.module_controls
+
 mixin session(time, title, description, speakers, dim)
     if (!session["dim"])
         .session
@@ -21,39 +23,40 @@ mixin session(time, title, description, speakers, dim)
                 != description
 
 - var programs = site.data.programs
-.module.module-program
-    a.module-title(name="program")
-        != general["programs-title"]
-    p.program-description
-        != general["programs-intro"]
-    .program
-        .day-buttons
-            - for (day in schedule) {
-                - sessions = schedule[day];
-                    span.day-button
-                        != day
+if controls["programs"]
+    .module.module-program
+        a.module-title(name="program")
+            != general["programs-title"]
+        p.program-description
+            != general["programs-intro"]
+        .program
+            .day-buttons
+                - for (day in schedule) {
+                    - sessions = schedule[day];
+                        span.day-button
+                            != day
+                - }
+            - var m = programs.length
+            - idx = 0
+            - for (day in programs) {
+                - idx += 1
+                - sessions = programs[day]
+                .day(id="day"+idx)
+                     .heading-box
+                         a.day-heading
+                             != day
+                         - if (day == "Day 1") {
+                         span.day-date November 9, 2018
+                         - }
+                         - if (day == "Day 2") {
+                         span.day-date November 10, 2018
+                         - }
+                         - if (day == "Day 3") {
+                         span.day-date November 11, 2018
+                         - }
+                     - n = sessions.length
+                     - for (var i = 0; i < n; i++) {
+                           - var session = sessions[i]
+                               + session(session["time"], session["title"], session["description"], session["speakers"], session["dim"])
+                     - }
             - }
-        - var m = programs.length
-        - idx = 0
-        - for (day in programs) {
-            - idx += 1
-            - sessions = programs[day]
-            .day(id="day"+idx)
-                 .heading-box
-                     a.day-heading
-                         != day
-                     - if (day == "Day 1") {
-                     span.day-date November 9, 2018
-                     - }
-                     - if (day == "Day 2") {
-                     span.day-date November 10, 2018
-                     - }
-                     - if (day == "Day 3") {
-                     span.day-date November 11, 2018
-                     - }
-                 - n = sessions.length
-                 - for (var i = 0; i < n; i++) {
-                       - var session = sessions[i]
-                           + session(session["time"], session["title"], session["description"], session["speakers"], session["dim"])
-                 - }
-        - }

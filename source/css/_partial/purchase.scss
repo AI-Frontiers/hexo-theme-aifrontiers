@@ -1,0 +1,119 @@
+.module-purchase {
+  display: block;
+  box-sizing: border-box;
+  width: 100vw;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+$border-color: #D2D6DF;
+
+.box-office {
+  background-color: #fff;
+  border: 1px solid $border-color;
+  border-radius: 4px;
+  max-width: 980px;
+  margin: auto;
+  .conference-information {
+    background: #EFF2F5;
+    padding: 20px;
+    border-bottom: 1px solid $border-color;
+    font-size: 13px;
+    display: flex;
+    flex-flow: column nowrap;
+    span {
+      display: block;
+    }
+    .conference-dates {
+    }
+    .sales-end-date {
+      margin-top: 2px;
+    }
+    .promocode {
+      margin-top: 5px;
+      input {
+        border-radius: 3px;
+        height: 24px;
+        border: 1px solid $border-color;
+        padding: 3px 6px;
+        margin-right: 10px;
+        width: 180px;
+      }
+      button {
+        border: 1px solid $border-color;
+        height: 24px;
+        border-radius: 3px;
+        padding: 3px 10px;
+        box-sizing: content-box;
+      }
+    }
+  }
+  .checkout {
+    padding: 20px;
+    background: #F8F8FA;
+    display: flex;
+    flex-flow: column nowrap;
+    .total {
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .counter {
+      display: none;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      width: 100%;
+      border-bottom: 1px solid rgba(0, 0, 0, .05);
+      .counter-ticket {
+        display: block;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        b {
+          display: inline-block;
+          min-width: 300px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  .tickets {
+    .ticket {
+      display: flex;
+      padding: 20px;
+      border-bottom: 1px solid $border-color;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      .ticket-left {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        max-width: 60%;
+      }
+      .ticket-right {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+      }
+      .ticket-name {
+        font-weight: 500;
+      }
+      .ticket-price {
+        font-size: 15px;
+      }
+      .ticket-description {
+        font-size: 12px;
+        color: #45494E;
+        margin-top: 3px;
+      }
+      .ticket-amount {
+        width: 80px;
+        height: 40px;
+        background-color: white;
+        font-size: 18px;
+        border: solid 1px $border-color;
+        outline: 0;
+      }
+    }
+  }
+}

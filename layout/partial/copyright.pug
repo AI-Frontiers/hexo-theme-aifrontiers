@@ -1,4 +1,11 @@
 - var general  = site.data.general
-.copyright
-    include social-bar
-    p © #{date(Date.now(), 'YYYY')} by #[span!= general["company-name"]]
+
+mixin copyright(conferenceKeyword, cityKeyword)
+    .copyright
+        include social-bar
+        p
+            if conferenceKeyword
+                != general["footer-text"].replace("%{conferenceKeyword}", conferenceKeyword).replace("%{cityKeyword}", cityKeyword)
+            else
+                != general["footer-text"].replace("%{conferenceKeyword}", "AI conference / Machine Learning conference / Deep Learning conference / NLP conference").replace("near %{cityKeyword}", "at San Jose <br>")
+            | organized by © #[span!= general["company-name"]]

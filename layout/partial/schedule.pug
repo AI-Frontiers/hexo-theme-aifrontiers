@@ -1,6 +1,7 @@
-- var general  = site.data.general;
-- var schedule = site.data.schedule;
-- var speakers = site.data.speakers;
+- var general  = site.data.general
+- var schedule = site.data.schedule
+- var speakers = site.data.speakers
+- var controls = site.data.module_controls
 
 mixin speaker(name, photo, position, company)
     .speaker
@@ -14,23 +15,60 @@ mixin speaker(name, photo, position, company)
 
 mixin speech(speaker, title, description)
     if title
-        .speech
+        - var urlizedSpeaker = speaker.toLowerCase().split(' ').join('-')
+        - var urlizedTitle = title.toLowerCase().split(' ').join('-')
+        .speech(id=urilizedTitle)
             .speech-title
                 span.speaker-name
                     != speaker
                 | &nbsp;:&nbsp;
-                != title
+                span
+                    != title
             .speech-description
                 != description
 
-mixin session(title, time, description, speeches, moderator, image)
+mixin session(type, title, time, description, speeches, moderator, image)
     if (speeches || description)
-        if (title.indexOf("Banquet") == -1)
-            - var urlizedTitle = title.toLowerCase().split(' ').join('-')
-            .session(id=urlizedTitle)
+        if type == "banquet"
+            .session.banquet
                 .left
                     .time
                         != time
+                    .session-title
+                        != title
+                    if speeches && general["schedule-show-speakers-photos"]
+                        .speakers
+                            - var sessionSpeaker = []
+                            each speech in speeches
+                                each speaker in speakers
+                                    - if (speech["speaker"] == speaker["name"])
+                                        - sessionSpeaker.push(speaker)
+                            each speaker in sessionSpeaker
+                                +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
+                    .banquet-images
+                        img(src="/images/banquet-1.jpg", alt="banquet")
+                        // img(src="/images/banquet-2.jpg", alt="banquet")
+                .right
+                    .session-title
+                        != title
+                    if speeches
+                        span.keynote-speech
+                            | Keynote speech
+                        each speech in speeches
+                            .speech
+                                +speech(speech["speaker"], speech["title"], speech["description"])
+                    if description
+                        .session-description
+                            br
+                            b Banquet and Networking
+                            br
+                            != description
+        else
+            .session
+                .left
+                    .time
+                        != time
+                    - var urlizedTitle = title.toLowerCase().split(' ').join('-')
                     .session-title
                         != title
                     if image
@@ -53,7 +91,7 @@ mixin session(title, time, description, speeches, moderator, image)
                                     - if (moderator == speaker["name"])
                                         +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
                 .right
-                    .session-title
+                    .session-title(id=urlizedTitle)
                         != title
                     if description
                         .session-description
@@ -62,40 +100,6 @@ mixin session(title, time, description, speeches, moderator, image)
                         each speech in speeches
                             .speech
                                 +speech(speech["speaker"], speech["title"], speech["description"])
-        else
-            .session.banquet
-                .left
-                    .time
-                        != time
-                    .session-title
-                        != title
-                    if speeches && general["schedule-show-speakers-photos"]
-                        .speakers
-                            - var sessionSpeaker = []
-                            each speech in speeches
-                                each speaker in speakers
-                                    - if (speech["speaker"] == speaker["name"])
-                                        - sessionSpeaker.push(speaker)
-                            each speaker in sessionSpeaker
-                                +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"])
-                    .banquet-images
-                        img(src="/images/banquet-1.jpg", alt="banquet")
-                        img(src="/images/banquet-2.jpg", alt="banquet")
-                .right
-                    .session-title
-                        != title
-                    if speeches
-                        span.keynote-speech
-                            | Keynote speech
-                        each speech in speeches
-                            .speech
-                                +speech(speech["speaker"], speech["title"], speech["description"])
-                    if description
-                        .session-description
-                            br
-                            b Banquet and Networking
-                            br
-                            != description
     else
         .session.dim
             .left
@@ -105,36 +109,42 @@ mixin session(title, time, description, speeches, moderator, image)
                 .session-title
                     != title
 
-.module.module-schedule#schedule
-    h1.module-title(name="schedule")
-        != general["schedule-title"]
-    p.schedule-description
-        != general["schedule-intro"]
-    .schedule
-        .day-buttons
-            - for (day in schedule) {
-                - sessions = schedule[day];
-                    span.day-button
-                        != day
-            - }
-        - idx = 0
-        - for (day in schedule) {
-            - idx += 1
-            - sessions = schedule[day];
-            .day(id="day"+idx)
-                .heading-box
-                    a.day-heading
-                        != day
-                    if (day == "Day 1")
-                        span.day-date November 9, 2018
-                    if (day == "Day 2")
-                        span.day-date November 10, 2018
-                    if (day == "Day 3")
-                        span.day-date November 11, 2018
-                each session in sessions
-                    +session(session["title"], session["time"], session["description"], session["speeches"], session["moderator"], session["image"])
-        - }
-        .continue-reading
-            a.back-to-top.day-button DAY 1
-            a.back-to-top.day-button DAY 2
-            a.back-to-top.day-button DAY 3
+mixin schedule(conferenceKeyword, cityKeyword, stateKeyword)
+    if controls["schedule"]
+        .module.module-schedule
+            h2.module-title#schedule
+                != general["schedule-title"]
+            p.schedule-description
+                if conferenceKeyword
+                    if stateKeyword == "CA"
+                        != general["schedule-intro"].replace("%{conferenceKeyword}", conferenceKeyword).replace("%{cityKeyword}", cityKeyword)
+                    else
+                        != general["schedule-intro"].replace("%{conferenceKeyword}", conferenceKeyword).replace("near %{cityKeyword}", "recommended for " + cityKeyword + " AI practitioners")
+                else
+                    != general["schedule-intro"].replace("%{conferenceKeyword}", "AI conference").replace("near %{cityKeyword}", "at San Jose")
+
+            .schedule
+                .day-buttons
+                    - for (day in schedule) {
+                        - var urlizedDay = day.toLowerCase().split(' ').join('')
+                        - sessions = schedule[day];
+                            a.day-button(href="#" + urlizedDay)
+                                != day
+                    - }
+                - idx = 0
+                - for (day in schedule) {
+                    - idx += 1
+                    - sessions = schedule[day];
+                    .day
+                        .heading-box
+                            a.day-heading(id="day"+idx)
+                                != day
+                            if (day == "Day 1")
+                                span.day-date November 9, 2018
+                            if (day == "Day 2")
+                                span.day-date November 10, 2018
+                            if (day == "Day 3")
+                                span.day-date November 11, 2018
+                        each session in sessions
+                            +session(session["type"], session["title"], session["time"], session["description"], session["speeches"], session["moderator"], session["image"])
+                - }

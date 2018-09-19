@@ -1,31 +1,34 @@
 - var general = site.data.general
-.module.module-about
-    a.module-title(name="about")
-        | About Us
-    .about
-        p.about-description
-            != general["about-us-intro"]
-        .wrapper
-            .heading
-                | Conference Organizer
-            .organizers
-                - var organizers = site.data.organizers;
-                - for (position in organizers) {
-                    - var names = organizers[position];
-                    - var m = names.length;
-                    span.title
-                        != position + ":"
-                        if (position != "Conference Chair")
-                            br
-                    if (position == "Conference Chair")
-                        span.name
-                            != " " + names[0]
-                            br
-                    else
-                        - for (var i = 0; i < m; i++) {
-                            span.name.indent
-                                != names[i]
-                        - }
-                - }
-        p.organizer-description
-            != general["about-us-outro"]
+- var controls = site.data.module_controls
+
+if controls["about"]
+    .module.module-about
+        a.module-title(name="about")
+            | About Us
+        .about
+            p.about-description
+                != general["about-us-intro"]
+            .wrapper
+                .heading
+                    | Conference Organizer
+                .organizers
+                    - var organizers = site.data.organizers;
+                    - for (position in organizers) {
+                        - var names = organizers[position];
+                        - var m = names.length;
+                        span.title
+                            != position + ":"
+                            if (position != "Conference Chair")
+                                br
+                        if (position == "Conference Chair")
+                            span.name
+                                != " " + names[0]
+                                br
+                        else
+                            - for (var i = 0; i < m; i++) {
+                                span.name.indent
+                                    != names[i]
+                            - }
+                    - }
+            p.organizer-description
+                != general["about-us-outro"]

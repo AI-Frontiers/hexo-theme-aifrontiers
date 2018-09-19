@@ -1,0 +1,20 @@
+.register_eventbrite,
+.register {
+  .container {
+    background: #F8F8FA;
+  }
+}
+
+.eventbrite {
+  box-sizing: border-box;
+  iframe {
+    display: block;
+    box-sizing: border-box;
+    width: 100vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 60px;
+    height: 800px;
+  }
+}
+

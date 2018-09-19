@@ -1,20 +1,23 @@
 - var general = site.data.general
+- var controls = site.data.module_controls
+
 mixin topic-card(title, image, description)
     - var urlizedTitle = title.toLowerCase().split(' ').join('-')
-    a.topic-card(href="#" + urlizedTitle)
+    .topic-card(href="#" + urlizedTitle)
         .topic-image-wrapper
-            img.topic-image(src=image)
+            img.topic-image(src=image alt=title)
             .topic-image-mask
             span.topic-title
                 != title
         span.topic-description
             != description
 
-.module.module-topics#topics
-    h1.module-title(name="topics")
-        != general["topics-title"]
-    .topics
-        - for (num in site.data.topics) {
-        - item = site.data.topics[num]
-            +topic-card(item["title"],item["image"],item["description"])
-        - }
+if controls["topics"]
+    .module.module-topics
+        h2.module-title#topics
+            != general["topics-title"]
+        .topics
+            - for (num in site.data.topics) {
+            - item = site.data.topics[num]
+                +topic-card(item["title"],item["image"],item["description"])
+            - }

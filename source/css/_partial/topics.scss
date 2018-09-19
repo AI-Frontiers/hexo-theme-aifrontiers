@@ -1,14 +1,15 @@
 .module-topics {
     margin: auto;
     margin-bottom: 10px;
+    padding-top: 40px;
     .module-title {
-        margin-top: 50px;
         margin-bottom: 40px;
     }
 
     .topics {
         display: flex;
-        padding: 0 6px;
+        padding-left: 6px;
+        padding-right: 6px;
         position: relative;
         flex-flow: row wrap;
         justify-content: center;

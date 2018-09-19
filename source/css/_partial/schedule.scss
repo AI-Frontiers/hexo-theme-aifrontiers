@@ -6,8 +6,6 @@
     max-width: 1250px;
     box-sizing: border-box;
     .module-title {
-        width: 100%;
-        margin: auto;
         margin-bottom: 20px;
     }
     .schedule {
@@ -24,7 +22,7 @@
         line-height: 32px;
         text-align: center;
         margin: auto;
-        margin-bottom: 0;
+        margin-bottom: 30px;
     }
     // .schedule-subdescription {
     //     font-size: 16px;
@@ -149,7 +147,7 @@
             line-height: 27px;
         }
         .session-image {
-            width: 100px;
+            height: 30px;
             margin: auto;
             display: block;
             padding: 5px;
@@ -249,7 +247,7 @@
         // white-space: nowrap;
     }
     .schedule > .day {
-        display: none;
+        // display: none;
         width: 100%;
     }
     .schedule > #day1 {
@@ -260,7 +258,6 @@
         width: 100%;
         display: flex;
         flex-direction: row;
-        margin-top: 30px;
         .day-button {
             position: relative;
             z-index: 1;
