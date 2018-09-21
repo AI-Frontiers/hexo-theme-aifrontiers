@@ -70,7 +70,11 @@
     }
 
     .speaker .name {
+        color: white;
+        margin-bottom: 0;
+        margin-top: 0;
         font-weight: 600;
+        font-size: inherit;
     }
 
     .speaker span {

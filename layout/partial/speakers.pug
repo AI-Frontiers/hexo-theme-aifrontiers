@@ -45,7 +45,7 @@ mixin speaker(name, photo, position, company, bio)
     - var urlizedName = name.toLowerCase().split(' ').join('-')
     .speaker(id=urlizedName)
         img.photo(src=photo alt=name)
-        span.name
+        h3.name
             != name
         span.position
             != position

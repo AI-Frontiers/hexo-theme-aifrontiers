@@ -18,7 +18,7 @@ mixin speech(speaker, title, description)
         - var urlizedSpeaker = speaker.toLowerCase().split(' ').join('-')
         - var urlizedTitle = title.toLowerCase().split(' ').join('-')
         .speech(id=urilizedTitle)
-            .speech-title
+            h3.speech-title
                 span.speaker-name
                     != speaker
                 | &nbsp;:&nbsp;
