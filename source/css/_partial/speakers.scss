@@ -64,9 +64,16 @@
     .speaker > .photo {
         transition: border .2s, opacity .2s;
     }
-    .speaker:hover > .photo {
+    .speaker:not([id="more-to-come"]):hover > .photo {
         border: rgba(255,255,255,.5) 3px solid;
         opacity: .85;
+    }
+
+    .speaker[id="more-to-come"] {
+        pointer-events: none;
+        .name {
+            display: none;
+        }
     }
 
     .speaker .name {

@@ -1,0 +1,19 @@
+- var controls = site.data.module_controls
+- var testimonials = site.data.testimonials
+
+mixin testimonial(name, quote)
+    .testimonial-card
+        span.testimonial-quote
+            != quote
+        span.testimonial-name
+            != name
+
+
+if controls["testimonials"]
+    .module.module-testimonials
+        span.module-title#testimonials
+            != general["testimonials-title"]
+        .testimonials
+            each testimonial in testimonials
+                +testimonial(testimonial["name"], testimonial["quote"])
+
