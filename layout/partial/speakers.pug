@@ -4,7 +4,13 @@
 
 -
     var speeches = []
-    var dict = {}
+    var eventDict = {}
+    var postDict = {}
+    site.posts.each((item) => {
+        if (item["featured-speaker"]) {
+            postDict[item["featured-speaker"]] = item;
+        }
+    });
     for (day in schedule) {
         for (i in schedule[day]) {
             if (schedule[day][i]["type"] == "keynote" && schedule[day][i]["speeches"]) {
@@ -31,17 +37,12 @@
     for (idx in speeches) {
         speech = speeches[idx];
         if(speech["speaker"]) {
-            if (dict[speech["speaker"]]) {
-                dict[speech["speaker"]].push(speech);
-            }
-            else {
-                dict[speech["speaker"]] = [];
-                dict[speech["speaker"]].push(speech);
-            }
+            eventDict[speech["speaker"]] = eventDict[speech["speaker"]] || [];
+            eventDict[speech["speaker"]].push(speech);
         }
     }
 
-mixin speaker(name, photo, position, company, bio)
+mixin speaker(name, photo, position, intro, company, bio)
     - var urlizedName = name.toLowerCase().split(' ').join('-')
     .speaker(id=urlizedName)
         img.photo(src=photo alt=name)
@@ -51,6 +52,9 @@ mixin speaker(name, photo, position, company, bio)
             != position
         span.company
             != company
+        if intro
+            span.intro
+                != intro
         .details
             span.close-button
                 | ⨉
@@ -62,9 +66,12 @@ mixin speaker(name, photo, position, company, bio)
                     != position
                 span.company
                     != company
+                if intro
+                    span.intro
+                        != intro
                 .sessions
-                    if dict[name]
-                        each session in dict[name]
+                    if eventDict[name]
+                        each session in eventDict[name]
                             if session["title"]
                                 - var urlizedTitle = session["title"].toLowerCase().split(' ').join('-')
                                 .session
@@ -76,6 +83,12 @@ mixin speaker(name, photo, position, company, bio)
                                         != session["title"]
                                     span.description
                                         != session["description"]
+
+                if postDict[name]
+                    span.related-news
+                        != "Learn more about " + name + " in the post: "
+                        a(href=postDict[name].permalink)
+                            != postDict[name].title
                 if bio
                     .bio
                         span.title
@@ -90,11 +103,17 @@ if controls["speakers"]
         .speakers
             each speaker in speakers
                 if (!speaker["hidden"] && !speaker["moderator"] && !speaker["previous"])
-                    +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
-            +speaker("more to come","/images/speakers/more-to-come.jpg", "", "", "")
+                    +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["intro"],speaker["company"], speaker["bio"])
+            +speaker("more to come","/images/speakers/more-to-come.jpg", "", "", "", "")
         a.moderator-title
             != general["moderators-title"]
         .moderators
             each speaker in speakers
                 if (!speaker["hidden"] && speaker["moderator"] && !speaker["previous"])
-                    +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["company"], speaker["bio"])
+                    +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["intro"],speaker["company"], speaker["bio"])
+        a.past-speakers-title
+            != general["past-speakers-title"]
+        .past-speakers
+            each speaker in speakers
+                if (!speaker["hidden"] && speaker["previous"])
+                    +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["intro"],speaker["company"], speaker["bio"])

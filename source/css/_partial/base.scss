@@ -82,6 +82,7 @@ table {
 }
 
 .container {
+    position: relative;
     display: flex;
     border-bottom: #EEE 1px solid;
 }
@@ -132,7 +133,14 @@ iframe {
 }
 
 .module-title {
+  position: relative;
+  z-index: 0;
   padding-top: calc( var(--header-height) + 15px);
+  margin-top: calc( -1 * var(--header-height));
+}
+
+.session-title {
+  padding-top: calc( var(--header-height));
   margin-top: calc( -1 * var(--header-height));
 }
 

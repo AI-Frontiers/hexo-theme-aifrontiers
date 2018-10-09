@@ -1,5 +1,6 @@
 - var type = "register"
 - var general = site.data.general
+- var tracking = site.data.tracking
 
 doctype
 html(lang=config.language, prefix="og: http://ogp.me/ns#")
@@ -7,10 +8,19 @@ html(lang=config.language, prefix="og: http://ogp.me/ns#")
         include partial/head
         +head(type)
     body(class=type)
-        // Google Tag Manager (noscript)
-        noscript
-            iframe(src="https://www.googletagmanager.com/ns.html?id=GTM-K869LBB", height="0", width="0", style="display:none;visibility:hidden")
-        // End Google Tag Manager (noscript)
-
+        // Global Site Tag (gtag.js) - Google Analytics
+        script(async, src="https://www.googletagmanager.com/gtag/js?id=" + tracking['GA-tracking-ID'])
         script.
-            window.location.replace("!{general['register-link']}");
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+          gtag('config', "#{tracking['GA-tracking-ID']}");
+        script.
+            document.addEventListener("DOMContentLoaded", () => {
+                var split = window.location.href.split("?");
+                if (split.length == 1) {
+                    window.location.href = "!{general['register-link']}";
+                } else {
+                    window.location.href = "!{general['register-link']}" + "?" + split[1];
+                }
+            });

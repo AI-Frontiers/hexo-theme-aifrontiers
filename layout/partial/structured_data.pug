@@ -3,46 +3,49 @@
 - var schedule = site.data.schedule
 
 - var eventData = site.data["JSON_LD/event"]
+- var organizationData = site.data["JSON_LD/organization"]
 
 -
     var idx0 = 0;
-    Object.keys(schedule).forEach((day) => {
-        var sessions = schedule[day];
-        (sessions || []).forEach((session) => {
-            (session["speeches"] || []).forEach((speech) => {
-                var performerSchema;
-                const speaker = speakers.filter(speaker => speaker["name"] == speech["speaker"])[0];
-                if (speaker) {
-                    performerSchema = {
-                        "@type": "Person",
-                        "name": speaker["name"],
-                        "jobTitle": speaker["position"],
-                        "affiliation": speaker["company"],
-                        "image": speaker["photo"],
-                        "description": speaker["bio"]
-                    };
-                }
-                if (speech["title"]) {
-                    eventData["subevents"].push({
-                          "@context": "http://schema.org",
-                          "@type": "Event",
-                          "location": eventData.location,
-                          "name": speech["title"] + " @ AI Frontiers conference",
-                          "description": speech["description"],
-                          "startDate": ("2018-11-0" + (9 + idx0)),
-                          "endDate": ("2018-11-0" + (9 + idx0)),
-                          "performer": performerSchema
-                    });
-                }
+    // This process only needs to happen once
+    if (eventData["subevents"].length == 0) {
+        Object.keys(schedule).forEach((day) => {
+            var sessions = schedule[day];
+            (sessions || []).forEach((session) => {
+                (session["speeches"] || []).forEach((speech) => {
+                    var performerSchema;
+                    const speaker = speakers.filter(speaker => speaker["name"] == speech["speaker"])[0];
+                    if (speaker) {
+                        performerSchema = {
+                            "@type": "Person",
+                            "name": speaker["name"],
+                            "jobTitle": speaker["position"],
+                            "affiliation": speaker["company"],
+                            "image": speaker["photo"],
+                            "description": speaker["bio"]
+                        };
+                    }
+                    if (speech["title"]) {
+                        eventData["subevents"].push({
+                              "@context": "http://schema.org",
+                              "@type": "Event",
+                              "location": eventData.location,
+                              "name": speech["title"] + " @ AI Frontiers conference",
+                              "description": speech["description"],
+                              "startDate": ("2018-11-0" + (9 + idx0)),
+                              "endDate": ("2018-11-0" + (9 + idx0)),
+                              "performer": performerSchema
+                        });
+                    }
+                });
             });
+            idx0 += 1;
         });
-        idx0 += 1;
-    });
+    };
 
 script(type="application/ld+json")
     != JSON.stringify(eventData)
 
-- var organiationData = site.data["JSON_LD/organization"]
 script(type="application/ld+json")
-    != JSON.stringify(organiationData)
+    != JSON.stringify(organizationData)
 

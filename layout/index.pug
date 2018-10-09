@@ -6,8 +6,8 @@ block jumbotron
 block container
     include partial/structured_data
 
-    include partial/topics
     include partial/speakers
+    include partial/topics
     +subscribe()
     include partial/schedule
     +schedule(page.conferenceKeyword, page.cityKeyword)

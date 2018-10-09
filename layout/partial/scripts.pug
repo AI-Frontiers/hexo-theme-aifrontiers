@@ -14,12 +14,12 @@ script(type='text/javascript').
   };
 
 // Global Site Tag (gtag.js) - Google Analytics
-script(async, src="https://www.googletagmanager.com/gtag/js?id=#{tracking['GA-tracking-ID']}")
+script(async, src="https://www.googletagmanager.com/gtag/js?id=" + tracking['GA-tracking-ID'])
 script.
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments)};
   gtag('js', new Date());
-  gtag('config', '#{tracking["GA-tracking-ID"]}');
+  gtag('config', "#{tracking['GA-tracking-ID']}");
   var trackOutboundLink = (url) => {
     ga('send', 'event', 'outbound', 'click', url, {
         'transport': 'beacon',
@@ -29,7 +29,7 @@ script.
     });
   };
 
-script(type='text/javascript',src=url_for("vendor/jquery-modal/jquery.modal.js"))
+// script(type='text/javascript',src=url_for("vendor/jquery-modal/jquery.modal.js"))
 // script(type='text/javascript',src=url_for("vendor/slick/slick.min.js"))
 
 // SlickNav
@@ -83,16 +83,17 @@ script(type='text/javascript').
               });
            }
         }
-        $("#fgPlayer").on($.modal.BEFORE_OPEN, function(event, modal) {
-           fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
-           if (bgPlayer) bgPlayer.pause();
-        });
-        $("#fgPlayer").on($.modal.OPEN, function(event, modal) {
-           if (!window.mobilecheck()) {if (fgPlayer) fgPlayer.play()};
-        });
-        $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
-           if (bgPlayer) bgPlayer.play();
-        });
+        // Watch video related scripts
+        // $("#fgPlayer").on($.modal.BEFORE_OPEN, function(event, modal) {
+        //    fgPlayer = new Vimeo.Player('fgPlayer', fgPlayerOptions);
+        //    if (bgPlayer) bgPlayer.pause();
+        // });
+        // $("#fgPlayer").on($.modal.OPEN, function(event, modal) {
+        //    if (!window.mobilecheck()) {if (fgPlayer) fgPlayer.play()};
+        // });
+        // $("#fgPlayer").on($.modal.BEFORE_CLOSE, function(event, modal) {
+        //    if (bgPlayer) bgPlayer.play();
+        // });
     }
 
 script(type="text/javascript").
@@ -124,14 +125,17 @@ script(type="text/javascript").
 //     }
 
 script(type="text/javascript").
-    $(".module-speakers .speakers .speaker, .module-speakers .moderators .speaker").click(function(e) {
-        $(this).toggleClass("speaker--active")
+    $(".module-speakers .speakers .speaker, .module-speakers .moderators .speaker, .module-speakers .past-speakers .speaker").click(function(e) {
+        $(this).toggleClass("speaker--active");
+    });
+    $(".module-schedule .schedule .speaker").click(function(e) {
+        var name = $(this).children(".name").text();
+        var urlizedName = name.toLowerCase().split(' ').join('-');
+        $("#" + urlizedName).click();
     });
     $(document).keyup(function(e) {
-        $details = $(".module-speakers .speakers .speaker .details, .module-speakers .moderators .speaker .details");
         if (e.which == 27) {
-            $details.css("display", "none");
-            $details.parent().css("cursor", "pointer");
+            $(".speaker--active").toggleClass("speaker--active");
         }
     });
 
@@ -144,6 +148,48 @@ script(type='text/javascript').
     return search?JSON.parse('{"' + search.replace(/&/g, '","').replace(/=/g,'":"') + '"}',
       function(key, value) { return key===""?value:decodeURIComponent(value) }):{}
   }
+
+// Preserve URL parameter
+script(type='text/javascript').
+    function getUrlParams() {
+        var params = [];
+        if (window.location.href.indexOf('?') == -1) return [];
+
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            params[hash[0]] = hash[1];
+        }
+        return params;
+    }
+
+    $( document ).ready(() => {
+        var url_string = window.location.href;
+        var params = getUrlParams();
+        if (Object.keys(params).length != 0) {
+            var paramsString = "?";
+            var paramsArray = [];
+
+            for (let field in params) {
+                paramsArray.push(`${field}=${params[field]}`);
+            }
+
+            paramsString += paramsArray.join("&");
+
+            for (var link of $('a')) {
+                var $link = $(link);
+                var href = $link.attr("href")
+                if (href && href.substring(0, 4) != "tel:" && href.substring(0, 7) != "mailto:" && href.substring(0, 1) != "#") {
+                    var splits = href.split("#");
+                    if (splits.length == 1) {
+                        $link.attr("href", splits[0] + paramsString);
+                    } else if (splits.length == 2) {
+                        $link.attr("href", splits[0] + paramsString + "#" + splits[1]);
+                    }
+                }
+            }
+        }
+    });
 
 // ========= Jumbotron Slider =========
 // script.

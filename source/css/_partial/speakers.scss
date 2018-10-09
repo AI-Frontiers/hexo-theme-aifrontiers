@@ -19,7 +19,8 @@
         width: 100%;
         margin-bottom: 25px;
     }
-    .moderator-title {
+    .moderator-title,
+    .past-speakers-title {
         display: block;
         color: white;
         font-weight: 600;
@@ -30,7 +31,9 @@
         margin-top: 25px;
         margin-bottom: 25px;
     }
-    .speakers, .moderators {
+    .speakers,
+    .moderators,
+    .past-speakers {
         display: flex;
         box-sizing: border-box;
         margin: auto;
@@ -91,6 +94,12 @@
         text-align: center;
     }
 
+    .speaker .intro {
+        margin-top: 10px;
+        font-weight: 600;
+        font-family: serif;
+    }
+
     .speaker .narrow {
         font-family: "Helvetica Narrow";
         letter-spacing: -1.4px;
@@ -101,7 +110,6 @@
     }
     .speaker .details {
         display: none;
-        overflow-y: scroll;
         flex-direction: column;
         position: fixed;
         z-index: 100;
@@ -112,9 +120,15 @@
         padding: 0 45px;
         justify-content: start;
         align-items: center;
-        background: #015EC3;
         left: 0;
         top: 0;
+        background: #015EC3;
+        a {
+            color: white;
+        }
+        .details-hide {
+            display: none!important;
+        }
         a {
           text-decoration: underline;
         }
@@ -131,17 +145,41 @@
         }
         .wrap {
             display: flex;
+            overflow-y: scroll;
+            height: 100vh;
             flex-direction: column;
             justify-content: start;
             align-items: center;
             max-width: 660px;
-            padding: 45px 0;
+            padding: 45px 60px;
+            background: white;
+            * {
+              color: #000!important;
+            }
+            &::-webkit-scrollbar {
+                width: 10px;
+            }
+            &::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+                background: rgba(0, 0, 0, .05);
+            }
+            &::-webkit-scrollbar-thumb {
+              background-color: rgba(255, 255, 255, .3);
+              border-radius: 5px;
+            }
             .photo {
                 box-sizing: border-box;
                 width: 150px;
                 height: 150px;
                 border-radius: 1000px;
                 margin-bottom: 16px;
+            }
+            .related-news {
+                font-size: 14px;
+                margin-bottom: 18px;
+                a {
+                    font-style: italic;
+                }
             }
             .bio .content {
                 display: block;
@@ -174,7 +212,6 @@
                 }
                 .day, .time {
                     display: inline-block;
-                    color: rgba(255,255,255,.6);
                 }
                 .description {
                     text-align: justify;

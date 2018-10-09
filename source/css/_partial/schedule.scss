@@ -219,6 +219,15 @@
         flex-direction: column;
         justify-content: start;
         align-items: center;
+        .photo {
+            border: white 3px solid;
+        }
+        &:hover {
+            cursor: pointer;
+            .photo {
+                border-color: #A5D2F1;
+            }
+        }
     }
     .speaker .photo {
         width: 75px;
