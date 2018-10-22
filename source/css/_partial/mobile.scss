@@ -329,6 +329,13 @@ $mobile-width: 600px;
         .level {
           margin-top: 20px;
         }
+        .diamond-spnrs .spnr-logo {
+          height: auto!important;
+          max-width: 100%;
+          box-sizing: border-box;
+          padding: 5px;
+          width: 100%;
+        }
         .sponsorship-letter {
             margin-top: 5px;
         }

@@ -13,8 +13,6 @@ if controls["contact"]
                 textarea(class='input-message', name='message', rows='5', placeholder='Message', required='')
                 input(class='submit-button', type='submit')
             span.company-info
-                != general["company-address-line-1"] + ". " + general["company-address-line-2"]
-                br
                 a(href="mailto:" + general["conference-email"])
                     != general["conference-email"]
                 a(href="tel:" + general["company-phone"])

@@ -27,7 +27,7 @@ mixin speech(speaker, title, description)
             .speech-description
                 != description
 
-mixin session(type, title, time, description, speeches, moderator, image)
+mixin session(type, title, time, description, speeches, moderator, image, imageSize)
     if (speeches || description)
         if type == "banquet"
             .session.banquet
@@ -72,7 +72,7 @@ mixin session(type, title, time, description, speeches, moderator, image)
                     .session-title
                         != title
                     if image
-                        img.session-image(src=image)
+                        img.session-image(src=image style="height: "+imageSize+"px")
                     if speeches && general["schedule-show-speakers-photos"]
                         .speakers
                             - var sessionSpeaker = []
@@ -146,5 +146,5 @@ mixin schedule(conferenceKeyword, cityKeyword, stateKeyword)
                             if (day == "Day 3")
                                 span.day-date November 11, 2018
                         each session in sessions
-                            +session(session["type"], session["title"], session["time"], session["description"], session["speeches"], session["moderator"], session["image"])
+                            +session(session["type"], session["title"], session["time"], session["description"], session["speeches"], session["moderator"], session["image"], session["image-height"])
                 - }
