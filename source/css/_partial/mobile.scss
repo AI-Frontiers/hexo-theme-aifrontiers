@@ -521,41 +521,65 @@ $mobile-width: 600px;
         padding-right: 10px!important;
     }
 
-    .module-speakers {
-      order: 1;
+    // .module-speakers {
+    //   order: 1;
+    // }
+
+    .module-tickets {
+      .tickets {
+        display: none;
+      }
+      .ticket {
+        .ticket-type {
+          min-height: 5.5em;
+        }
+        font-size: 9px!important;
+        li {
+          margin-left: 10px!important;
+        }
+      }
     }
 
-    .module-topics {
-      order: 2;
+    .module-schedule-summary {
+        .schedule-summary {
+            font-size: 13px;
+        }
+        .day-summary {
+            padding: 2vw!important;
+        }
     }
 
-    .container .subscribe {
-      order: 3;
-    }
+    // .module-topics {
+    //   order: 2;
+    // }
 
-    .module-schedule {
-      order: 4;
-    }
+    // .container .subscribe {
+    //   order: 3;
+    // }
 
-    .module-spnrs {
-      order: 6;
-    }
+    // .module-schedule {
+    //   order: 4;
+    // }
 
-    .module-testimonials {
-      order: 7;
-    }
+    // .module-spnrs {
+    //   order: 6;
+    // }
 
-    .module-news {
-      order: 8;
-    }
+    // .module-testimonials {
+    //   order: 7;
+    // }
 
-    .module-venue {
-      order: 9;
-    }
+    // .module-news {
+    //   order: 8;
+    // }
 
-    .module-contact {
-      order: 10;
-    }
+    // .module-venue {
+    //   order: 9;
+    // }
+
+    // .module-contact {
+    //   order: 10;
+    // }
 }
 
 @media (max-width: 660px) {

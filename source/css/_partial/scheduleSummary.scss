@@ -1,0 +1,77 @@
+.module-schedule-summary {
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+  .details-hide {
+    display: none;
+  }
+  .schedule-description {
+    font-size: 18px;
+    color: #083365;
+    letter-spacing: 0;
+    line-height: 32px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  .schedule-summary {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    .summary-day-heading {
+      position: relative;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+      line-height: 72px;
+      font-size: 22px;
+      text-align: center;
+      height: 72px;
+      font-weight: 600;
+      letter-spacing: .5px;
+      align-content: baseline;
+      border-bottom: 0;
+      color: #0057b5;
+      background: #e5f0fd;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .summary-day {
+      width: 33.333%;
+      box-sizing: border-box;
+      display: flex;
+      flex-flow: column nowrap;
+      &:last-of-type .day-summary {
+        border-right: solid 1px #E2E2E2;
+      }
+      .day-summary {
+        padding: 18px 20px;
+        border: solid 1px #E2E2E2;
+        border-top: 0;
+        border-right: 0;
+        height: 360px;
+        .day-summary-item {
+          box-sizing: border-box;
+          padding: 4px 0 2px;
+          line-height: 1.2;
+          list-style-position: outside;
+          .day-summary-item-time {
+            display: none;
+            padding-right: 10px;
+            whitespace: nowrap;
+            min-width: 40px;
+          }
+          .day-summary-item-title {
+            color: inherit;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

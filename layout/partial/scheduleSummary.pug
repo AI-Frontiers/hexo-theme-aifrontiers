@@ -1,0 +1,41 @@
+- var general  = site.data.general
+- var schedule = site.data.schedule
+- var scheduleSummary = site.data.schedule_summary
+- var controls = site.data.module_controls
+
+mixin scheduleSummary(conferenceKeyword, cityKeyword, stateKeyword)
+    if controls["schedule"]
+        .module.module-schedule-summary
+            h2.module-title#schedule-summary
+                != general["schedule-title"]
+            p.schedule-description
+                if conferenceKeyword
+                    if stateKeyword == "CA"
+                        != general["schedule-intro"].replace("%{conferenceKeyword}", conferenceKeyword).replace("%{cityKeyword}", cityKeyword)
+                    else
+                        != general["schedule-intro"].replace("%{conferenceKeyword}", conferenceKeyword).replace("near %{cityKeyword}", "recommended for " + cityKeyword + " AI practitioners")
+                else
+                    != general["schedule-intro"].replace("%{conferenceKeyword}", "AI conference").replace("near %{cityKeyword}", "at San Jose")
+            .schedule-summary
+                - for (day in scheduleSummary) {
+                    .summary-day
+                        - var urlizedDay = day.toLowerCase().split(' ').join('')
+                        a.summary-day-heading(href='/schedule/#' + urlizedDay)
+                            != day
+                        .day-summary
+                            // != scheduleSummary[day]
+                            ul.day-summary-list
+                                - for (session of schedule[day]) {
+                                    if !session['summary-hide']
+                                        li.day-summary-item
+                                            span.day-summary-item-time
+                                                if session['time'].indexOf('-') != -1
+                                                    != session['time'].substring(0, session['time'].indexOf('-'))
+                                                else
+                                                    != session['time']
+                                            - var urlizedTitle = session['title'].toLowerCase().split(' ').join('-')
+                                            a.day-summary-item-title(href="/schedule/#" + urlizedTitle)
+                                                != session['title']
+                            - }
+
+                - }

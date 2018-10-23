@@ -7,8 +7,11 @@ block container
     include partial/structured_data
 
     include partial/speakers
+    include partial/tickets
     include partial/topics
     +subscribe()
+    // include partial/scheduleSummary
+    // +scheduleSummary()
     include partial/schedule
     +schedule(page.conferenceKeyword, page.cityKeyword)
     include partial/sponsors

@@ -1,0 +1,38 @@
+- var general  = site.data.general
+- var tickets = site.data.tickets
+
+.module.module-tickets
+    h2.module-title#tickets
+        != general["tickets-title"]
+    a.tickets(href='/register')
+        - for (ticket of tickets) {
+            .ticket
+                .ticket-type
+                    span.ticket-type-text
+                        != ticket['type']
+                    span.ticket-type-sub-text
+                        != ticket['type-sub']
+                .ticket-price
+                    if ticket['price-discounted']
+                        span.ticket-price-text.ticket-price-text-striked
+                            | $!{ticket['price']}
+                        span.ticket-price-discounted-text
+                            |  $!{ticket['price-discounted']}
+                    else
+                        .ticket-price-text
+                            | $!{ticket['price']}
+                if ticket['description']
+                    .ticket-description
+                        ul.ticket-description-list
+                            - for (item of ticket['description']) {
+                                li.ticket-description-item
+                                    != item
+                            - }
+                .ticket-tagline
+                    != ticket['tagline']
+        - }
+    a(href='/register')
+        img.mobile-only(src="/images/price-table.png?v=4")
+    a.button.register-button.button-effects(href="/register")
+        != general["jumbotron-register-button-text"]
+

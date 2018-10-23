@@ -111,9 +111,9 @@ if controls["speakers"]
             each speaker in speakers
                 if (!speaker["hidden"] && speaker["moderator"] && !speaker["previous"])
                     +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["intro"],speaker["company"], speaker["bio"])
-        a.past-speakers-title
-            != general["past-speakers-title"]
-        .past-speakers
-            each speaker in speakers
-                if (!speaker["hidden"] && speaker["previous"])
-                    +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["intro"],speaker["company"], speaker["bio"])
+        // a.past-speakers-title
+        //     != general["past-speakers-title"]
+        // .past-speakers
+        //     each speaker in speakers
+        //         if (!speaker["hidden"] && speaker["previous"])
+        //             +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["intro"],speaker["company"], speaker["bio"])
