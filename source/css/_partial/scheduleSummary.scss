@@ -51,12 +51,14 @@
         border: solid 1px #E2E2E2;
         border-top: 0;
         border-right: 0;
-        height: 360px;
+        height: 500px;
         .day-summary-item {
           box-sizing: border-box;
           padding: 4px 0 2px;
+          margin-left: 10px;
           line-height: 1.2;
           list-style-position: outside;
+          list-style: none;
           .day-summary-item-time {
             display: none;
             padding-right: 10px;
@@ -64,14 +66,37 @@
             min-width: 40px;
           }
           .day-summary-item-title {
-            color: inherit;
+            // color: inherit;
+            display: inline-block;
+            box-sizing: border-box;
+            padding: 5px 8px;
+            border-radius: 4px;
+            vertical-align: top;
+            color: #083365;
+            width: 100%;
             &:hover {
-              text-decoration: underline;
+              color: #0057b5;
+              background: #e5f0fd;
             }
           }
         }
       }
     }
+  }
+  .button {
+      position: relative;
+      display: block;
+      width: 150px;
+      box-sizing: border-box;
+      margin: auto;
+      margin-top: 20px;
+      padding-bottom: 12px;
+  }
+  .register-button {
+      background-color: #0070E8;
+      color: white;
+      letter-spacing: .7px;
+      z-index: 9;
   }
 }
 

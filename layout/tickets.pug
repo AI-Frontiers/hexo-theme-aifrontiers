@@ -1,0 +1,8 @@
+extends partial/layout
+
+block container
+    include partial/tickets
+
+block copyright
+    include partial/copyright
+    +copyright(page.conferenceKeyword, page.cityKeyword)

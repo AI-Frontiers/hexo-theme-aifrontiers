@@ -36,6 +36,8 @@ mixin scheduleSummary(conferenceKeyword, cityKeyword, stateKeyword)
                                             - var urlizedTitle = session['title'].toLowerCase().split(' ').join('-')
                                             a.day-summary-item-title(href="/schedule/#" + urlizedTitle)
                                                 != session['title']
-                            - }
+                                - }
 
                 - }
+            a.button.register-button.button-effects(href="/schedule")
+                | Full Schedule

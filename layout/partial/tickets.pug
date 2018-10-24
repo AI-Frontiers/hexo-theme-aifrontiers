@@ -4,7 +4,7 @@
 .module.module-tickets
     h2.module-title#tickets
         != general["tickets-title"]
-    a.tickets(href='/register')
+    a.tickets(href='/register/')
         - for (ticket of tickets) {
             .ticket
                 .ticket-type
@@ -33,6 +33,6 @@
         - }
     a(href='/register')
         img.mobile-only(src="/images/price-table.png?v=4")
-    a.button.register-button.button-effects(href="/register")
+    a.button.register-button.button-effects(href="/register/")
         != general["jumbotron-register-button-text"]
 
