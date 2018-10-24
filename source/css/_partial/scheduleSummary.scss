@@ -32,8 +32,8 @@
       letter-spacing: .5px;
       align-content: baseline;
       border-bottom: 0;
-      color: #0057b5;
-      background: #e5f0fd;
+      color: white;
+      background: #0070E8;
       &:hover {
         text-decoration: underline;
       }
@@ -44,39 +44,30 @@
       display: flex;
       flex-flow: column nowrap;
       &:last-of-type .day-summary {
-        border-right: solid 1px #E2E2E2;
+        border-right: solid 1px #999;
       }
       .day-summary {
         padding: 18px 20px;
-        border: solid 1px #E2E2E2;
+        border: solid 1px #999;
         border-top: 0;
         border-right: 0;
-        height: 500px;
+        height: 365px;
+        .part-of-day-heading {
+          margin: 0;
+          color: #0057b5;
+        }
         .day-summary-item {
           box-sizing: border-box;
           padding: 4px 0 2px;
           margin-left: 10px;
           line-height: 1.2;
           list-style-position: outside;
-          list-style: none;
-          .day-summary-item-time {
-            display: none;
-            padding-right: 10px;
-            whitespace: nowrap;
-            min-width: 40px;
-          }
+          font-weight: 500;
           .day-summary-item-title {
-            // color: inherit;
-            display: inline-block;
+            color: inherit;
             box-sizing: border-box;
-            padding: 5px 8px;
-            border-radius: 4px;
-            vertical-align: top;
-            color: #083365;
-            width: 100%;
-            &:hover {
-              color: #0057b5;
-              background: #e5f0fd;
+            &[href]:hover {
+              text-decoration: underline;
             }
           }
         }

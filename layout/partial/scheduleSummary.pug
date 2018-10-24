@@ -23,21 +23,27 @@ mixin scheduleSummary(conferenceKeyword, cityKeyword, stateKeyword)
                         a.summary-day-heading(href='/schedule/#' + urlizedDay)
                             != day
                         .day-summary
-                            // != scheduleSummary[day]
-                            ul.day-summary-list
-                                - for (session of schedule[day]) {
-                                    if !session['summary-hide']
-                                        li.day-summary-item
-                                            span.day-summary-item-time
-                                                if session['time'].indexOf('-') != -1
-                                                    != session['time'].substring(0, session['time'].indexOf('-'))
-                                                else
-                                                    != session['time']
-                                            - var urlizedTitle = session['title'].toLowerCase().split(' ').join('-')
-                                            a.day-summary-item-title(href="/schedule/#" + urlizedTitle)
-                                                != session['title']
+                            - for (partOfDay of scheduleSummary[day]) {
+                                h3.part-of-day-heading
+                                    != partOfDay['part']
+                                ul.day-summary-list
+                                - for (session of partOfDay['sessions']) {
+                                    li.day-summary-item
+                                        a.day-summary-item-title(href=session['url'])
+                                            != session['title']
                                 - }
-
+                            - }
                 - }
-            a.button.register-button.button-effects(href="/schedule")
-                | Full Schedule
+
+            // a.button.register-button.button-effects(href="/schedule")
+            //     | Full Schedule
+        // - for (dayIdx in schedule) {
+        //     - day = schedule[dayIdx]
+        //     - for (session of day) {
+        //         span 
+        //             != "title: " + session['title']
+        //         - var urlizedTitle = session['title'].toLowerCase().split(' ').join('-')
+        //         span 
+        //             != "url: https://aifrontiers.com/schedule/#" + urlizedTitle
+        //     - }
+        // - }

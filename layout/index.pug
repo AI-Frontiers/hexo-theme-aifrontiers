@@ -10,10 +10,10 @@ block container
     // include partial/tickets
     include partial/topics
     +subscribe()
-    // include partial/scheduleSummary
-    // +scheduleSummary()
-    include partial/schedule
-    +schedule(page.conferenceKeyword, page.cityKeyword)
+    include partial/scheduleSummary
+    +scheduleSummary()
+    // include partial/schedule
+    // +schedule(page.conferenceKeyword, page.cityKeyword)
     include partial/sponsors
     include partial/testimonials
     include partial/news
