@@ -104,7 +104,7 @@ if controls["speakers"]
             each speaker in speakers
                 if (!speaker["hidden"] && !speaker["moderator"] && !speaker["previous"])
                     +speaker(speaker["name"],speaker["photo"],speaker["position"],speaker["intro"],speaker["company"], speaker["bio"])
-            +speaker("more to come","/images/speakers/more-to-come.jpg", "", "", "", "")
+            // +speaker("more to come","/images/speakers/more-to-come.jpg", "", "", "", "")
         a.moderator-title
             != general["moderators-title"]
         .moderators

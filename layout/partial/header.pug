@@ -11,9 +11,11 @@ header#header
             include navigation/nav-sub
             include navigation/nav-mobile
         include social-bar
-        if type != 'tickets'
-            a.button.button-effects.buy-tickets(href="/tickets/")
-                != general["header-register-button-text"]
-        else
-            a.button.button-effects.buy-tickets(href="/register/")
-                != general["header-register-button-text"]
+        a.button.button-effects.buy-tickets(href="/register/")
+            != general["header-register-button-text"]
+        // if type != 'tickets'
+        //     a.button.button-effects.buy-tickets(href="/tickets/")
+        //         != general["header-register-button-text"]
+        // else
+        //     a.button.button-effects.buy-tickets(href="/register/")
+        //         != general["header-register-button-text"]
