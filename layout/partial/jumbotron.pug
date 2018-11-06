@@ -15,11 +15,11 @@
         // h2.conf-theme
         //     != general["conference-theme"]
         span.conf-info
-            h3.conf-date #{date(general["start-date"], "MMMM D-" + date(general["end-date"], "D") + ", YYYY")}
-            span.sep
-                != ", "
             h3.conf-location
                 != general["venue-name"]
+            h3.conf-date #{date(general["start-date"], "MMMM D-" + date(general["end-date"], "D") + ", YYYY")}
+        include countdown
+        +countdown()
         .buttons
             a.button.register-button(href="/register/")
                 != general["jumbotron-register-button-text"]

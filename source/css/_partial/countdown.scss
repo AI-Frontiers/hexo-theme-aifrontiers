@@ -1,85 +1,57 @@
 .countdown {
     position: relative;
-    margin-top: 275px;
     z-index: 7;
-    .font-size {
-        font-weight: 800;
-    }
-    .emphasis {
-        background: lightgray;
-        padding: 0 2px;
-        font-size: 14px;
-    }
-    // #sec, .labels li:nth-child(3){
-    //     display: none;
-    // }
-    // #minute:after {
-    //     content: none;
-    // }
-
-    ////
-    // Countdown Plugin Specific styles
-    ////
-
-    //less variables
-    $counter-bg: transparent;
-
+    color: white;
+    font-family: monospace;
+    margin-top: 30px;
+    font-family: "Tungsten";
     .counter {
-        font-size: 32px; /* <<<<adjust this value to change the size of the counter*/
-        width: 10em;
-        height: 2em;
-        left: 0;
-        right: 0; // this is used to center the coutner, in a real application it would be positioned as need
-        position: absolute;
-        font-family: arial, helvetica, sans-serif;
+        display: flex;
+        flex-flow: row nowrap;
         text-align: center;
-        line-height: 2em;
         margin: 0 auto;
-        background: $counter-bg;
-
-        > ul {
-            display: inline-block;
-            color: #000;
-
-            &:after {
-                content: ":";
-                color: #fff;
-                margin: 0 .35em 0 .39em;
+        justify-content: center;
+        align-items: flex-start;
+        font-size: 38px;
+        .segment {
+          display: flex;
+          flex-flow: column nowrap;
+          justify-content: center;
+          .digits {
+            line-height: 1;
+            display: flex;
+            padding: 8px 7px 5px;
+            border-radius: 4px;
+            background-color: #0171E7;
+            flex-flow: row nowrap;
+            span {
+              display: inline-block;
+              // text-shadow: rgba(0,0,0,0.4) 0px 4px 3px;
+              font-weight: 500;
+              width: 13px;
+              // background-color: #0171E7;
+              // text-align: center;
+              // padding: 3px 2px;
+              // margin: 0 2px;
+              // border-radius: 3px;
+              // box-shadow: rgba(0,0,0,0.4) 0px 4px 3px;
             }
-
-            &:last-of-type:after {
-                content: "";
-                margin: 0;
-            }
-
-            li {
-                line-height: 1em;
-                display: inline-block;
-                color: #FFF;
-                border-radius: 6px;
-                letter-spacing: -.1em;
-                &:first-child{
-                    margin-right:.1em;
-                }
-            }
+          }
+          .label {
+            font-size: 26px;
+            text-transform: capitalize;
+            text-shadow: rgba(0,0,0,0.6) 0px 4px 3px;
+            color: white;
+          }
         }
-        .labels {
-            padding-left: .97em;
-            padding-right: .8em;
-            height: 20px;
-            width: 100%;
-            box-sizing: border-box;
-            li {
-                list-style-type: none!important;
-                width: 25%;
-                float: left;
-                line-height: .2em;
-                font-size: .4em;
-                text-align: center;
-                color: white;
-                background: $counter-bg;
-                padding-bottom: .75em;
-            }
+        .colon {
+          line-height: .85;
+          margin-left: 5px;
+          margin-right: 5px;
+          padding: 8px 0;
+        }
+        .colon:last-of-type {
+          display: none;
         }
     }
   }

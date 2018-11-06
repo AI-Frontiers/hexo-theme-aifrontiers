@@ -8,6 +8,12 @@
 @import "_fonts/Helvetica-Narrow";
 @import "_fonts/Avenir-Next";
 @import "_fonts/Audiowide";
+@font-face {
+	font-family: 'Tungsten';
+	src: url('/fonts/Tungsten.otf');
+	font-weight: 500;
+	font-style: normal;
+}
 
 @import "_partial/root";
 @import "_partial/base";
@@ -33,6 +39,7 @@
 @import "_partial/contact";
 @import "_partial/testimonials";
 @import "_partial/purchase";
+@import "_partial/countdown";
 
 @import "_partial/eventbrite";
 @import "_partial/past_conferences";

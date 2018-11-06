@@ -218,4 +218,87 @@ script(type='text/javascript').
 //             nextArrow: '<button type="button" class="slick-next slick-arrow"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 21 41" enable-background="new 0 0 21 41"><polygon points="20.3,40.8 0,20.5 20.3,0.2 21,0.9 1.3,20.5 21,40.1 "></polygon></svg></button>'
 //         });
 //     });
+script(type='text/javascript').
+    (function ($) {
+      $.fn.countdown = function(options){
+        //global variables
+        var vars = $.extend({}, $.fn.countdown.defaults, options),
+            $counter = $(this),
+            t = {days: 0, hours: 0, min: 0, sec: 0},
+            // targetDate = new Date(vars.targetDate).getTime(),
+            // secondsLeft;
+            targetDate = new Date('nov 09, 2018').getTime(),
+            secondsLeft;
 
+        //private methods
+        methods = {
+          setup: function() {
+            $.each(t, function(time, value){
+              var currentSection = '<div class="segment"><div class="digits" id="'+time+'"><span>0</span><span>0</span></div><div class="label">'+time+'</div></div><span class="colon">:</div>';
+              $counter.append(currentSection);
+            });
+          },
+          updateTime: function(){
+            var currentTime = new Date().getTime(),
+                secondsLeft = (targetDate - currentTime) / 1000,
+                secsIn = {days: 86400, hours: 3600, min: 60};
+            if (secondsLeft < 0) {secondsLeft = 0;}
+            $.each(t, function(timePeriod, value){
+              t[timePeriod] = parseInt( (secondsLeft / secsIn[timePeriod]), 10);
+              if (timePeriod !== 'sec'){
+               secondsLeft = secondsLeft % secsIn[timePeriod];
+              }
+              else {
+                t[timePeriod] = secondsLeft;
+              }
+            });
+          },
+          updateCounter: function() {
+            $.each(t, function(period, value){
+              var section = $counter.find('#'+period).children();
+              digit = splitDigits(value);
+              section.eq(0).html(digit[0]);
+              section.eq(1).html(digit[1]);
+            });
+            function splitDigits(number) {
+              var digits = [];
+              digits[0] = Math.floor(number / 10);
+              digits[1] = Math.floor(number % 10);
+              return digits;
+            }
+          },
+          tick: function () {
+            if (secondsLeft < 1) {}
+            else {
+              methods.updateTime();
+              methods.updateCounter();
+              setTimeout(function() {methods.tick();}, 1000);
+            }
+          },
+
+          init: function () {
+            methods.setup();
+            methods.updateTime();
+            methods.updateCounter();
+            methods.tick();
+          },
+        };
+
+        //initiate countdown
+        methods.init();
+      };
+
+      $.fn.countdown.defaults = {
+        targetDate: 'nov 09 2018',
+        labels: true
+      };
+    }(jQuery));
+    // end of countdown plugin
+
+    // dom ready events (would usually be in separate js file)
+    $(document).ready(function() {
+      // arbitrarially make a new date
+      var newDate = new Date();
+      newDate.setDate(45);
+      $('.counter').countdown({targetDate: newDate});
+    });
