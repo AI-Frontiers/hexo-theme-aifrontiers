@@ -19,7 +19,8 @@ block container
     include partial/news
     include partial/venue
     // include partial/about
-    include partial/contact
+    if is_current("/")
+        include partial/contact
 
 block copyright
     include partial/copyright

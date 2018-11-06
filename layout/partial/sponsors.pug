@@ -39,17 +39,17 @@ if controls["sponsors"]
             .spnrs.gold-spnrs
                 each spnr in gold
                     +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
-        if knowledge
-            span.level.knowledge-level
-                != general["sponsor-knowledge-partner"]
-            .spnrs.knowledge-spnrs
-                each spnr in knowledge
-                    +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
         if media
             span.level.media-level
                 != general["sponsor-media-partner"]
             .spnrs.media-spnrs
                 each spnr in media
+                    +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
+        if knowledge
+            span.level.knowledge-level
+                != general["sponsor-knowledge-partner"]
+            .spnrs.knowledge-spnrs
+                each spnr in knowledge
                     +sponsor-card(spnr["name"], spnr["link"], spnr["logo"], spnr["height"], spnr["offset"])
         // span.last-years-spnrs
         //     != general["sponsor-previous"]

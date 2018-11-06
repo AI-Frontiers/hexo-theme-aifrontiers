@@ -15,6 +15,13 @@
         justify-content: space-between;
         color: #454545;
     }
+    .startup-logo-link {
+        line-height: 1.6;
+        img {
+          position: relative;
+          top: 5px;
+        }
+    }
     .schedule-description {
         font-size: 18px;
         color: #083365;
