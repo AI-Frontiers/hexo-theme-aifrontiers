@@ -90,7 +90,6 @@ $mobile-width: 600px;
         }
         .buttons {
             display: flex;
-            margin-top: 20px;
             width: 80%;
             .button {
                 font-size: 14px;
@@ -495,6 +494,7 @@ $mobile-width: 600px;
     .countdown {
       transform-origin: center center;
       transform: scale(.8);
+      margin-top: 10px;
     }
 
 // Posts
