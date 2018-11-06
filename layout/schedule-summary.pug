@@ -1,0 +1,9 @@
+extends partial/layout
+
+block container
+    include partial/scheduleSummary
+    +scheduleSummary(page.conferenceKeyword, page.cityKeyword)
+
+block copyright
+    include partial/copyright
+    +copyright(page.conferenceKeyword, page.cityKeyword)

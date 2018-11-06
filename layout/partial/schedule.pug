@@ -122,6 +122,7 @@ mixin schedule(conferenceKeyword, cityKeyword, stateKeyword)
                         != general["schedule-intro"].replace("%{conferenceKeyword}", conferenceKeyword).replace("near %{cityKeyword}", "recommended for " + cityKeyword + " AI practitioners")
                 else
                     != general["schedule-intro"].replace("%{conferenceKeyword}", "AI conference").replace("near %{cityKeyword}", "at San Jose")
+            a.schedule-summary-link(href="/schedule-summary") View Schedule Summary
 
             .schedule
                 .day-buttons

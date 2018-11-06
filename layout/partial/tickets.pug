@@ -14,8 +14,8 @@
                         != ticket['type-sub']
                 .ticket-price
                     if ticket['price-discounted']
-                        span.ticket-price-text.ticket-price-text-striked
-                            | $!{ticket['price']}
+                        // span.ticket-price-text.ticket-price-text-striked
+                        //     | $!{ticket['price']}
                         span.ticket-price-discounted-text
                             |  $!{ticket['price-discounted']}
                     else

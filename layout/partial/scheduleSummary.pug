@@ -7,7 +7,7 @@ mixin scheduleSummary(conferenceKeyword, cityKeyword, stateKeyword)
     if controls["schedule"]
         .module.module-schedule-summary
             h2.module-title#schedule-summary
-                != general["schedule-title"]
+                | Schedule Summary
             p.schedule-description
                 if conferenceKeyword
                     if stateKeyword == "CA"
